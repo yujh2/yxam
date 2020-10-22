@@ -923,6 +923,16 @@ body{
     .work--lockup .slider--item-left,.work--lockup .slider--item-right{
         display:none
     }
+    .work--lockup .slider--item-center .slider--item-description{
+        color: #2f4f4f;
+        font-size: 17px;
+        display:block;
+        line-height: 1.7;
+    }
+    .work--lockup .slider--item-center .slider--item-title{
+        /* margin-top:25px; */
+        font-size:25px
+    }
 }
 
 /*
