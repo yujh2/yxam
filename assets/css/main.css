@@ -1136,11 +1136,6 @@ Design Methodolodies
         left:205px
     }
 
-    figure:hover+.product-des  {
-        bottom: -15px;
-        opacity: 1;
-    }
-
     .about--options{
         display:none
     }
@@ -1168,7 +1163,9 @@ Design Methodolodies
 .column {
   -ms-flex: 25%; /* IE10 */
   flex: 25%;
-  padding: 0 4px;
+  position: relative;
+  padding: 10px;
+  margin: auto;
 }
 
 .column img {
@@ -1180,12 +1177,6 @@ Design Methodolodies
 
 /* (Design Methodolody) - Gallery layout variation
 -----------------------------------------*/
-
-.column {
-  position: relative;
-  padding: 10px 20px 10px 0;
-  margin: auto;
-}
 
 .grid-container {
   display: grid;
@@ -1207,33 +1198,21 @@ Design Methodolodies
 }
 
 .product-des {
-  position: absolute;
-	bottom: -20px;
-	left: auto;
-	z-index: -1;
-	display: block;
-	width: 35vw;
-	margin: 0;
-	padding: 10px;
-	color: #444;
-	font-size: 18px;
-	text-decoration: none;
-	text-align: center;
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
-	opacity: 0;
+   position: absolute;
+   top: 55%;
+   left: 51%;
+   transform: translate(-50%, -50%);
+   font-size: large;
+   letter-spacing: 0.2em;
+   pointer-events: none;
 }
 
-figure:hover+.product-des  {
-	bottom: -28px;
-	opacity: 1;
-}
 
 /* Overlay hover effect
 -----------------------------------------*/
 .overlay figure img{
-  	-webkit-filter: grayscale(0) blur(0);
-	filter: grayscale(0) blur(0);
+	-webkit-filter: grayscale(100%) blur(3px);
+	filter: grayscale(100%) blur(3px);
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
   height: 25vw;
@@ -1243,8 +1222,8 @@ figure:hover+.product-des  {
 }
 
 .overlay figure:hover img {
-	-webkit-filter: grayscale(100%) blur(3px);
-	filter: grayscale(100%) blur(3px);
+    -webkit-filter: grayscale(0) blur(0);
+  filter: grayscale(0) blur(0);
   border-radius: 0;
 }
 
@@ -1395,17 +1374,11 @@ figure.column {
   }
   /* Overlay hover effect */
   .overlay figure img{
-    -webkit-filter: grayscale(0) blur(0);
-    filter: grayscale(0) blur(0);
-    -webkit-transition: .3s ease-in-out;
-    transition: .3s ease-in-out;
     height: 225px;
     max-width: 500px;
     object-fit: cover;
    }
-   .product-des {
-     max-width: 500px;
-   }
+
 }
 
 @media screen and (max-width: 600px) {
@@ -1415,13 +1388,12 @@ figure.column {
 
     .overlay figure img{
       width: 60vw;
-      height: 17vw;
+      height: 20vw;
     }
 
     .product-des {
-      width: 60vw;
-      left: auto;
-      opacity: 1;
+      font-size: initial;
+      letter-spacing: 0.1em;
     }
 }
 
