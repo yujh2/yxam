@@ -1,3 +1,18 @@
+/* CSS HEX
+--bisque: #ffe5c3ff;
+--powder-blue: #a9d2d5ff;
+--dark-slate-gray: #2f4f4fff;
+--royal-blue-dark: #102571ff;
+--celtic-blue: #226ce0ff;
+
+CSS HSL
+--bisque: hsla(34, 100%, 88%, 1);
+--powder-blue: hsla(184, 34%, 75%, 1);
+--dark-slate-gray: hsla(180, 25%, 25%, 1);
+--royal-blue-dark: hsla(227, 75%, 25%, 1);
+--celtic-blue: hsla(217, 75%, 51%, 1);
+*/
+
 @font-face{
     font-family:'Montserrat';
     src:url("fonts/Montserrat-Black.eot");
@@ -190,7 +205,7 @@ body{
     -webkit-tap-highlight-color:#FFF498
 }
 body{
-    background-color:#FAEBD7;
+    background-color: #FFE5C3;
     font-size:14px;
     line-height:1.6;
     font-family:  sans-serif;
@@ -457,7 +472,7 @@ body{
     color:#fff;
     font-weight:700;
     text-transform:uppercase;
-    background-color:#0f33ff;
+    background-color:#226CE0;
     border:none;
     opacity:0;
     visibility:hidden;
@@ -603,15 +618,15 @@ body{
     left:0;
     width:30px;
     height:4px;
-    background-color:#0f33ff
+    background-color:#226CE0
 }
 .intro--banner h1{
     position:relative;
-    font-size:68px;
+    font-size:63px;
     font-weight:900;
-    line-height:1;
+    line-height:1.2;
     z-index:1;
-    color:black;
+    color: #102571;
 }
 .intro--banner button{
     position:relative;
@@ -627,7 +642,7 @@ body{
     left:23px;
     right:0;
     height:100%;
-    background-color:#0f33ff;
+    background-color:#226CE0;
     z-index:-1;
     -webkit-transition:left .2s ease-in-out;
     transition:left .2s ease-in-out
@@ -804,7 +819,7 @@ body{
 }
 .work--lockup .slider--item-description{
     display:none;
-    margin-bottom: 10%;
+    margin-bottom: 8%;
     margin-top: 0; /*This is zero for now because of the "-" spacing from the title*/
 }
 .work--lockup .slider--item-image{
@@ -815,7 +830,9 @@ body{
     overflow:hidden
 }
 .work--lockup .slider--item-image img{
-    width:100%
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 .work--lockup .slider--item-left{
     top:85%;
@@ -844,7 +861,7 @@ body{
 }
 .work--lockup .slider--item-center .slider--item-title{
     margin-top:25px;
-    font-size:30px
+    font-size:0;
 }
 .work--lockup .slider--item-center .slider--item-description{
     color: #2f4f4f;
@@ -1059,7 +1076,7 @@ Design Methodolodies
     height:75px;
     text-decoration:none;
     color:#fff;
-    border:10px solid #0f33ff;
+    border:10px solid #226CE0;
     background-position:center;
     background-size:cover;
     background-repeat:no-repeat
@@ -1461,7 +1478,7 @@ Tutorial Section (YouTube iFrame)
     font-size:16px;
     font-weight:700;
     text-transform:uppercase;
-    background-color:#0f33ff;
+    background-color:#226CE0;
     border:none;
     border-radius:0
 }
@@ -1534,8 +1551,8 @@ Tutorial Section (YouTube iFrame)
     display:none
 }
 .work-request--options input[type="checkbox"]:checked+label{
-    background-color:#0f33ff;
-    border-color:#0f33ff
+    background-color:#226CE0;
+    border-color:#226CE0
 }
 .work-request--options input[type="checkbox"]:checked+label svg{
     width:15px
@@ -1645,7 +1662,7 @@ Tutorial Section (YouTube iFrame)
     -webkit-transform:translateZ(0) translateX(0) rotateY(0deg);
     transform:translateZ(0) translateX(0) rotateY(0deg);
     min-height:100%;
-    outline:30px solid #0f33ff;
+    outline:30px solid #226CE0;
     -webkit-transition:-webkit-transform .4s;
     transition:-webkit-transform .4s;
     transition:transform .4s;
@@ -1670,7 +1687,7 @@ Tutorial Section (YouTube iFrame)
 .effect-rotate-left--animate .container{
     -webkit-transform:translateZ(-1800px) translateX(-50%) rotateY(45deg);
     transform:translateZ(-1800px) translateX(-50%) rotateY(45deg);
-    outline:30px solid #0f33ff
+    outline:30px solid #226CE0
 }
 .outer-nav{
     position:absolute;
@@ -1709,7 +1726,7 @@ Tutorial Section (YouTube iFrame)
     transform-style:preserve-3d;
     -webkit-transform:translateX(350px) translateZ(-1000px);
     transform:translateX(350px) translateZ(-1000px);
-    font-size:55px;
+    font-size:51px;
     font-weight:900;
     opacity:0;
     cursor:pointer;
@@ -1719,7 +1736,8 @@ Tutorial Section (YouTube iFrame)
     transition:transform .2s,opacity .2s,-webkit-transform .2s
 }
 .outer-nav>li.is-vis{
-    color: #2F4F4F;
+    letter-spacing: 0.087em;
+    color: #102571;
     -webkit-transform:translateX(0) translateZ(0);
     transform:translateX(0) translateZ(0);
     opacity:1;
@@ -1738,7 +1756,7 @@ Tutorial Section (YouTube iFrame)
     width:110%;
     height:15px;
     opacity:0;
-    background-color:#0f33ff
+    background-color:#226CE0
 }
 .outer-nav>li.is-active::before{
     opacity:1
