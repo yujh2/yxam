@@ -661,8 +661,9 @@ body{
 }
 .intro--banner img{
     position:absolute;
-    bottom:21px;
-    right:-12px
+    bottom:-64px;
+    right:-121px;
+    width: 89%;
 }
 .intro--options{
     display:-webkit-box;

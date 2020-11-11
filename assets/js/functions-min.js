@@ -1078,8 +1078,8 @@
         var t = $(".side-nav").find(".is-active"),
             n = $(".side-nav").children().index(t),
             s = $(".side-nav").children().length - 1,
-            r = s;
-        e(s), i(n, r, s)
+            r = n + 1;
+        e(r), i(n, r, s)
     });
     var l = document.getElementById("viewport"),
         c = new Hammer(l);
