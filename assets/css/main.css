@@ -642,7 +642,8 @@ body{
     left:23px;
     right:0;
     height:100%;
-    background-color:#226CE0;
+    border: 2px solid #226CE0;
+    border-radius: 0.3em;
     z-index:-1;
     -webkit-transition:left .2s ease-in-out;
     transition:left .2s ease-in-out
@@ -657,7 +658,7 @@ body{
     position:relative;
     left:5px;
     width:15px;
-    fill:#fff
+    fill:#102571;
 }
 .intro--banner img{
     position:absolute;
