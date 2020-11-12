@@ -148,6 +148,8 @@ body {
 @media only screen and (max-width: 600px) {
   .param1, .param2, .param3, .param4 {
     margin: 20px 0;
+    width: auto;
+    height: auto;
   }
 }
 
