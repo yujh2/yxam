@@ -18,8 +18,9 @@ body {
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .container {
-      max-width: 600px;
-      display: block;
+    max-width: 600px;
+    display: block;
+    max-height: 892px;
   }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
