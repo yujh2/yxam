@@ -15,6 +15,36 @@ body {
   display: flex;
 }
 
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .container {
+      max-width: 600px;
+      display: block;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .container {
+    max-width: 80%;
+    display: block;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 90%;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .container {
+      width: 100%;
+      display: flex;
+  }
+}
+
 /* Left Columns - Product Viewer
 -----------------------------------------*/
 
@@ -23,6 +53,28 @@ body {
   height: 700px;
   position: relative;
   margin-right: 10px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #sdv-container {
+      width: 100%;
+      height: 40%;
+    }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  #sdv-container {
+    width: 100%;
+    height: 40%;
+  }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  #sdv-container {
+    width: 60%;
+    height: 700px;
+  }
 }
 
 .left-column img {
@@ -44,6 +96,20 @@ body {
   background: #ffffff00;
   margin-left: 20px;
 }
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .right-column {
+    width: auto;
+    margin: 3% 5%;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .right-column {
+    width: auto;
+    margin: 3% 5%;
+  }
+}
 /* Right Column - Product Title
 -----------------------------------------*/
 
@@ -53,6 +119,13 @@ body {
   font-weight: 700;
   margin-left: 30px;
   margin-bottom: 0.2rem;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .title-prompt {
+    margin-left: 4%;
+    font-size: 17px;
+  }
 }
 .right-column h1 {
   font-weight: 700;
@@ -69,6 +142,13 @@ body {
   box-shadow: 3px 3px 6px 2px #de9826c2;
   display: flex;
   background-color: #ffc05ae8;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .param1, .param2, .param3, .param4 {
+    margin: 20px 0;
+  }
 }
 
 .product-description span {
@@ -251,6 +331,14 @@ body {
   cursor: pointer;
 }
 
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .material-card img {
+    width: 90;
+    height: 45;
+  }
+}
+
 .material-card p {
   margin: 6px;
   font-weight: 700;
@@ -384,81 +472,25 @@ body {
     background-position: 100%;
   }
 }
-
-/* Extra small devices (phones, 600px and down)
------------------------------------------*/
+/* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-  .container {
-      max-width: 600px;
-      display: block;
-  }
-  #sdv-container {
-    width: 100%;
-    height: 40%;
-  }
-  .material-card img {
-    width: 90;
-    height: 45;
-  }
-  .title-prompt {
-    margin-left: 4%;
-  }
-  .right-column {
-    width: auto;
-    margin: 3% 5%;
+  .button-submit {
+    font-size: 12px;
   }
   #title {
     font-size: 32px;
     margin-left: 4%;
   }
-  .title-prompt {
-    font-size: 17px;
-  }
-  .param1, .param2, .param3, .param4 {
-    margin: 20px 0;
-  }
-  .button-submit {
-    font-size: 12px;
-  }
 }
-
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-  .container {
-    max-width: 80%;
-    display: block;
-  }
-  .right-column {
-    width: auto;
-    margin: 3% 5%;
-  }
-  #sdv-container {
-    width: 100%;
-    height: 40%;
-  }
   .button-submit {
     font-size: 14px;
   }
 }
-
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-  .container {
-    max-width: 90%;
-  }
   #title {
     font-size: 36px;
-  }
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-  .container {
-      width: 100%;
-      display: flex;
-  }
-  #sdv-container {
-    width: 60%;
-    height: 700px;
   }
 }
