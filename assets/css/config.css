@@ -15,40 +15,16 @@ body {
   display: flex;
 }
 
-@media (min-width: 576px) {
-  .container {
-      max-width: 540px;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-      max-width: 720px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-      max-width: 1250px;
-  }
-}
-
-/* Columns
+/* Left Columns - Product Viewer
 -----------------------------------------*/
+
 #sdv-container {
-  width: 65%;
+  width: 60%;
+  height: 700px;
   position: relative;
   margin-right: 10px;
 }
 
-.right-column {
-  width: 60%;
-  margin-top: 60px;
-  background: #ffffff00;
-}
-
-/* Left Columns - Product Viewer
------------------------------------------*/
 .left-column img {
   width: 100%;
   position: absolute;
@@ -62,16 +38,13 @@ body {
   opacity: 1;
 }
 
-
-/* Right Column General
------------------------------------------*/
 .right-column {
+  width: 60%;
+  margin-top: 60px;
+  background: #ffffff00;
   margin-left: 20px;
 }
-
-
-
-/* (Right Column) Product Title
+/* Right Column - Product Title
 -----------------------------------------*/
 
 .title-prompt {
@@ -82,13 +55,11 @@ body {
   margin-bottom: 0.2rem;
 }
 .right-column h1 {
-  font-size: 40px;
   font-weight: 700;
   margin-left: 25px;
-/*   color: #024785; */
 }
 
-/* (Right Column) Product Parameters
+/* Right Column - Product Parameters
 -----------------------------------------*/
 .param1, .param2, .param3, .param4 {
   border-radius: 1em;
@@ -108,6 +79,19 @@ body {
   text-decoration: none;
 }
 
+.product-description h1 {
+  font-weight: 300;
+  font-size: 45px;
+  color: #43484D;
+  letter-spacing: -2px;
+}
+
+.product-description p {
+  font-size: 16px;
+  font-weight: 300;
+  color: #86939E;
+  line-height: 24px;
+}
 
 .param-icon {
   flex-grow: 1;
@@ -139,20 +123,6 @@ body {
   color: #522402;
 }
 
-.product-description h1 {
-  font-weight: 300;
-  font-size: 45px;
-  color: #43484D;
-  letter-spacing: -2px;
-}
-
-.product-description p {
-  font-size: 16px;
-  font-weight: 300;
-  color: #86939E;
-  line-height: 24px;
-}
-
 .adjust-labels-left, .adjust-labels-right, .adjust-labels-middle, .adjust-labels {
   margin: 10px;
 }
@@ -166,77 +136,6 @@ body {
 .adjust-labels-hidden {
   display: none;
 }
-/* Cable Configuration
------------------------------------------*/
-
-.cable-config {
-  border-bottom: 1px solid #E1E8EE;
-  margin-bottom: 20px;
-}
-
-.cable-config a {
-  color: #358ED7;
-  text-decoration: none;
-  font-size: 12px;
-  position: relative;
-  margin: 10px 0;
-  display: inline-block;
-}
-
-.cable-config a:before {
-  content: &amp;
-  quot;
-  ?&amp;
-  quot;
-  ;
-  height: 15px;
-  width: 15px;
-  border-radius: 50%;
-  border: 2px solid rgba(53, 142, 215, 0.5);
-  display: inline-block;
-  text-align: center;
-  line-height: 16px;
-  opacity: 0.5;
-  margin-right: 5px;
-}
-
-/* Product Price
------------------------------------------*/
-.product-price {
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.product-price span {
-  font-size: 26px;
-  font-weight: 300;
-  color: #43474D;
-  margin-right: 20px;
-  margin-top: 0;
-}
-
-.product-price button {
-  border: none;
-}
-
-.cart-btn {
-  display: inline-block;
-  background-color: #7DC855;
-  border-radius: 6px;
-  font-size: 16px;
-  color: #FFFFFF;
-  text-decoration: none;
-  padding: 12px 30px;
-  transition: all .5s;
-}
-
-.cart-btn:hover {
-  background-color: #64af3d;
-  color: #2F4F4F;
-  text-decoration: none;
-}
 
 #materialOptions {
   width: 100%;
@@ -244,99 +143,8 @@ body {
   z-index: 10;
 }
 
-/* Material card styling
+/* Right column - parameter dropdown styling
 -----------------------------------------*/
-.material-card {
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 1%;
-  display: inline-block;
-  cursor: pointer;
-}
-
-
-.material-card p {
-  margin: 6px;
-  font-weight: 700;
-  color: #424242de;
-}
-
-.material-card img {
-  border-radius: 0.4em;
-}
-
-/* mouse interaction styling
------------------------------------------*/
-#interaction {
-  display: block;
-  position: relative;
-  bottom: 20px;
-  width: 100%;
-  /* height: 50%;
-   */
-}
-
-/* email input and submission styling
------------------------------------------*/
-
-.email-submit {
-  flex-grow: 1;
-}
-
-
-.submit {
-  position: relative;
-  display: inline-block;
-  width: 205px;
-  height: 50px;
-  line-height: 60px;
-  text-align: center;
-  background-color: transparent;
-  cursor: pointer;
-  text-decoration:none;
-  font-size:17px;
-  font-weight: 700;
-  letter-spacing: 0.045em;
-}
-
-.submit:hover {
-  text-decoration:none;
-}
-
-.submit svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.submit svg rect {
-  stroke-width: 2;
-  stroke-dasharray: 353, 0;
-  stroke-dashoffset: 0;
-  -webkit-transition: all 600ms ease;
-  transition: all 600ms ease;
-}
-
-.submit span{
-  background: rgb(255,130,130);
-  background: -moz-linear-gradient(left,  rgba(255,130,130,1) 0%, rgba(225,120,237,1) 100%);
-  background: -webkit-linear-gradient(left,  rgba(255,130,130,1) 0%,rgba(225,120,237,1) 100%);
-  background: linear-gradient(to right,  rgba(255,130,130,1) 0%,rgba(225,120,237,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8282', endColorstr='#e178ed',GradientType=1 );
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.submit:hover svg rect {
-  stroke-width: 3;
-  stroke-dasharray: 70, 350;
-  stroke-dashoffset: 230;
-}
-
-/* Dropdown styling
------------------------------------------*/
-
 .select-box {
   position: relative;
   display: block;
@@ -409,10 +217,6 @@ body {
   background-color: #ffe3b4;
 }
 
-.select-box__sections {
-
-}
-
 .list-hidden {
   display: none;
 }
@@ -437,6 +241,83 @@ body {
 	}
 }
 
+/* Right column - material card styling
+-----------------------------------------*/
+.material-card {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 1%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.material-card p {
+  margin: 6px;
+  font-weight: 700;
+  color: #424242de;
+}
+
+.material-card img {
+  border-radius: 0.4em;
+}
+
+/* Right column - email input and submission styling
+-----------------------------------------*/
+.email-submit {
+  flex-grow: 1;
+}
+
+.submit {
+  position: relative;
+  display: inline-block;
+  width: 205px;
+  height: 50px;
+  line-height: 60px;
+  text-align: center;
+  background-color: transparent;
+  cursor: pointer;
+  text-decoration:none;
+  font-size:17px;
+  font-weight: 700;
+  letter-spacing: 0.045em;
+}
+
+.submit:hover {
+  text-decoration:none;
+}
+
+.submit svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.submit svg rect {
+  stroke-width: 2;
+  stroke-dasharray: 353, 0;
+  stroke-dashoffset: 0;
+  -webkit-transition: all 600ms ease;
+  transition: all 600ms ease;
+}
+
+.submit span{
+  background: rgb(255,130,130);
+  background: -moz-linear-gradient(left,  rgba(255,130,130,1) 0%, rgba(225,120,237,1) 100%);
+  background: -webkit-linear-gradient(left,  rgba(255,130,130,1) 0%,rgba(225,120,237,1) 100%);
+  background: linear-gradient(to right,  rgba(255,130,130,1) 0%,rgba(225,120,237,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8282', endColorstr='#e178ed',GradientType=1 );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.submit:hover svg rect {
+  stroke-width: 3;
+  stroke-dasharray: 70, 350;
+  stroke-dashoffset: 230;
+}
+
+
 .slider-row {
   display: flex;
 }
@@ -453,7 +334,7 @@ body {
   line-height: 0.9;
 }
 
-/* submit button styling
+/* Right column - Submit button styling
 -----------------------------------------*/
 
 .button-submit {
@@ -501,5 +382,83 @@ body {
   }
   100% {
     background-position: 100%;
+  }
+}
+
+/* Extra small devices (phones, 600px and down)
+-----------------------------------------*/
+@media only screen and (max-width: 600px) {
+  .container {
+      max-width: 600px;
+      display: block;
+  }
+  #sdv-container {
+    width: 100%;
+    height: 40%;
+  }
+  .material-card img {
+    width: 90;
+    height: 45;
+  }
+  .title-prompt {
+    margin-left: 4%;
+  }
+  .right-column {
+    width: auto;
+    margin: 3% 5%;
+  }
+  #title {
+    font-size: 32px;
+    margin-left: 4%;
+  }
+  .title-prompt {
+    font-size: 17px;
+  }
+  .param1, .param2, .param3, .param4 {
+    margin: 20px 0;
+  }
+  .button-submit {
+    font-size: 12px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .container {
+    max-width: 80%;
+    display: block;
+  }
+  .right-column {
+    width: auto;
+    margin: 3% 5%;
+  }
+  #sdv-container {
+    width: 100%;
+    height: 40%;
+  }
+  .button-submit {
+    font-size: 14px;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 90%;
+  }
+  #title {
+    font-size: 36px;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .container {
+      width: 100%;
+      display: flex;
+  }
+  #sdv-container {
+    width: 60%;
+    height: 700px;
   }
 }
