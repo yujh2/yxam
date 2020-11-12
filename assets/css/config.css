@@ -149,7 +149,7 @@ body {
   .param1, .param2, .param3, .param4 {
     margin: 20px 0;
     width: auto;
-    height: auto;
+    height: auto !important;
   }
 }
 
