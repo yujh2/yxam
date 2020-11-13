@@ -655,29 +655,30 @@ body{
     outline:none
 }
 .intro--banner button svg{
-    position:relative;
-    left:5px;
-    width:15px;
-    fill:#102571;
+  position:relative;
+  left:5px;
+  width:15px;
+  fill:#102571;
 }
 .intro--banner img{
-    position:absolute;
-    bottom:-64px;
-    right:-121px;
-    width: 89%;
+  position: absolute;
+  bottom: -57px;
+  right: -63px;
+  width: 82%;
+  height: auto;
 }
 .intro--options{
-    display:-webkit-box;
-    display:-webkit-flex;
-    display:-ms-flexbox;
-    display:flex;
-    -webkit-box-pack:justify;
-    -webkit-justify-content:space-between;
-    -ms-flex-pack:justify;
-    justify-content:space-between;
-    margin:0;
-    padding:0;
-    list-style:none
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-pack:justify;
+  -webkit-justify-content:space-between;
+  -ms-flex-pack:justify;
+  justify-content:space-between;
+  margin:0;
+  padding:0;
+  list-style:none
 }
 .intro--options>a{
     max-width:250px;
