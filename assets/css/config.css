@@ -145,6 +145,10 @@ body {
   background-color: #ffc05ae8;
 }
 
+#param2-test {
+
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .param1, .param2, .param3, .param4 {
