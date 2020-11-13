@@ -1,7 +1,6 @@
 /* Basic Styling
 -----------------------------------------*/
-html,
-body {
+html,body,main {
   height: 100%;
   width: 100%;
   margin: 0;
@@ -139,7 +138,7 @@ body {
   border-radius: 1em;
   margin: 20px 0 20px 10px;
   width: auto;
-  max-height: 100%;
+  height: auto;
   box-shadow: 3px 3px 6px 2px #de9826c2;
   display: flex;
   background-color: #ffc05ae8;
@@ -180,10 +179,10 @@ body {
   line-height: 24px;
 }
 
-.param-icon {
+/* .param-icon {
   flex-grow: 1;
   display: contents;
-}
+} */
 
 .param-icon img {
   vertical-align: middle;
