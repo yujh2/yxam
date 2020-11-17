@@ -470,7 +470,7 @@ body{
     color:#fff;
     font-weight:700;
     text-transform:uppercase;
-    background-color:#226CE0;
+    background-:#226CE0;
     border:none;
     opacity:0;
     visibility:hidden;
@@ -821,6 +821,7 @@ body{
 }
 .work--lockup{
     position:relative
+    top: -3%
 }
 .work--lockup .slider{
     position:relative;
@@ -850,7 +851,7 @@ body{
 }
 .work--lockup .slider--item-description{
     display:none;
-    margin-bottom: 8%;
+    margin-bottom: 6%;
     margin-top: 0; /*This is zero for now because of the "-" spacing from the title*/
 }
 .work--lockup .slider--item-image{
@@ -906,7 +907,7 @@ body{
 }
 .work--lockup .slider--next,.work--lockup .slider--prev{
     position:absolute;
-    top:85%;
+    top:74%;
     display:-webkit-box;
     display:-webkit-flex;
     display:-ms-flexbox;
@@ -945,7 +946,7 @@ body{
         height:240px
     }
     .work--lockup .slider--next,.work--lockup .slider--prev{
-        top: 85%;
+        top: 78%;
     }
 }
 @media (max-width: 767px){
@@ -961,7 +962,7 @@ body{
         height:190px
     }
     .work--lockup .slider--next,.work--lockup .slider--prev{
-        top:85%;
+        top:78%;
     }
 }
 @media (max-width: 600px){
@@ -975,10 +976,6 @@ body{
         font-size: 17px;
         display:block;
         line-height: 1.7;
-    }
-    .work--lockup .slider--item-center .slider--item-title{
-        /* margin-top:25px; */
-        font-size:25px
     }
 }
 
