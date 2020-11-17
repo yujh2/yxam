@@ -130,6 +130,7 @@ html,body,main {
 .right-column h1 {
   font-weight: 700;
   margin-left: 25px;
+  color: #522402;
 }
 
 /* Right Column - Product Parameters
@@ -179,16 +180,10 @@ html,body,main {
   line-height: 24px;
 }
 
-/* .param-icon {
-  flex-grow: 1;
-  display: contents;
-} */
-
 .param-icon img {
   vertical-align: middle;
   border-style: none;
-  /* object-fit: cover; */
-  width: 72px;
+  width: 78px;
   height: auto;
   margin: auto;
   padding: 10px 10px 10px 15px;
