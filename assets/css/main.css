@@ -207,7 +207,6 @@ body{
     background-color: #FFE5C3;
     font-size:14px;
     line-height:1.6;
-    font-family:  sans-serif;
     font-family: "Noto Sans TC","Montserrat",sans-serif;
     color:#fff;
     -webkit-font-smoothing:antialiased;
@@ -598,7 +597,7 @@ body{
 }
 .intro--banner{
     position:relative;
-    height:550px;
+    height:515px;
 }
 .intro--banner::before{
     content:"";
@@ -671,9 +670,9 @@ body{
 }
 .intro--banner img{
   position: absolute;
-  bottom: -68px;
+  bottom: -63px;
   right: -68px;
-  width: 843px;
+  width: 800px;
   height: auto;
 }
 .intro--options{
@@ -851,7 +850,7 @@ body{
 }
 .work--lockup .slider--item-description{
     display:none;
-    margin-bottom: 6%;
+    margin-bottom: 4%;
     margin-top: 0; /*This is zero for now because of the "-" spacing from the title*/
 }
 .work--lockup .slider--item-image{
@@ -897,7 +896,7 @@ body{
 }
 .work--lockup .slider--item-center .slider--item-description{
     color: #363636;
-    font-size: 20px;
+    font-size: 1.4em;
     display:block;
     line-height: 2;
 }
@@ -1011,7 +1010,7 @@ Design Methodolodies
 .about--banner{
     display: inline-flex;
     position:relative;
-    height:70%;
+    height: auto;
     max-width: 900px;
 }
 .about--banner::before{
@@ -1064,7 +1063,6 @@ Design Methodolodies
     padding:5px 17px 5px 0;
     text-decoration:none;
     color:#fff;
-    font-weight:700;
     text-transform:uppercase;
     background-color:transparent
 }
@@ -1246,8 +1244,8 @@ Design Methodolodies
    top: 55%;
    left: 51%;
    transform: translate(-50%, -50%);
-   font-size: large;
-   letter-spacing: 0.2em;
+   font-size: 40px;
+   letter-spacing: 0.1em;
    pointer-events: none;
 }
 
@@ -1299,10 +1297,9 @@ Design Methodolodies
 /* main image in modal
 -----------------------------------------*/
 .modal-image-full {
-  height: 35vw;
+  height: 40vw;
   max-height: 413px;
 }
-
 /* The Close Button
 -----------------------------------------*/
 .close {
@@ -1375,7 +1372,6 @@ Design Methodolodies
 -----------------------------------------*/
 .row-demo {
   margin: auto;
-  position: absolute;
   width: 100%;
   max-width: 1200px;
   display: flex;
@@ -1422,14 +1418,21 @@ figure.column {
     max-width: 500px;
     object-fit: cover;
    }
+}
 
+@media screen and (max-width: 900px) {
+  .modal-image-full {
+    height: 60vw;
+  }
+  .modal {
+    padding-top: 0;
+  }
 }
 
 @media screen and (max-width: 600px) {
     .column {
       padding: 10px;
     }
-
     .overlay figure img{
       width: 60vw;
       height: 20vw;
@@ -1439,12 +1442,12 @@ figure.column {
       font-size: initial;
       letter-spacing: 0.1em;
     }
-}
-
-@media screen and (max-width: 900px) {
-  .modal-image-full {
-    height: 60vw;
-  }
+    .modal {
+      padding-top: 25%;
+    }
+    .button-submit-row  {
+      width: 90%;
+    }
 }
 
 /*
@@ -1812,4 +1815,132 @@ Tutorial Section (YouTube iFrame)
 .outer-nav li.is-vis:nth-child(5){
     -webkit-transition-delay:.16s;
     transition-delay:.16s
+}
+
+/* Submit button styling
+-----------------------------------------*/
+
+.button-submit-row {
+  width: 47%;
+  padding-top: 5px;
+  margin: auto;
+  display: flex;
+}
+
+.button-submit-yes {
+  -webkit-appearance: none;
+  background: linear-gradient(to right,#669408 0%,#fceeb5 40%,#ee786e 100%);
+  background-size: 500%;
+  border: none;
+  border-radius: 0.5rem;
+  color: #fff;
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 2.4rem;
+  letter-spacing: 0.05em;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 8rem;
+  box-shadow: 0px 3px 5px 2px #00000026;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.button-submit-yes:hover {
+  animation-name: gradient;
+  -webkit-animation-name: gradient;
+  animation-duration: 0.5s;
+  -webkit-animation-duration: s;
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+}
+
+.button-submit-yes:focus {
+  border: none;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
+.button-submit-custom {
+  -webkit-appearance: none;
+  background: linear-gradient(to right,#4290b9 5%,#fceeb5 40%,#ee786e 100%);
+  background-size: 500%;
+  border: none;
+  border-radius: 0.5rem;
+  color: #fff;
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 2.4rem;
+  letter-spacing: 0.05em;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 8rem;
+  box-shadow: 0px 3px 5px 2px #00000026;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.button-submit-custom:hover {
+  animation-name: gradient;
+  -webkit-animation-name: gradient;
+  animation-duration: 0.5s;
+  -webkit-animation-duration: s;
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+}
+
+.button-submit-custom:focus {
+  border: none;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+    .button-submit-row  {
+      width: 90%;
+    }
+}
+
+.relax-layout {
+  font-family: "Bad Script";
+}
+.makeup-layout {
+  font-family: "Cinzel";
+  font-weight: 300;
+}
+.work-layout {
+  font-family: "Fredericka the Great";
+}
+.tech-layout {
+  font-family: "Fjalla One";
 }
