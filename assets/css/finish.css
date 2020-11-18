@@ -1,0 +1,13 @@
+/* Basic Styling
+-----------------------------------------*/
+html,body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: "Noto Sans TC","Montserrat",sans-serif;
+  background-color: #ffe5c3;
+}
+
+.test {
+  border: 1px solid red;
+}
