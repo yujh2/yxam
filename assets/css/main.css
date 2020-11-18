@@ -1850,6 +1850,9 @@ Tutorial Section (YouTube iFrame)
   display: inline-block;
   font-size: 16px;
   font-weight: 300;
+  text-decoration: none;
+  text-align: center;
+  line-height: 2.4;
 }
 
 .button-submit-yes:hover {
@@ -1899,6 +1902,9 @@ Tutorial Section (YouTube iFrame)
   display: inline-block;
   font-size: 16px;
   font-weight: 300;
+  text-decoration: none;
+  text-align: center;
+  line-height: 2.4;
 }
 
 .button-submit-custom:hover {
