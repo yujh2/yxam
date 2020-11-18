@@ -1297,7 +1297,7 @@ Design Methodolodies
 /* main image in modal
 -----------------------------------------*/
 .modal-image-full {
-  height: 40vw;
+  height: 50vh;
   max-height: 413px;
 }
 /* The Close Button
