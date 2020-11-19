@@ -212,6 +212,7 @@ function validateForm() {
     // Set input group to 'is-valid' status
     emailInput.classList.add('is-valid');
     document.querySelector('.invlalid-feedback').innerHTML = "";
+    window.location.href = "finish.html";
     return true;
   }
 }
