@@ -64,7 +64,7 @@ html,body {
 .site-footer
 {
   display: block;
-  font-size: 0.2em;
+  font-size: 10px;
   color: #9b9082;
 }
 
@@ -72,5 +72,7 @@ html,body {
   .contact {
     display: block;
   }
-  .
+  #section-2 h3 {
+    font-size: 1em;
+  }
 }
