@@ -555,14 +555,12 @@ body{
 }
 .side-nav li.is-active{
     color:#2F4F4F;
-    font-weight: bold;
     -webkit-transition:color .4s ease-in-out;
     transition:color .4s ease-in-out
 }
 .side-nav li.is-active span{
     opacity:1;
     visibility:visible;
-    font-weight: bold;
     -webkit-transition:opacity .4s ease-in-out;
     transition:opacity .4s ease-in-out
 }
@@ -701,11 +699,11 @@ body{
 }
 .intro--options h3{
     font-size:22px;
-    font-weight:bold;
+    font-weight:300;
     margin-bottom:0;
 }
 .intro--options p{
-  font-size: 16px;
+  font-size: 15px;
   letter-spacing: 1px;
 }
 @media (max-width: 900px){
@@ -1829,7 +1827,7 @@ Tutorial Section (YouTube iFrame)
 
 .button-submit-yes {
   -webkit-appearance: none;
-  background: linear-gradient(to right,#669408 0%,#fceeb5 40%,#ee786e 100%);
+  background: linear-gradient(to right,#91896a 5%,#eeab6ed6 60%,#ec8d0f 100%);
   background-size: 500%;
   border: none;
   border-radius: 0.5rem;
@@ -1881,7 +1879,7 @@ Tutorial Section (YouTube iFrame)
 
 .button-submit-custom {
   -webkit-appearance: none;
-  background: linear-gradient(to right,#4290b9 5%,#fceeb5 40%,#ee786e 100%);
+background: linear-gradient(to right,#91896a 5%,#eeab6ed6 60%,#fc6154 100%);
   background-size: 500%;
   border: none;
   border-radius: 0.5rem;
