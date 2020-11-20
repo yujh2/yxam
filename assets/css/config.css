@@ -93,8 +93,11 @@ html,body,main {
 .right-column {
   width: 60%;
   margin-top: 60px;
-  background: #ffffff00;
+  background: #fbf9f1;
   margin-left: 20px;
+  border-radius 1em;
+  box-shadow: 4px 4px 35px 2px #0000002e;
+  height: fit-content;
 }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
@@ -137,7 +140,7 @@ html,body,main {
 -----------------------------------------*/
 .param1, .param2, .param3, .param4 {
   border-radius: 1em;
-  margin: 20px 0 20px 10px;
+  margin: 20px 15px;
   width: auto;
   height: auto;
   box-shadow: 3px 3px 6px 2px #de9826c2;
@@ -223,6 +226,18 @@ html,body,main {
   text-align: center;
   z-index: 10;
 }
+.material-card:hover {
+  color: white;
+}
+.material-card {
+  transition-property: color;
+  transition-duration: 0.3s;
+}
+.material-card p:focus {
+  color: white;
+}
+
+
 
 /* Right column - parameter dropdown styling
 -----------------------------------------*/
