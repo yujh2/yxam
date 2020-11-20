@@ -155,7 +155,6 @@ html,body,main {
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .param1, .param2, .param3, .param4 {
-    margin: 20px 0;
     width: auto;
     max-height: auto;
   }
@@ -226,18 +225,6 @@ html,body,main {
   text-align: center;
   z-index: 10;
 }
-.material-card:hover {
-  color: white;
-}
-.material-card {
-  transition-property: color;
-  transition-duration: 0.3s;
-}
-.material-card p:focus {
-  color: white;
-}
-
-
 
 /* Right column - parameter dropdown styling
 -----------------------------------------*/
