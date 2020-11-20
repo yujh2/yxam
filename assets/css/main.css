@@ -1058,7 +1058,6 @@ Design Methodolodies
     height:10px;
 }
 .about--banner a{
-    padding:5px 17px 5px 0;
     text-decoration:none;
     color:#fff;
     text-transform:uppercase;
@@ -1237,6 +1236,36 @@ Design Methodolodies
   }
 }
 
+.relax-layout {
+  font-family: "Montserrat Alternates";
+  padding: 10px;
+  border: 2px solid white;
+  letter-spacing: 3.5px;
+  padding: 20px 30px;
+}
+.makeup-layout {
+  font-family: "Cinzel";
+  font-weight: 300;
+  letter-spacing: 1px !important;
+  padding: 10px;
+  border: 2px solid white;
+  padding: 20px 30px;
+}
+.work-layout {
+  font-family: "Roboto Slab";
+  padding: 10px;
+  border: 2px solid white;
+  letter-spacing: 5px;
+  padding: 20px 33px;
+}
+.tech-layout {
+  font-family: "Fjalla One";
+  padding: 10px;
+  border: 2px solid white;
+  letter-spacing: 3.5px;
+  padding: 20px 30px;
+}
+
 .product-des {
    position: absolute;
    top: 55%;
@@ -1246,7 +1275,6 @@ Design Methodolodies
    letter-spacing: 0.1em;
    pointer-events: none;
 }
-
 
 /* Overlay hover effect
 -----------------------------------------*/
@@ -1445,6 +1473,9 @@ figure.column {
     }
     .button-submit-row  {
       width: 90%;
+    }
+    .makeup-layout {
+      padding: 20px 24px;
     }
 }
 
@@ -1933,18 +1964,4 @@ background: linear-gradient(to right,#91896a 5%,#eeab6ed6 60%,#fc6154 100%);
     .button-submit-row  {
       width: 90%;
     }
-}
-
-.relax-layout {
-  font-family: "Bad Script";
-}
-.makeup-layout {
-  font-family: "Cinzel";
-  font-weight: 300;
-}
-.work-layout {
-  font-family: "Fredericka the Great";
-}
-.tech-layout {
-  font-family: "Fjalla One";
 }
