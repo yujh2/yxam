@@ -638,7 +638,7 @@ body{
     text-transform:uppercase;
     background-color:transparent;
     border:none;
-    letter-spacing:0.5px;
+    letter-spacing:0.8px;
     margin-top: 1em;
     font-size: 16px;
 }
@@ -1258,13 +1258,14 @@ Design Methodolodies
   height: 25vw;
   width: 35vw;
   object-fit: cover;
-  border-radius: 15px;
+  border-radius: 0px;
+  box-shadow: 0px 7px 35px 1px hsl(34deg 9% 41% / 60%);
 }
 
 .overlay figure:hover img {
     -webkit-filter: grayscale(0) blur(0);
   filter: grayscale(0) blur(0);
-  border-radius: 0;
+  border-radius: 15px;
 }
 
 /* (Design Methodolody) - The Modal (background)
@@ -1429,7 +1430,7 @@ figure.column {
 
 @media screen and (max-width: 600px) {
     .column {
-      padding: 10px;
+      padding: 5px;
     }
     .overlay figure img{
       width: 60vw;
