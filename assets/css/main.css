@@ -1249,7 +1249,7 @@ Design Methodolodies
   letter-spacing: 1px !important;
   padding: 10px;
   border: 2px solid white;
-  padding: 20px 30px;
+  padding: 20px;
 }
 .work-layout {
   font-family: "Roboto Slab";
@@ -1271,7 +1271,7 @@ Design Methodolodies
    top: 55%;
    left: 51%;
    transform: translate(-50%, -50%);
-   font-size: 40px;
+   font-size: 30px;
    letter-spacing: 0.1em;
    pointer-events: none;
 }
