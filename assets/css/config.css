@@ -12,6 +12,7 @@ html,body,main {
   max-width: 2000px;
   margin: 5% auto;
   display: flex;
+  flex-wrap: wrap;
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -128,7 +129,7 @@ html,body,main {
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .title-prompt {
-    margin-left: 4%;
+    margin-left: 8%;
     font-size: 17px;
   }
 }
@@ -145,9 +146,8 @@ html,body,main {
   margin: 20px;
   width: auto;
   height: auto;
-  box-shadow: 0px 2px 6px 1px #d5d2c9;
   display: flex;
-  background-color: #edeae1;
+  background-color: #edeae1cc;
 }
 
 #param2-test {
@@ -198,10 +198,10 @@ html,body,main {
 }
 
 .param-adjust h1 {
-  font-size: 20px;
+  font-size: 1.2rem;
   font-weight: 700;
   margin: 10px;
-  border-bottom: 2px solid #52240229;
+  border-bottom: 1px solid #52240229;
   padding-bottom: 5px;
   padding-top: 2px;
   cursor: pointer;
@@ -484,7 +484,7 @@ html,body,main {
   }
   #title {
     font-size: 32px;
-    margin-left: 4%;
+    margin-left: 8%;
   }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
