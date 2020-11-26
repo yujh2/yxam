@@ -12,7 +12,6 @@ html,body,main {
   max-width: 2000px;
   margin: 5% auto;
   display: flex;
-  flex-wrap: wrap;
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -219,7 +218,7 @@ html,body,main {
 }
 
 .adjust-labels-hidden {
-  display: none;
+  display: none !important;
 }
 
 #materialOptions {
@@ -250,6 +249,10 @@ html,body,main {
   line-height: 1.1;
   margin: 5px 0;
 }
+.select-box__current:focus {
+  cursor: default;
+}
+
 .select-box__current:focus + .select-box__list {
   opacity: 1;
   animation-name: none;
@@ -316,6 +319,7 @@ html,body,main {
 .select-box__option:hover, .select-box__option:focus, .select-box-left__option:hover, .select-box-left__option:focus,  .select-box-right__option:hover, .select-box-right__option:focus,  .select-box-middle__option:hover, .select-box-middle__option:focus {
 	 color: #546c84;
 	 background-color: #fbfbfb;
+   cursor: pointer;
 }
  @keyframes HideList {
 	 from {
@@ -498,4 +502,11 @@ html,body,main {
   #title {
     font-size: 36px;
   }
+}
+
+/* (FREE ADJUSTMENT LAYOUT ONLY)
+-----------------------------------------*/
+
+.double-slider-row {
+  display: flex;
 }
