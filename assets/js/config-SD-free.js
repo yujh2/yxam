@@ -325,32 +325,81 @@ function paramsOpenClose(section) {
 
 var leftRightRange = document.getElementById('leftRightRange');
 noUiSlider.create(leftRightRange, {
-    start: [ 20, 80 ], // Handle start position
-    step: 10, // Slider moves in increments of '10'
-    margin: 20, // Handles must be more than '20' apart
+    start: [ -125, 125 ], // Handle start position
+    step: 1, // Slider moves in increments of '10'
+    margin: 131, // Handles must be more than '20' apart
     connect: true, // Display a colored bar between the handles
-    direction: 'rtl', // Put '0' at the bottom of the slider
+    direction: 'ltr', // Put '0' at the bottom of the slider
     behaviour: 'tap-drag', // Move handle on tap, bar is draggable
-    range: {'min': 0,'max': 100 }
+    range: {'min': -234,'max': 234 },
+    format: wNumb({
+      decimals: 0,
+      suffix: ' (mm)'
+    }),
+    padding: 64
 });
+
+//https://refreshless.com/nouislider/examples/#section-soft-limits currently not working but can give it a try in the future
+leftRightRange.noUiSlider.on('change', function (values, handle) {
+    if (values[handle] > -65) {
+        leftRightRange.noUiSlider.set(-65);
+    } else if (values[handle] < 65) {
+        leftRightRange.noUiSlider.set(65);
+    }
+});
+
+var leftRightRangeDatas = [
+  document.getElementById('leftRangeData'),
+  document.getElementById('RightRangeData')
+];
+leftRightRange.noUiSlider.on('update', function (values, handle) {
+     left = values[0]; //left range data
+     formatLeft(left);
+     right = values[1];
+     formatRight(right);
+});
+function formatLeft(left) {
+  temp = (171+parseInt(left)).toString()
+  leftRightRangeDatas[0].innerHTML = temp.concat('(mm)');
+}
+function formatRight(right) {
+  temp = (234-parseInt(right)).toString()
+  leftRightRangeDatas[1].innerHTML = temp.concat('(mm)');
+}
 
 var midLineRange = document.getElementById('midLineRange');
 noUiSlider.create(midLineRange, {
-    start: [ 50 ], // Handle start position
-    step: 10, // Slider moves in increments of '10'
+    start: [ 0 ], // Handle start position
+    step: 1, // Slider moves in increments of '10'
     margin: 20, // Handles must be more than '20' apart
     direction: 'rtl', // Put '0' at the bottom of the slider
     behaviour: 'tap-drag', // Move handle on tap, bar is draggable
-    range: {'min': 0,'max': 100 }
+    range: {'min': -50,'max': 50 },
+    format: wNumb({
+      suffix: ' (mm)'
+    })
+});
+
+var midLineRangeData = document.getElementById('midLineRangeData');
+midLineRange.noUiSlider.on('update', function (values, handle) {
+     midLineRangeData.innerHTML = values[handle];
 });
 
 var depth = document.getElementById('depth');
 noUiSlider.create(depth, {
-    start: [ 20 ], // Handle start position
-    step: 10, // Slider moves in increments of '10'
+    start: [ 5 ], // Handle start position
+    step: 1, // Slider moves in increments of '10'
     margin: 20, // Handles must be more than '20' apart
     connect: [false, true], // Display a colored bar between the handles
     direction: 'rtl', // Put '0' at the bottom of the slider
     behaviour: 'tap-drag', // Move handle on tap, bar is draggable
-    range: {'min': 0,'max': 100 }
+    range: {'min': 0,'max': 7 },
+    format: wNumb({
+      suffix: ' (mm)'
+    })
+});
+
+var depthData = document.getElementById('depthData');
+depth.noUiSlider.on('update', function (values, handle) {
+     depthData.innerHTML = values[handle];
 });
