@@ -109,6 +109,7 @@ html,body,main {
   .right-column {
     width: auto;
     margin: 0;
+    border-radius: 1em 1em 0 0;
   }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -187,13 +188,36 @@ html,body,main {
   line-height: 24px;
 }
 
-.param-icon img {
+.param-icon img, .param-icon_mobile img {
   vertical-align: middle;
   border-style: none;
   width: 78px;
   height: auto;
   margin: auto;
   padding: 10px 10px 10px 15px;
+}
+
+.param-icon-blk_mobile {
+  display: none;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .mobile-params {
+    display: flex;
+    padding: 0 20px;
+  }
+  .param-icon_mobile {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  .param-icon {
+    display: none;
+  }
+  .param-switch_mobile {
+    display: none;
+  }
 }
 
 .param-adjust {

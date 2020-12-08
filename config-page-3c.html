@@ -30,6 +30,20 @@
     <!-- Product Title -->
     <p class="title-prompt">開始客製你的</p>
     <h1 id="title">桌面收納好幫手&#x1F4AA;</h1>
+    <div class="param-icon-blk_mobile">
+      <div class="param-icon_mobile">
+      <!-- Illustrative icon for param goes here -->
+      <img style="padding: 20px;" src="assets\img\membrane-line.svg" alt="material selection" href="#" data-toggle="tooltip" data-placement="left" title="兩種高級質感木材任你選擇!">
+      </div>
+      <div class="param-icon_mobile">
+      <!-- Illustrative icon for param goes here -->
+      <img style="padding: 20px;" src="assets\img\arrange.svg" alt="block arrangement" href="#" data-toggle="tooltip" data-placement="left" title="兩種高級質感木材任你選擇!">
+      </div>
+      <div class="param-icon_mobile">
+      <!-- Illustrative icon for param goes here -->
+      <img style="padding: 20px;" src="assets\img\square-to-circle.svg" alt="detailed customization" href="#" data-toggle="tooltip" data-placement="left" title="兩種高級質感木材任你選擇!">
+      </div>
+    </div>
     <!-- First Params: material selection -->
     <div class="param1">
       <div class="param-icon">
@@ -56,66 +70,64 @@
         </div>
       </div>
     </div>
-    <!-- Second Params: left function arrangement -->
-    <div id="param2-test">
-      <div class="param2">
-        <div class="param-icon">
-          <img src="assets\img\arrange.svg" style="padding: 23px;" alt="fix" href="#" data-toggle="tooltip" data-placement="left" title="想要改變左邊區塊的收納功能及排列方式嗎? 趕快調整看看!">
-        </div>
-        <div class="param-adjust">
-          <h1 onclick="paramsOpenClose('left')">排版調整</h1>
-          <div class="adjust-labels-left adjust-labels-hidden">
-            <div class="slider-block">
-              <p style="margin-bottom: 10px;">左右區塊調整</p>
-              <div id="leftRightRange"></div>
-              <div style="display: flex;">
-                <p id="leftRangeData" class="slider-value"></p>
-                <p id="RightRangeData" class="slider-value"></p>
-              </div>
+    <!-- Second Params: block layout and design -->
+    <div class="param2 param-switch_mobile">
+      <div class="param-icon">
+        <img src="assets\img\arrange.svg" style="padding: 23px;" alt="fix" href="#" data-toggle="tooltip" data-placement="left" title="想要改變左邊區塊的收納功能及排列方式嗎? 趕快調整看看!">
+      </div>
+      <div class="param-adjust">
+        <h1 onclick="paramsOpenClose('left')">排版調整</h1>
+        <div class="adjust-labels-left adjust-labels-hidden">
+          <div class="slider-block">
+            <p style="margin-bottom: 10px;">左右區塊調整</p>
+            <div id="leftRightRange"></div>
+            <div style="display: flex;">
+              <p id="leftRangeData" class="slider-value"></p>
+              <p id="RightRangeData" class="slider-value"></p>
             </div>
-            <div class="double-slider-row slider-block">
-              <div style="flex-grow: 1;">
-                <p style="margin-bottom: 10px;">長軸中線</p>
-                <div id="midLineRange"></div>
-                <p id="midLineRangeData" class="slider-value"></p>
-              </div>
-              <div style="flex-grow: 1;">
-                <p style="margin-bottom: 10px;">深度</p>
-                <div id="depth"></div>
-                <p id="depthData" class="slider-value"></p>
-              </div>
+          </div>
+          <div class="double-slider-row slider-block">
+            <div style="flex-grow: 1;">
+              <p style="margin-bottom: 10px;">長軸中線</p>
+              <div id="midLineRange"></div>
+              <p id="midLineRangeData" class="slider-value"></p>
             </div>
-            <div class="row-count-param slider-block">
-              <p style="margin-left: 0; margin-right: 10px;">區塊橫格數量</p>
-              <select name="row-count" id="row-count">
-                <option value="1">&nbsp;1 橫格/塊</option>
-                <option value="2">&nbsp;2 橫格/塊</option>
-                <option value="3">&nbsp;3 橫格/塊</option>
-                <option value="4">&nbsp;4 橫格/塊</option>
-              </select>
+            <div style="flex-grow: 1;">
+              <p style="margin-bottom: 10px;">深度</p>
+              <div id="depth"></div>
+              <p id="depthData" class="slider-value"></p>
             </div>
-            <div class="connect-box-param slider-block">
-              <p class="connect-box__title" style="min-width: 106px;">打通區塊</p>
-              <div class="input-group input-group-sm mb-3" style="flex-grow: 1; margin-bottom: 0.5rem !important;">
-                <input placeholder="ex: 1,3; 1,4" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-              </div>
+          </div>
+          <div class="row-count-param slider-block">
+            <p style="margin-left: 0; margin-right: 10px;">區塊橫格數量</p>
+            <select name="row-count" id="row-count">
+              <option value="1">&nbsp;1 橫格/塊</option>
+              <option value="2">&nbsp;2 橫格/塊</option>
+              <option value="3">&nbsp;3 橫格/塊</option>
+              <option value="4">&nbsp;4 橫格/塊</option>
+            </select>
+          </div>
+          <div class="connect-box-param slider-block">
+            <p class="connect-box__title" style="min-width: 106px;">打通區塊</p>
+            <div class="input-group input-group-sm mb-3" style="flex-grow: 1; margin-bottom: 0.5rem !important;">
+              <input placeholder="ex: 1,3; 1,4" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
             </div>
-            <div class="index-show-check">
-              <div class="custom-control custom-switch">
-                <input type="checkbox" class="custom-control-input" id="customSwitch1">
-                <label class="custom-control-label" for="customSwitch1">區塊編號</label>
-              </div>
-              <div class="custom-control custom-switch">
-                <input type="checkbox" class="custom-control-input" id="customSwitch2" checked>
-                <label class="custom-control-label" for="customSwitch2">小格編號</label>
-              </div>
+          </div>
+          <div class="index-show-check">
+            <div class="custom-control custom-switch">
+              <input type="checkbox" class="custom-control-input" id="customSwitch1">
+              <label class="custom-control-label" for="customSwitch1">區塊編號</label>
+            </div>
+            <div class="custom-control custom-switch">
+              <input type="checkbox" class="custom-control-input" id="customSwitch2" checked>
+              <label class="custom-control-label" for="customSwitch2">小格編號</label>
             </div>
           </div>
         </div>
       </div>
     </div>
     <!-- Third Params: box design and density -->
-    <div class="param3">
+    <div class="param3 param-switch_mobile">
       <div class="param-icon">
         <img src="assets\img\square-to-circle.svg" style="padding: 23px;" alt="design" href="#" data-toggle="tooltip" data-placement="left" title="想要改變右邊區塊的收納功能及排列方式嗎? 趕調整看看!">
       </div>
