@@ -20,6 +20,7 @@ html,body,main {
     max-width: 600px;
     display: block;
     max-height: 892px;
+    padding: 0;
   }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -107,7 +108,7 @@ html,body,main {
 @media only screen and (max-width: 600px) {
   .right-column {
     width: auto;
-    margin: 3% 5%;
+    margin: 0;
   }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
