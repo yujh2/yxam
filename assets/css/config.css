@@ -63,7 +63,7 @@ html,body,main {
 @media only screen and (max-width: 600px) {
     #sdv-container {
       width: 100%;
-      height: 40%;
+      height: 50%;
     }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -217,6 +217,10 @@ html,body,main {
   }
   .param-switch_mobile {
     display: none;
+    pointer-events: none;
+  }
+  .param-icon-blk_mobile {
+    display: flex;
   }
 }
 
@@ -245,8 +249,11 @@ html,body,main {
   color: #424242de;
 }
 
-.adjust-labels-hidden {
-  display: none !important;
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-width: 600px) {
+  .adjust-labels-hidden {
+    display: none !important;
+  }
 }
 
 #materialOptions {

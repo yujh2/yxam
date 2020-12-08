@@ -285,10 +285,6 @@ function modifyCurrentSelected(curSelected, curSection) {
     middleCurrentDisplay[0].checked = true; // middle
     lowerCurrentDisplay[0].checked = true; // lower
   }
-  // Update shapediver with new set of parameters and change current display selection for radio
-  // [ concat 'curSection' with 1, 2, 3 to only clearup the specific side that user changed ]
-  // [ get left1, left2, left3 by id and seperately iterate inside and clear all 'checked'.]
-  // [ set 'checked' status for options with designated id ] -> organize a list of combos first
 }
 
 
@@ -339,7 +335,6 @@ noUiSlider.create(leftRightRange, {
     padding: 64
 });
 
-//https://refreshless.com/nouislider/examples/#section-soft-limits currently not working but can give it a try in the future
 leftRightRange.noUiSlider.on('change', function (values, handle) {
     if (values[handle] > -65) {
         leftRightRange.noUiSlider.set(-65);
@@ -403,3 +398,26 @@ var depthData = document.getElementById('depthData');
 depth.noUiSlider.on('update', function (values, handle) {
      depthData.innerHTML = values[handle];
 });
+
+
+/************************************************************************
+// mobileParamSelect(selected): This function dynamically show the parameter's
+//                              content based on user's selection. (mobile
+//                              view only)
+// selected - user's selection of parameter to customize
+// content - to call 'paramsOpenCLose' to open content
+************************************************************************/
+function mobileParamSelect(selected) {
+  //get all parameters by 'param-switch-mobile' by getElementsByClassName
+  var allParams = document.getElementsByClassName('param-switch_mobile');
+  var openParam = document.getElementsByClassName(selected);
+  //traverse through all elements and see which one has display: flex and remove it
+  for (i = 0; i < allParams.length; i++) {
+    if(allParams[i].hasAttribute("style")) {
+      allParams[i].removeAttribute("style");
+      break;
+    }
+  }
+  //add "selected param" with display=flex inline css
+  openParam[0].setAttribute("style","display: flex;");
+}
