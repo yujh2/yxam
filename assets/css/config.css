@@ -102,7 +102,7 @@ html,body,main {
   border-radius: 1em;
   box-shadow: 4px 4px 85px 2px #0000002e;
   height: fit-content;
-  display: inline-table;
+  height: -moz-fit-content;
   z-index: 1;
 }
 /* Extra small devices (phones, 600px and down) */
