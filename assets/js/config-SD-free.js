@@ -407,17 +407,22 @@ depth.noUiSlider.on('update', function (values, handle) {
 // selected - user's selection of parameter to customize
 // content - to call 'paramsOpenCLose' to open content
 ************************************************************************/
-function mobileParamSelect(selected) {
-  //get all parameters by 'param-switch-mobile' by getElementsByClassName
+function mobileParamSelect(selected, iconId) {
+  // get all parameters by 'param-switch-mobile' by getElementsByClassName
   var allParams = document.getElementsByClassName('param-switch_mobile');
   var openParam = document.getElementsByClassName(selected);
-  //traverse through all elements and see which one has display: flex and remove it
+  var iconImg = document.getElementsByClassName('param-icon-img');
+  // change all tooltip toward up direction
+
+  // traverse through all elements and see which one has display: flex and remove it
   for (i = 0; i < allParams.length; i++) {
+    // uncheck selected param (icon)
     if(allParams[i].hasAttribute("style")) {
       allParams[i].removeAttribute("style");
-      break;
+      iconImg[i].removeAttribute("style");
     }
   }
-  //add "selected param" with display=flex inline css
+  // add "selected param" with display=flex inline css
   openParam[0].setAttribute("style","display: flex;");
+  iconImg[iconId].setAttribute("Style", "border-bottom: 2px solid #ef6e0c;");
 }
