@@ -317,3 +317,30 @@ function paramsOpenClose(section) {
     paramSection[i].classList.toggle("adjust-labels-hidden");
   }
 }
+
+/************************************************************************
+// mobileParamSelect(selected): This function dynamically show the parameter's
+//                              content based on user's selection. (mobile
+//                              view only)
+// selected - user's selection of parameter to customize
+// content - to call 'paramsOpenCLose' to open content
+************************************************************************/
+function mobileParamSelect(selected, iconId) {
+  // get all parameters by 'param-switch-mobile' by getElementsByClassName
+  var allParams = document.getElementsByClassName('param-switch_mobile');
+  var openParam = document.getElementsByClassName(selected);
+  var iconImg = document.getElementsByClassName('param-icon-img');
+  // change all tooltip toward up direction
+
+  // traverse through all elements and see which one has display: flex and remove it
+  for (i = 0; i < allParams.length; i++) {
+    // uncheck selected param (icon)
+    if(allParams[i].hasAttribute("style")) {
+      allParams[i].removeAttribute("style");
+      iconImg[i].removeAttribute("style");
+    }
+  }
+  // add "selected param" with display=flex inline css
+  openParam[0].setAttribute("style","display: flex;");
+  iconImg[iconId].setAttribute("Style", "border-bottom: 2px solid #ef6e0c;");
+}
