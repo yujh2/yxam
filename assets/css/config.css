@@ -217,6 +217,8 @@ html,body,main {
   }
   .param-switch_mobile {
     display: none;
+  }
+  .param-stay-open_mobile {
     pointer-events: none;
   }
   .param-icon-blk_mobile {
