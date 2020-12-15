@@ -426,3 +426,23 @@ function mobileParamSelect(selected, iconId) {
   openParam[0].setAttribute("style","display: flex;");
   iconImg[iconId].setAttribute("Style", "border-bottom: 2px solid #ef6e0c;");
 }
+
+// Validation for detailed text input parameters
+var paramTest = document.getElementById('paramTest');
+paramTest.addEventListener("input", testMe, false);
+function testMe() {
+  var inputTest = paramTest.value;
+  var check = /(?:g[0-9]+,)/g;
+  if (!inputTest == "" && !check.test(inputTest)) {
+    paramTest.classList.add('is-invalid');
+  } else {
+    // if email format if valid
+    if (paramTest.classList.contains('is-invalid')) {
+      // remove 'is-invalid' class if previous submission triggered invalid
+      paramTest.classList.remove('is-invalid');
+    }
+    // Set input group to 'is-valid' status
+    paramTest.classList.add('is-valid');
+  }
+  console.log(inputTest);
+}
