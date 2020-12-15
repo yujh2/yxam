@@ -1,4 +1,4 @@
-/************************************************************************
+/***********************************************************************
 // ShapeDiver Product Configuration Viewer - Prototype 3.5
 // Date: 2020/10/05
 // Creator: Henry Yu, YXAM R&D
@@ -13,7 +13,7 @@
 // 															 files for manufacturablility)
 //										[Beta] 6.) Added experimental mouse interaction feature.
 //															 (Need GH file to verify how objects are seperated)
-************************************************************************/
+***********************************************************************/
 
 var _container = document.getElementById('sdv-container');
 // viewer settings
