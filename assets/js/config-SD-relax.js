@@ -344,3 +344,12 @@ function mobileParamSelect(selected, iconId) {
   openParam[0].setAttribute("style","display: flex;");
   iconImg[iconId].setAttribute("Style", "border-bottom: 2px solid #ef6e0c;");
 }
+
+// test shapeDiver API is working
+function materialSelection(choice) {
+  api.parameters.updateAsync({
+  // PDF maker startup. (id corresponds to PDF maker)
+  name: 'choose wood',
+  value: choice
+  });
+}
