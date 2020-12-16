@@ -35,10 +35,10 @@
         <img class="param-icon-img" style="padding: 20px;" src="assets\img\left-section.svg" alt="left arrangement" href="#">
         </div>
         <div class="param-icon_mobile" onclick="mobileParamSelect('param3', 2)">
-        <img class="param-icon-img" style="padding: 20px;" src="assets\img\right-section.svg" alt="right arrangement" href="#">
+        <img class="param-icon-img" style="padding: 20px;" src="assets\img\middle-section.svg" alt="middle arrangement" href="#">
         </div>
         <div class="param-icon_mobile" onclick="mobileParamSelect('param4', 3)">
-        <img class="param-icon-img" style="padding: 20px;" src="assets\img\middle-section.svg" alt="middle arrangement" href="#">
+        <img class="param-icon-img" style="padding: 20px;" src="assets\img\right-section.svg" alt="right arrangement" href="#">
         </div>
       </div>
       <!-- First Params: material selection -->
@@ -176,117 +176,8 @@
           </div>
         </div>
       </div>
-      <!-- Third Params: right function arrangement -->
-      <div class="param3 param-switch_mobile">
-        <div class="param-icon">
-          <img src="assets\img\right-section.svg" style="padding: 23px;" alt="design" href="#" data-toggle="tooltip" data-placement="left" title="想要改變右邊區塊的收納功能及排列方式嗎? 趕調整看看!">
-        </div>
-        <div class="param-adjust">
-          <h1 onclick="paramsOpenClose('right')">右邊隨心所欲</h1>
-          <div class="adjust-labels-right adjust-labels-hidden">
-            <p>右邊愛擺啥</p>
-            <div class="select-box">
-              <div class="select-box__current" tabindex="5">
-                <div class="select-box__value"><input class="select-box__input" type="radio" id="20" value="20" name="right-function"/>
-                  <p class="select-box__input-text">飲酒放鬆</p>
-                </div>
-                <div class="select-box__value"><input class="select-box__input" type="radio" id="21" value="21" name="right-function"/>
-                  <p class="select-box__input-text">手機舞台</p>
-                </div>
-                <div class="select-box__value"><input class="select-box__input" type="radio" id="22" value="22" name="right-function" checked="checked"/>
-                  <p class="select-box__input-text">點心誘惑</p>
-                </div><img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true" /></div>
-              <ul class="select-box__list">
-                <li><label class="select-box__option" for="20" aria-hidden="aria-hidden" onclick="dynamicOptions('alchol', 'right', 0)">飲酒放鬆</label></li>
-                <li><label class="select-box__option" for="21" aria-hidden="aria-hidden" onclick="dynamicOptions('phone', 'right', 1)">手機舞台</label></li>
-                <li><label class="select-box__option" for="22" aria-hidden="aria-hidden" onclick="dynamicOptions('snacks', 'right', 2)">點心誘惑</label></li>
-              </ul>
-            </div>
-          </div>
-          <div class="adjust-labels-right adjust-labels-hidden">
-            <p>右邊就要有 (上/中/下)</p>
-            <div class="select-box__sections">
-              <div class="select-box" id="right1">
-                <div class="select-box__current" tabindex="6">
-                  <div class="select-box__value"><input class="select-box-top__input" type="radio" id="25" value="25" name="right-arrange1"/>
-                    <p class="select-box__input-text">彈性空間</p>
-                  </div>
-                  <div class="select-box__value"><input class="select-box-top__input" type="radio" id="26" value="26" name="right-arrange1" />
-                    <p class="select-box__input-text">酒瓶座</p>
-                  </div>
-                  <div class="select-box__value"><input class="select-box-top__input" type="radio" id="27" value="27" name="right-arrange1" />
-                    <p class="select-box__input-text">手機立著放</p>
-                  </div>
-                  <div class="select-box__value"><input class="select-box-top__input" type="radio" id="28" value="28" name="right-arrange1" />
-                    <p class="select-box__input-text">手機躺著放</p>
-                  </div>
-                  <div class="select-box__value"><input class="select-box-top__input" type="radio" id="29" value="29" name="right-arrange1" checked="checked"/>
-                    <p class="select-box__input-text">點心盤</p>
-                  </div><img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true" /></div>
-                <ul class="select-box__list">
-                  <li class="right-list" value="all"><label class="select-box-right__option" value="all" for="25" aria-hidden="aria-hidden">彈性空間</label></li>
-                  <li class="right-list list-hidden" value="alchol"><label class="select-box-right__option" value="alchol" for="26" aria-hidden="aria-hidden">酒瓶座</label></li>
-                  <li class="right-list list-hidden" value="phone"><label class="select-box-right__option" value="phone" for="27" aria-hidden="aria-hidden">手機立著放</label></li>
-                  <li class="right-list list-hidden" value="phone"><label class="select-box-right__option" value="phone" for="28" aria-hidden="aria-hidden">手機躺著放</label></li>
-                  <li class="right-list" value="snacks"><label class="select-box-right__option" value="snacks" for="29" aria-hidden="aria-hidden">點心盤</label></li>
-                </ul>
-              </div>
-              <div class="select-box" id="right2">
-                <div class="select-box__current" tabindex="7">
-                  <div class="select-box__value"><input class="select-box-middle__input" type="radio" id="30" value="30" name="right-arrange2"/>
-                    <p class="select-box__input-text">彈性空間</p>
-                  </div>
-                  <div class="select-box__value"><input class="select-box-middle__input" type="radio" id="31" value="31" name="right-arrange2" />
-                    <p class="select-box__input-text">酒瓶座</p>
-                  </div>
-                  <div class="select-box__value"><input class="select-box-middle__input" type="radio" id="32" value="32" name="right-arrange2" />
-                    <p class="select-box__input-text">手機立著放</p>
-                  </div>
-                  <div class="select-box__value"><input class="select-box-middle__input" type="radio" id="33" value="33" name="right-arrange2" />
-                    <p class="select-box__input-text">手機躺著放</p>
-                  </div>
-                  <div class="select-box__value"><input class="select-box-middle__input" type="radio" id="34" value="34" name="right-arrange2" checked="checked"/>
-                    <p class="select-box__input-text">點心盤</p>
-                  </div><img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true" /></div>
-                <ul class="select-box__list">
-                  <li class="right-list" value="all"><label class="select-box-right__option" for="30" aria-hidden="aria-hidden">彈性空間</label></li>
-                  <li class="right-list list-hidden" value="alchol"><label class="select-box-right__option" for="31" aria-hidden="aria-hidden">酒瓶座</label></li>
-                  <li class="right-list list-hidden" value="phone"><label class="select-box-right__option" for="32" aria-hidden="aria-hidden">手機立著放</label></li>
-                  <li class="right-list list-hidden" value="phone"><label class="select-box-right__option" for="33" aria-hidden="aria-hidden">手機躺著放</label></li>
-                  <li class="right-list" value="snacks"><label class="select-box-right__option" for="34" aria-hidden="aria-hidden">點心盤</label></li>
-                </ul>
-              </div>
-              <div class="select-box" id="right3">
-                <div class="select-box__current" tabindex="8">
-                  <div class="select-box__value"><input class="select-box-lower__input" type="radio" id="35" value="35" name="right-arrange3" checked="checked"/>
-                    <p class="select-box__input-text">彈性空間</p>
-                  </div>
-                  <div class="select-box__value"><input class="select-box-lower__input" type="radio" id="36" value="36" name="right-arrange3" />
-                    <p class="select-box__input-text">酒瓶座</p>
-                  </div>
-                  <div class="select-box__value"><input class="select-box-lower__input" type="radio" id="37" value="37" name="right-arrange3" />
-                    <p class="select-box__input-text">手機立著放</p>
-                  </div>
-                  <div class="select-box__value"><input class="select-box-lower__input" type="radio" id="38" value="38" name="right-arrange3" />
-                    <p class="select-box__input-text">手機躺著放</p>
-                  </div>
-                  <div class="select-box__value"><input class="select-box-lower__input" type="radio" id="39" value="39" name="right-arrange3" />
-                    <p class="select-box__input-text">點心盤</p>
-                  </div><img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true" /></div>
-                <ul class="select-box__list">
-                  <li class="right-list" value="all"><label class="select-box-right__option" for="35" aria-hidden="aria-hidden">彈性空間</label></li>
-                  <li class="right-list list-hidden" value="alchol"><label class="select-box-right__option" for="36" aria-hidden="aria-hidden">酒瓶座</label></li>
-                  <li class="right-list list-hidden" value="phone"><label class="select-box-right__option" for="37" aria-hidden="aria-hidden">手機立著放</label></li>
-                  <li class="right-list list-hidden" value="phone"><label class="select-box-right__option" for="38" aria-hidden="aria-hidden">手機躺著放</label></li>
-                  <li class="right-list" value="snacks"><label class="select-box-right__option" for="39" aria-hidden="aria-hidden">點心盤</label></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       <!-- Fourth Params: Middle function arrangement -->
-      <div class="param4 param-switch_mobile">
+      <div class="param3 param-switch_mobile">
         <div class="param-icon">
           <img src="assets\img\middle-section.svg" style="padding: 23px;" alt="product" href="#" data-toggle="tooltip" data-placement="left" title="想要改變中間區塊的收納功能及排列方式嗎? 趕快調整看看!而且中間還可以調整寬度喔">
         </div>
@@ -395,9 +286,118 @@
           <div class="adjust-labels-middle adjust-labels-hidden">
             <p>中間可微調</p>
             <div class="slider-row">
-              <input class="slider-adjust" type="range" min="0" max="100" step="10" value="100" oninput="this.nextElementSibling.value = this.value">
+              <input id='midSlider' class="slider-adjust" type="range" min="0" max="100" step="10" value="100" oninput="this.nextElementSibling.value = this.value">
               <output class="slider-output">100</output>
               <p>%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Third Params: right function arrangement -->
+      <div class="param4 param-switch_mobile">
+        <div class="param-icon">
+          <img src="assets\img\right-section.svg" style="padding: 23px;" alt="design" href="#" data-toggle="tooltip" data-placement="left" title="想要改變右邊區塊的收納功能及排列方式嗎? 趕調整看看!">
+        </div>
+        <div class="param-adjust">
+          <h1 onclick="paramsOpenClose('right')">右邊隨心所欲</h1>
+          <div class="adjust-labels-right adjust-labels-hidden">
+            <p>右邊愛擺啥</p>
+            <div class="select-box">
+              <div class="select-box__current" tabindex="5">
+                <div class="select-box__value"><input class="select-box__input" type="radio" id="20" value="20" name="right-function"/>
+                  <p class="select-box__input-text">飲酒放鬆</p>
+                </div>
+                <div class="select-box__value"><input class="select-box__input" type="radio" id="21" value="21" name="right-function"/>
+                  <p class="select-box__input-text">手機舞台</p>
+                </div>
+                <div class="select-box__value"><input class="select-box__input" type="radio" id="22" value="22" name="right-function" checked="checked"/>
+                  <p class="select-box__input-text">點心誘惑</p>
+                </div><img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true" /></div>
+              <ul class="select-box__list">
+                <li><label class="select-box__option" for="20" aria-hidden="aria-hidden" onclick="dynamicOptions('alchol', 'right', 0)">飲酒放鬆</label></li>
+                <li><label class="select-box__option" for="21" aria-hidden="aria-hidden" onclick="dynamicOptions('phone', 'right', 1)">手機舞台</label></li>
+                <li><label class="select-box__option" for="22" aria-hidden="aria-hidden" onclick="dynamicOptions('snacks', 'right', 2)">點心誘惑</label></li>
+              </ul>
+            </div>
+          </div>
+          <div class="adjust-labels-right adjust-labels-hidden">
+            <p>右邊就要有 (上/中/下)</p>
+            <div class="select-box__sections">
+              <div class="select-box" id="right1">
+                <div class="select-box__current" tabindex="6">
+                  <div class="select-box__value"><input class="select-box-top__input" type="radio" id="25" value="25" name="right-arrange1"/>
+                    <p class="select-box__input-text">彈性空間</p>
+                  </div>
+                  <div class="select-box__value"><input class="select-box-top__input" type="radio" id="26" value="26" name="right-arrange1" />
+                    <p class="select-box__input-text">酒瓶座</p>
+                  </div>
+                  <div class="select-box__value"><input class="select-box-top__input" type="radio" id="27" value="27" name="right-arrange1" />
+                    <p class="select-box__input-text">手機立著放</p>
+                  </div>
+                  <div class="select-box__value"><input class="select-box-top__input" type="radio" id="28" value="28" name="right-arrange1" />
+                    <p class="select-box__input-text">手機躺著放</p>
+                  </div>
+                  <div class="select-box__value"><input class="select-box-top__input" type="radio" id="29" value="29" name="right-arrange1" checked="checked"/>
+                    <p class="select-box__input-text">點心盤</p>
+                  </div><img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true" /></div>
+                <ul class="select-box__list">
+                  <li class="right-list" value="all"><label class="select-box-right__option" value="all" for="25" aria-hidden="aria-hidden">彈性空間</label></li>
+                  <li class="right-list list-hidden" value="alchol"><label class="select-box-right__option" value="alchol" for="26" aria-hidden="aria-hidden">酒瓶座</label></li>
+                  <li class="right-list list-hidden" value="phone"><label class="select-box-right__option" value="phone" for="27" aria-hidden="aria-hidden">手機立著放</label></li>
+                  <li class="right-list list-hidden" value="phone"><label class="select-box-right__option" value="phone" for="28" aria-hidden="aria-hidden">手機躺著放</label></li>
+                  <li class="right-list" value="snacks"><label class="select-box-right__option" value="snacks" for="29" aria-hidden="aria-hidden">點心盤</label></li>
+                </ul>
+              </div>
+              <div class="select-box" id="right2">
+                <div class="select-box__current" tabindex="7">
+                  <div class="select-box__value"><input class="select-box-middle__input" type="radio" id="30" value="30" name="right-arrange2"/>
+                    <p class="select-box__input-text">彈性空間</p>
+                  </div>
+                  <div class="select-box__value"><input class="select-box-middle__input" type="radio" id="31" value="31" name="right-arrange2" />
+                    <p class="select-box__input-text">酒瓶座</p>
+                  </div>
+                  <div class="select-box__value"><input class="select-box-middle__input" type="radio" id="32" value="32" name="right-arrange2" />
+                    <p class="select-box__input-text">手機立著放</p>
+                  </div>
+                  <div class="select-box__value"><input class="select-box-middle__input" type="radio" id="33" value="33" name="right-arrange2" />
+                    <p class="select-box__input-text">手機躺著放</p>
+                  </div>
+                  <div class="select-box__value"><input class="select-box-middle__input" type="radio" id="34" value="34" name="right-arrange2" checked="checked"/>
+                    <p class="select-box__input-text">點心盤</p>
+                  </div><img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true" /></div>
+                <ul class="select-box__list">
+                  <li class="right-list" value="all"><label class="select-box-right__option" for="30" aria-hidden="aria-hidden">彈性空間</label></li>
+                  <li class="right-list list-hidden" value="alchol"><label class="select-box-right__option" for="31" aria-hidden="aria-hidden">酒瓶座</label></li>
+                  <li class="right-list list-hidden" value="phone"><label class="select-box-right__option" for="32" aria-hidden="aria-hidden">手機立著放</label></li>
+                  <li class="right-list list-hidden" value="phone"><label class="select-box-right__option" for="33" aria-hidden="aria-hidden">手機躺著放</label></li>
+                  <li class="right-list" value="snacks"><label class="select-box-right__option" for="34" aria-hidden="aria-hidden">點心盤</label></li>
+                </ul>
+              </div>
+              <div class="select-box" id="right3">
+                <div class="select-box__current" tabindex="8">
+                  <div class="select-box__value"><input class="select-box-lower__input" type="radio" id="35" value="35" name="right-arrange3" checked="checked"/>
+                    <p class="select-box__input-text">彈性空間</p>
+                  </div>
+                  <div class="select-box__value"><input class="select-box-lower__input" type="radio" id="36" value="36" name="right-arrange3" />
+                    <p class="select-box__input-text">酒瓶座</p>
+                  </div>
+                  <div class="select-box__value"><input class="select-box-lower__input" type="radio" id="37" value="37" name="right-arrange3" />
+                    <p class="select-box__input-text">手機立著放</p>
+                  </div>
+                  <div class="select-box__value"><input class="select-box-lower__input" type="radio" id="38" value="38" name="right-arrange3" />
+                    <p class="select-box__input-text">手機躺著放</p>
+                  </div>
+                  <div class="select-box__value"><input class="select-box-lower__input" type="radio" id="39" value="39" name="right-arrange3" />
+                    <p class="select-box__input-text">點心盤</p>
+                  </div><img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true" /></div>
+                <ul class="select-box__list">
+                  <li class="right-list" value="all"><label class="select-box-right__option" for="35" aria-hidden="aria-hidden">彈性空間</label></li>
+                  <li class="right-list list-hidden" value="alchol"><label class="select-box-right__option" for="36" aria-hidden="aria-hidden">酒瓶座</label></li>
+                  <li class="right-list list-hidden" value="phone"><label class="select-box-right__option" for="37" aria-hidden="aria-hidden">手機立著放</label></li>
+                  <li class="right-list list-hidden" value="phone"><label class="select-box-right__option" for="38" aria-hidden="aria-hidden">手機躺著放</label></li>
+                  <li class="right-list" value="snacks"><label class="select-box-right__option" for="39" aria-hidden="aria-hidden">點心盤</label></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

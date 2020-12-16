@@ -25,7 +25,7 @@ var _viewerSettings = {
     version: 2
   },
   // ticket for a ShapeDiver model
-  ticket: '31f654e77118a29835d2098b56872b64be47ef7bfb25ff9caf1ee2cb3cf2713bb5ff4115c7ea6c379e2cc56e0a8ce5ae2d70e8acd102b6d9728918d92b6f69014207da3161c2fc6969c12d9c3a4707172f106bf1d0010f108698f1406064582b39bcf9d24d657e116aa71d7ac7684559af46dad5d3fb-94f7cdbc7f3a8d6215e5a77b1ddb40d1',
+  ticket: '946291ca177466d81b7a4f07f4600067c85d677138ab89739a114764dc7af6e649bcca0e33f52d4e107730950eb9353af6988d1ae7a86a8721b334c5fefb4484fe041c20449d095a2b662c294781423fba4a4419e103f6ac120d09d66131651c1946601b1ff0935dac1d0ef0b9c91a02d481e745c2e6-70721bcc172411f265a0d519fe4a0697',
   modelViewUrl: 'eu-central-1'
 };
 
@@ -369,5 +369,18 @@ function SDleftFunctionality(section, choice) {
   api.parameters.updateAsync({
   name: section,
   value: choice
+  });
+}
+/************************************************************************
+// SDmaterialSelection(choice): Provides API command to SD for user's material
+//                              selection.
+// choice - user's selection of material
+************************************************************************/
+var SDmidSlider = document.getElementById('midSlider');
+SDmidSlider.addEventListener('input', SDmidLength, false);
+function SDmidLength() {
+  api.parameters.updateAsync({
+  name: 'middle pos',
+  value: (SDmidSlider.value)/100
   });
 }
