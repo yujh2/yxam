@@ -301,9 +301,12 @@ function modifyCurrentSelected(curSelected, curSection) {
 // curSection - show which section is the user adjusting (left,right,middle)
 ************************************************************************/
 
-function dynamicOptions(curSelected, curSection) {
+function dynamicOptions(curSelected, curSection, SDchoice) {
   modifyCurrentSelected(curSelected, curSection); // function has to consider three of the displayed options independently.
   modifyList(curSelected, curSection);
+  // ShapeDiver API call for respective section functionality
+  var curSection_SDFormat = curSection.concat(" func");
+  SDleftFunctionality(curSection_SDFormat, SDchoice);
 }
 
 /************************************************************************
@@ -362,9 +365,9 @@ function SDmaterialSelection(choice) {
 //                              selection.
 // choice - user's selection of material
 ************************************************************************/
-function SDleftFunctionality(choice) {
+function SDleftFunctionality(section, choice) {
   api.parameters.updateAsync({
-  name: 'choose func',
+  name: section,
   value: choice
   });
 }
