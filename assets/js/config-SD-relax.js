@@ -383,5 +383,5 @@ function SDmidLength() {
   name: 'middle pos',
   value: (SDmidSlider.value)/100
   });
-  console.log(SDmidSlider.value);
+  console.log((SDmidSlider.value)/100);
 }
