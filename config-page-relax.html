@@ -51,14 +51,14 @@
           <h1 style="cursor: default;">木種就選擇</h1>
           <div id="materialOptions">
             <!--   First material: Dark Wood -->
-            <div id="material1" class="material-card" onclick="materialSelection(0)">
+            <div id="material1" class="material-card" onclick="SDmaterialSelection(0)">
               <image height="50" width="100" src="https://unruhfurniture.com/wp-content/uploads/2020/06/SD-Stain-SugarMaple-1.jpg" alt="dark-wood">
               <p>
                 巴西花梨木
               </p>
             </div>
             <!--   Second material: bright Wood -->
-            <div id="material2" class="material-card" onclick="materialSelection(1)">
+            <div id="material2" class="material-card" onclick="SDmaterialSelection(1)">
               <image height="50" width="100" src="https://unruhfurniture.com/wp-content/uploads/2020/06/SD-Stain-Natural.jpg" alt="bright-wood">
               <p>
                 淺色梣木
@@ -88,9 +88,9 @@
                   <p class="select-box__input-text">點心誘惑</p>
                 </div><img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true" /></div>
               <ul class="select-box__list">
-                <li><label class="select-box__option" for="0" aria-hidden="aria-hidden" onclick="dynamicOptions('alchol', 'left')">飲酒放鬆</label></li>
-                <li><label class="select-box__option" for="1" aria-hidden="aria-hidden" onclick="dynamicOptions('phone', 'left')">手機舞台</label></li>
-                <li><label class="select-box__option" for="2" aria-hidden="aria-hidden" onclick="dynamicOptions('snacks', 'left')">點心誘惑</label></li>
+                <li><label class="select-box__option" for="0" aria-hidden="aria-hidden" onclick="dynamicOptions('alchol', 'left'); SDleftFunctionality(0)">飲酒放鬆</label></li>
+                <li><label class="select-box__option" for="1" aria-hidden="aria-hidden" onclick="dynamicOptions('phone', 'left'); SDleftFunctionality(1)">手機舞台</label></li>
+                <li><label class="select-box__option" for="2" aria-hidden="aria-hidden" onclick="dynamicOptions('snacks', 'left'); SDleftFunctionality(2)">點心誘惑</label></li>
               </ul>
             </div>
           </div>

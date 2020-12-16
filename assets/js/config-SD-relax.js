@@ -344,12 +344,27 @@ function mobileParamSelect(selected, iconId) {
   openParam[0].setAttribute("style","display: flex;");
   iconImg[iconId].setAttribute("Style", "border-bottom: 2px solid #ef6e0c;");
 }
+// -------- SHAPEDIVER API LISTENER SECTION ---------
 
-// test shapeDiver API is working
-function materialSelection(choice) {
+/************************************************************************
+// SDmaterialSelection(choice): Provides API command to SD for user's material
+//                              selection.
+// choice - user's selection of material
+************************************************************************/
+function SDmaterialSelection(choice) {
   api.parameters.updateAsync({
-  // PDF maker startup. (id corresponds to PDF maker)
   name: 'choose wood',
+  value: choice
+  });
+}
+/************************************************************************
+// SDmaterialSelection(choice): Provides API command to SD for user's material
+//                              selection.
+// choice - user's selection of material
+************************************************************************/
+function SDleftFunctionality(choice) {
+  api.parameters.updateAsync({
+  name: 'choose func',
   value: choice
   });
 }
