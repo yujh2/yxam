@@ -175,19 +175,6 @@ function exportAction(exportName) {
   );
 }
 
-// apply user's choice in picking the material of their choice (onclick with HTML element)
-var applyOption = function(opt) {
-  api.parameters.updateAsync({
-    id: "7f00fbb0-586e-47c4-9b3b-c7b96af5a8fa",
-    value: opt
-  }).then(function() {
-    api.scene.camera.updateAsync(initCamera);
-    leftTrans.transformations[0].rotationDegree = 90;
-    rightTrans.transformations[0].rotationDegree = -90;
-  });
-}
-
-
 /************************************************************************
 // validateForm(): function that sets a validation for email input group.
 //								 It also sends export action codes to shapeDiver
@@ -306,7 +293,7 @@ function dynamicOptions(curSelected, curSection, SDchoice) {
   modifyList(curSelected, curSection);
   // ShapeDiver API call for respective section functionality
   var curSection_SDFormat = curSection.concat(" func");
-  SDleftFunctionality(curSection_SDFormat, SDchoice);
+  SDsectionFunctionality(curSection_SDFormat, SDchoice);
 }
 
 /************************************************************************
@@ -365,16 +352,14 @@ function SDmaterialSelection(choice) {
 //                              selection.
 // choice - user's selection of material
 ************************************************************************/
-function SDleftFunctionality(section, choice) {
+function SDsectionFunctionality(section, choice) {
   api.parameters.updateAsync({
   name: section,
   value: choice
   });
 }
 /************************************************************************
-// SDmaterialSelection(choice): Provides API command to SD for user's material
-//                              selection.
-// choice - user's selection of material
+// SDmidLength(): Provides API command to SD for mid section length adjustments
 ************************************************************************/
 var SDmidSlider = document.getElementById('midSlider');
 SDmidSlider.addEventListener('input', SDmidLength, false);
@@ -383,5 +368,17 @@ function SDmidLength() {
   name: 'mid pos',
   value: (SDmidSlider.value)/100
   });
-  console.log((SDmidSlider.value)/100);
+}
+
+/************************************************************************
+// SDmaterialSelection(choice): Provides API command to SD for user's material
+//                              selection.
+// choice - user's selection of material
+************************************************************************/
+function SDleftFunctionality(section, choice) {
+  api.parameters.updateAsync({
+  name: section,
+  value: choice
+  });
+  console.log(api.parameter.get({name: 'right pos'}));
 }
