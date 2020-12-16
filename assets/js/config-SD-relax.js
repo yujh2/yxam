@@ -380,7 +380,7 @@ var SDmidSlider = document.getElementById('midSlider');
 SDmidSlider.addEventListener('input', SDmidLength, false);
 function SDmidLength() {
   api.parameters.updateAsync({
-  name: 'middle pos',
+  name: 'mid pos',
   value: (SDmidSlider.value)/100
   });
   console.log((SDmidSlider.value)/100);
