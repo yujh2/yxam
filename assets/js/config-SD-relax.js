@@ -377,7 +377,7 @@ function SDitemSelection(section, order, choice) {
   curOrder = api.parameters.get({name: section}, "CommPlugin_1").data[0].value;
   curOrderArr = curOrder.split(',');
   // access the right order to alter user selection
-  curOderArr[order] = choice;
+  curOrderArr[order] = choice;
   // update parameter
   api.parameters.updateAsync({
     name: section,
