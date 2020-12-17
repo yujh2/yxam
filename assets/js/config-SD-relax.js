@@ -220,13 +220,8 @@ function modifyList(curSelected, curSection) {
     layerOptions[i].classList.add("list-hidden");
     // Make sub-list options visible based on 'curSelected' user made
     if (layerOptions[i].getAttribute('value') == "all" || layerOptions[i].getAttribute('value') == curSelected) {
-      console.log("it did came here");
       layerOptions[i].classList.remove("list-hidden");
-      console.log(layerOptions[i].getAttribute('value') );
       continue;
-    } else {
-      console.log('nothing got validated');
-      console.log(layerOptions[i].getAttribute('value') );
     }
   }
 }
@@ -260,17 +255,17 @@ function modifyCurrentSelected(curSelected, curSection) {
 
   // Update shapediver with new set of parameters and change current option for radio
   if (curSelected == "alchol") {
-    topCurrentDisplay[1].checked = true; // top
-    middleCurrentDisplay[1].checked = true; // middle
-    lowerCurrentDisplay[0].checked = true; // lower
-  } else if (curSelected == "phone") {
     topCurrentDisplay[2].checked = true; // top
-    middleCurrentDisplay[3].checked = true; // middle
-    lowerCurrentDisplay[0].checked = true; // lower
-  } else if (curSelected == "snacks") {
-    topCurrentDisplay[4].checked = true; // top
+    middleCurrentDisplay[2].checked = true; // middle
+    lowerCurrentDisplay[1].checked = true; // lower
+  } else if (curSelected == "phone") {
+    topCurrentDisplay[3].checked = true; // top
     middleCurrentDisplay[4].checked = true; // middle
-    lowerCurrentDisplay[0].checked = true; // lower
+    lowerCurrentDisplay[1].checked = true; // lower
+  } else if (curSelected == "snacks") {
+    topCurrentDisplay[5].checked = true; // top
+    middleCurrentDisplay[5].checked = true; // middle
+    lowerCurrentDisplay[1].checked = true; // lower
   }
   // Update shapediver with new set of parameters and change current display selection for radio
   // [ concat 'curSection' with 1, 2, 3 to only clearup the specific side that user changed ]
@@ -371,14 +366,21 @@ function SDmidLength() {
 }
 
 /************************************************************************
-// SDmaterialSelection(choice): Provides API command to SD for user's material
-//                              selection.
-// choice - user's selection of material
+// SDitemSelection(section, order, choice): Provides API command on which section (L/M/R)
+//                          did the user decide to change item arrangements
+// section - Left, middle, or right section (in SD API formality (+items))
+// order - top, middle, or bottom
+// choice - user's selection of item
 ************************************************************************/
-function SDleftFunctionality(section, choice) {
+function SDitemSelection(section, order, choice) {
+  // get current section layout
+  curOrder = console.log(api.parameters.get({name: section}, "CommPlugin_1").data[0].value);
+  curOrderArr = curOrder.split(',');
+  // access the right order to alter user selection
+  curOderArr[order] = choice;
+  // update parameter
   api.parameters.updateAsync({
-  name: section,
-  value: choice
+    name: section,
+    value: choice
   });
-  console.log(api.parameter.get({name: 'right pos'}));
 }
