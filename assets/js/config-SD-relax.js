@@ -45,100 +45,6 @@ api.scene.addEventListener(api.scene.EVENTTYPE.VISIBILITY_ON, function() {
       return a.order - b.order;
     });
     console.log(parameters.data);
-    for (let i = 0; i < parameters.data.length - 2; i++) {
-      let paramInput = null;
-      let paramDiv = document.createElement("div");
-      let param = parameters.data[i];
-      let label = document.createElement("label");
-      label.setAttribute("for", param.id);
-      label.innerHTML = param.name;
-      if (i == 3) {
-        // skip the material parameter because there's already one in the HTML
-        continue;
-      } else if (param.type == "Int" || param.type == "Float" || param.type == "Even" || param.type == "Odd") {
-        paramInput = document.createElement("input");
-        paramInput.setAttribute("id", param.id);
-        paramInput.setAttribute("type", "range");
-        paramInput.setAttribute("min", param.min);
-        paramInput.setAttribute("max", param.max);
-        paramInput.setAttribute("value", param.value);
-        if (param.type == "Int") paramInput.setAttribute("step", 1);
-        else if (param.type == "Even" || param.type == "Odd") paramInput.setAttribute("step", 2);
-        else paramInput.setAttribute("step", 1 / Math.pow(10, param.decimalplaces));
-        paramInput.onchange = function() {
-          api.parameters.updateAsync({
-            id: param.id,
-            value: this.value
-          });
-        };
-      } else if (param.type == "Bool") {
-        paramInput = document.createElement("input");
-        paramInput.setAttribute("id", param.id);
-        paramInput.setAttribute("type", "checkbox");
-        paramInput.setAttribute("unchecked", param.value);
-        paramInput.onchange = function() {
-          console.log(this);
-          api.parameters.updateAsync({
-            id: param.id,
-            value: this.checked
-          });
-        };
-      } else if (param.type == "String") {
-        paramInput = document.createElement("input");
-        paramInput.setAttribute("id", param.id);
-        paramInput.setAttribute("type", "text");
-        paramInput.setAttribute("value", param.value);
-        paramInput.onchange = function() {
-          api.parameters.updateAsync({
-            id: param.id,
-            value: this.value
-          });
-        };
-      } else if (param.type == "Color") {
-        paramInput = document.createElement("input");
-        paramInput.setAttribute("id", param.id);
-        paramInput.setAttribute("type", "color");
-        paramInput.setAttribute("value", param.value);
-        paramInput.onchange = function() {
-          api.parameters.updateAsync({
-            id: param.id,
-            value: this.value
-          });
-        };
-      } else if (param.type == "StringList") {
-        paramInput = document.createElement("select");
-        paramInput.setAttribute("id", param.id);
-        for (let j = 0; j < param.choices.length; j++) {
-          let option = document.createElement("option");
-          option.setAttribute("value", j);
-          option.setAttribute("name", param.choices[j]);
-          option.innerHTML = param.choices[j];
-          if (param.value == j) option.setAttribute("selected", "");
-          paramInput.appendChild(option);
-        }
-        paramInput.onchange = function() {
-          api.parameters.updateAsync({
-            id: param.id,
-            value: this.value
-          });
-        };
-      }
-      if (param.hidden) paramDiv.setAttribute("hidden", "");
-      paramDiv.appendChild(label);
-      paramDiv.appendChild(paramInput);
-      // append different part of params to different blocks
-      if (i >= 0 && i <= 2) {
-        sizingDiv.appendChild(paramDiv);
-      } else if (i >= 3 && i <= 5) {
-        materialDiv.appendChild(paramDiv);
-      } else if (i >= 6 && i <= 11) {
-        doorDiv.appendChild(paramDiv);
-      } else {
-        spaceDiv.appendChild(paramDiv);
-      }
-    }
-  }
-});
 
 /************************************************************************
 // exportFile(): Dedicated function triigered when onclick event is activated
@@ -241,6 +147,7 @@ function modifyCurrentSelected(curSelected, curSection) {
   var topCurrentDisplay = document.getElementById(curSection.concat("1")).getElementsByClassName('select-box-top__input');
   var middleCurrentDisplay = document.getElementById(curSection.concat("2")).getElementsByClassName('select-box-middle__input');
   var lowerCurrentDisplay = document.getElementById(curSection.concat("3")).getElementsByClassName('select-box-lower__input');
+  var orderElementVar = [lowerCurrentDisplay, middleCurrentDisplay, topCurrentDisplay];
 
   console.log(topCurrentDisplay);
   console.log(middleCurrentDisplay);
@@ -252,25 +159,56 @@ function modifyCurrentSelected(curSelected, curSection) {
     middleCurrentDisplay[i].checked = false;
     lowerCurrentDisplay[i].checked = false;
   }
-
+  // get current section item order
+  curOrder = api.parameters.get({name: curSection.concat(" items")}, "CommPlugin_1").data[0].value;
+  curOrderArr = curOrder.split(',');
   // Update shapediver with new set of parameters and change current option for radio
   if (curSelected == "alchol") {
-    topCurrentDisplay[2].checked = true; // top
-    middleCurrentDisplay[2].checked = true; // middle
-    lowerCurrentDisplay[1].checked = true; // lower
+    // filter through current options
+    for (let i = 0; i < curOrderArr.length; i++) {
+      if (curOrderArr[i] == "100") {
+        orderElementVar[i][1].checked = true; // Universal none
+        continue;
+      } else if (curOrderArr[i] == "1") {
+        orderElementVar[i][3].checked = true; // alc cup
+        continue;
+      } else if (curOrderArr[i] == "2") {
+        orderElementVar[i][2].checked = true; // flexible space
+        continue;
+      }
+    }
   } else if (curSelected == "phone") {
-    topCurrentDisplay[3].checked = true; // top
-    middleCurrentDisplay[4].checked = true; // middle
-    lowerCurrentDisplay[1].checked = true; // lower
+    // filter through current options
+    for (let i = 0; i < curOrderArr.length; i++) {
+      if (curOrderArr[i] == "100") {
+        orderElementVar[i][1].checked = true; // Universal none
+        continue;
+      } else if (curOrderArr[i] == "1") {
+        orderElementVar[i][4].checked = true; // phone stand
+        continue;
+      } else if (curOrderArr[i] == "2") {
+        orderElementVar[i][5].checked = true; // phone lay
+        continue;
+      } else if (curOrderArr[i] == "3") {
+        orderElementVar[i][2].checked = true; // flexible space
+        continue;
+      }
+    }
   } else if (curSelected == "snacks") {
-    topCurrentDisplay[5].checked = true; // top
-    middleCurrentDisplay[5].checked = true; // middle
-    lowerCurrentDisplay[1].checked = true; // lower
+    // filter through current options
+    for (let i = 0; i < curOrderArr.length; i++) {
+      if (curOrderArr[i] == "100") {
+        orderElementVar[i][1].checked = true; // Universal none
+        continue;
+      } else if (curOrderArr[i] == "1") {
+        orderElementVar[i][6].checked = true; // snack platter
+        continue;
+      } else if (curOrderArr[i] == "2") {
+        orderElementVar[i][2].checked = true; // flexible space
+        continue;
+      }
+    }
   }
-  // Update shapediver with new set of parameters and change current display selection for radio
-  // [ concat 'curSection' with 1, 2, 3 to only clearup the specific side that user changed ]
-  // [ get left1, left2, left3 by id and seperately iterate inside and clear all 'checked'.]
-  // [ set 'checked' status for options with designated id ] -> organize a list of combos first
 }
 
 
