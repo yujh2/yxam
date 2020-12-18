@@ -35,17 +35,12 @@ var viewerInit = false;
 var parameters;
 api.scene.addEventListener(api.scene.EVENTTYPE.VISIBILITY_ON, function() {
   if (!viewerInit) {
-    // set up different blocks for parameters
-    var sizingDiv = document.getElementById("sizing-param-knobs");
-    var materialDiv = document.getElementById("material-param-knobs");
-    var doorDiv = document.getElementById("door-param-knobs");
-    var spaceDiv = document.getElementById("space-param-knobs");
     parameters = api.parameters.get();
     parameters.data.sort(function(a, b) {
       return a.order - b.order;
     });
     console.log(parameters.data);
-
+}
 /************************************************************************
 // exportFile(): Dedicated function triigered when onclick event is activated
 // 							 when user clicked submit.
