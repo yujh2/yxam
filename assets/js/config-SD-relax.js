@@ -35,13 +35,17 @@ var viewerInit = false;
 var parameters;
 api.scene.addEventListener(api.scene.EVENTTYPE.VISIBILITY_ON, function() {
   if (!viewerInit) {
+    // set up different blocks for parameters
+    var sizingDiv = document.getElementById("sizing-param-knobs");
+    var materialDiv = document.getElementById("material-param-knobs");
+    var doorDiv = document.getElementById("door-param-knobs");
+    var spaceDiv = document.getElementById("space-param-knobs");
     parameters = api.parameters.get();
     parameters.data.sort(function(a, b) {
       return a.order - b.order;
     });
     console.log(parameters.data);
-  }
-});
+
 /************************************************************************
 // exportFile(): Dedicated function triigered when onclick event is activated
 // 							 when user clicked submit.
@@ -158,63 +162,34 @@ function modifyCurrentSelected(curSelected, curSection) {
   // get current section item order
   curOrder = api.parameters.get({name: curSection.concat(" items")}, "CommPlugin_1").data[0].value;
   curOrderArr = curOrder.split(',');
-  console.log(curOrderArr);
   // Update shapediver with new set of parameters and change current option for radio
   if (curSelected == "alchol") {
-    // filter through current options
-    for (let i = 0; i < curOrderArr.length; i++) {
-      if (curOrderArr[i] == "100") {
-        orderElementVar[i][1].checked = true; // Universal none
-        console.log("empty");
-        continue;
-      } else if (curOrderArr[i] == "1") {
-        orderElementVar[i][3].checked = true; // alc cup
-        console.log("alc cup");
-        continue;
-      } else if (curOrderArr[i] == "2") {
-        orderElementVar[i][2].checked = true; // flexible space
-        console.log("flex");
-        continue;
-      }
-    }
+    topCurrentDisplay[2].checked = true; // top
+    middleCurrentDisplay[2].checked = true; // middle
+    lowerCurrentDisplay[1].checked = true; // lower
+    var newOrder = "1,1,100";
+    api.parameters.updateAsync({
+      name: curSection.concat(" items"),
+      value: newOrder
+    });
   } else if (curSelected == "phone") {
-    // filter through current options
-    for (let i = 0; i < curOrderArr.length; i++) {
-      if (curOrderArr[i] == "100") {
-        orderElementVar[i][1].checked = true; // Universal none
-        console.log("empty");
-        continue;
-      } else if (curOrderArr[i] == "1") {
-        orderElementVar[i][4].checked = true; // phone stand
-        console.log("phone stand");
-        continue;
-      } else if (curOrderArr[i] == "2") {
-        orderElementVar[i][5].checked = true; // phone lay
-        console.log("phone lay");
-        continue;
-      } else if (curOrderArr[i] == "3") {
-        orderElementVar[i][2].checked = true; // flexible space
-        console.log("flex");
-        continue;
-      }
-    }
+    topCurrentDisplay[3].checked = true; // top
+    middleCurrentDisplay[4].checked = true; // middle
+    lowerCurrentDisplay[1].checked = true; // lower
+    var newOrder = "2,3,1";
+    api.parameters.updateAsync({
+      name: curSection.concat(" items"),
+      value: newOrder
+    });
   } else if (curSelected == "snacks") {
-    // filter through current options
-    for (let i = 0; i < curOrderArr.length; i++) {
-      if (curOrderArr[i] == "100") {
-        orderElementVar[i][1].checked = true; // Universal none
-        console.log("empty");
-        continue;
-      } else if (curOrderArr[i] == "1") {
-        orderElementVar[i][6].checked = true; // snack platter
-        console.log("snack");
-        continue;
-      } else if (curOrderArr[i] == "2") {
-        orderElementVar[i][2].checked = true; // flexible space
-        console.log("flex");
-        continue;
-      }
-    }
+    topCurrentDisplay[5].checked = true; // top
+    middleCurrentDisplay[5].checked = true; // middle
+    lowerCurrentDisplay[1].checked = true; // lower
+    var newOrder = "1,1,100";
+    api.parameters.updateAsync({
+      name: curSection.concat(" items"),
+      value: newOrder
+    });
   }
 }
 
