@@ -158,18 +158,22 @@ function modifyCurrentSelected(curSelected, curSection) {
   // get current section item order
   curOrder = api.parameters.get({name: curSection.concat(" items")}, "CommPlugin_1").data[0].value;
   curOrderArr = curOrder.split(',');
+  console.log(curOrderArr);
   // Update shapediver with new set of parameters and change current option for radio
   if (curSelected == "alchol") {
     // filter through current options
     for (let i = 0; i < curOrderArr.length; i++) {
       if (curOrderArr[i] == "100") {
         orderElementVar[i][1].checked = true; // Universal none
+        console.log("empty");
         continue;
       } else if (curOrderArr[i] == "1") {
         orderElementVar[i][3].checked = true; // alc cup
+        console.log("alc cup");
         continue;
       } else if (curOrderArr[i] == "2") {
         orderElementVar[i][2].checked = true; // flexible space
+        console.log("flex");
         continue;
       }
     }
@@ -178,15 +182,19 @@ function modifyCurrentSelected(curSelected, curSection) {
     for (let i = 0; i < curOrderArr.length; i++) {
       if (curOrderArr[i] == "100") {
         orderElementVar[i][1].checked = true; // Universal none
+        console.log("empty");
         continue;
       } else if (curOrderArr[i] == "1") {
         orderElementVar[i][4].checked = true; // phone stand
+        console.log("phone stand");
         continue;
       } else if (curOrderArr[i] == "2") {
         orderElementVar[i][5].checked = true; // phone lay
+        console.log("phone lay");
         continue;
       } else if (curOrderArr[i] == "3") {
         orderElementVar[i][2].checked = true; // flexible space
+        console.log("flex");
         continue;
       }
     }
@@ -195,12 +203,15 @@ function modifyCurrentSelected(curSelected, curSection) {
     for (let i = 0; i < curOrderArr.length; i++) {
       if (curOrderArr[i] == "100") {
         orderElementVar[i][1].checked = true; // Universal none
+        console.log("empty");
         continue;
       } else if (curOrderArr[i] == "1") {
         orderElementVar[i][6].checked = true; // snack platter
+        console.log("snack");
         continue;
       } else if (curOrderArr[i] == "2") {
         orderElementVar[i][2].checked = true; // flexible space
+        console.log("flex");
         continue;
       }
     }
