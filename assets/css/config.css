@@ -526,7 +526,7 @@ html,body,main {
 .button-submit:hover {
   animation-name: gradient;
   -webkit-animation-name: gradient;
-  animation-duration: 0.5s;
+  animation-duration: 0.4s;
   -webkit-animation-duration: s;
   animation-iteration-count: 1;
   -webkit-animation-iteration-count: 1;

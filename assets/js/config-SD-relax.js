@@ -86,7 +86,8 @@ function exportAction(exportName) {
 
 function validateForm() {
   var emailInput = document.getElementById('email');
-  var email =  emailInput.value;
+  var submitButton = document.getElementById('button-submit');
+  var email = emailInput.value;
   var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   // check if email format is invalid
   if (email == "" || !re.test(email)) {
@@ -102,6 +103,8 @@ function validateForm() {
     // Set input group to 'is-valid' status
     emailInput.classList.add('is-valid');
     document.querySelector('.invlalid-feedback').innerHTML = "";
+    submitButton.innerHTML = "完成!"
+    submitButton.setAttribute("style", "background: linear-gradient(to right, #5ead07 0%, #5ead07 50%, #5ead07 100%);");
     // update user's email to SD param and redirect to finish page
     exportFile();
     api.exports.requestAsync({name: "data email"}).then( function(response) {
@@ -112,10 +115,6 @@ function validateForm() {
   }
 }
 
-.then( function(response1) {
-    console.log(response1);
-  }
-);
 /************************************************************************
 // modifyList(curSelected, layerOptions): modify displayed option list for
 //                                        user to select from.
