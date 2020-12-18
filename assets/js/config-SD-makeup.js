@@ -328,3 +328,17 @@ function testMe() {
   }
   console.log(inputTest);
 }
+
+// -------- SHAPEDIVER API LISTENER SECTION ---------
+
+/************************************************************************
+// SDmaterialSelection(choice): Provides API command to SD for user's material
+//                              selection.
+// choice - user's selection of material
+************************************************************************/
+function SDmaterialSelection(choice) {
+  api.parameters.updateAsync({
+  name: 'MAT',
+  value: choice
+  });
+}

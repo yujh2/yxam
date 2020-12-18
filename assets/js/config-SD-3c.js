@@ -208,7 +208,7 @@ noUiSlider.create(leftRightRange, {
     margin: 131, // Handles must be more than '20' apart
     connect: true, // Display a colored bar between the handles
     direction: 'ltr', // Put '0' at the bottom of the slider
-    behaviour: 'tap-drag', // Move handle on tap, bar is draggable
+    behaviour: 'tap-drag', // Move handle on tap, bar is draggable .
     range: {'min': -234,'max': 234 },
     format: wNumb({
       decimals: 0,
@@ -327,4 +327,18 @@ function testMe() {
     paramTest.classList.add('is-valid');
   }
   console.log(inputTest);
+}
+
+// -------- SHAPEDIVER API LISTENER SECTION ---------
+
+/************************************************************************
+// SDmaterialSelection(choice): Provides API command to SD for user's material
+//                              selection.
+// choice - user's selection of material
+************************************************************************/
+function SDmaterialSelection(choice) {
+  api.parameters.updateAsync({
+  name: 'MAT',
+  value: choice
+  });
 }
