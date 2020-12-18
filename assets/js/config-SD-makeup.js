@@ -45,98 +45,6 @@ api.scene.addEventListener(api.scene.EVENTTYPE.VISIBILITY_ON, function() {
       return a.order - b.order;
     });
     console.log(parameters.data);
-    for (let i = 0; i < parameters.data.length - 2; i++) {
-      let paramInput = null;
-      let paramDiv = document.createElement("div");
-      let param = parameters.data[i];
-      let label = document.createElement("label");
-      label.setAttribute("for", param.id);
-      label.innerHTML = param.name;
-      if (i == 3) {
-        // skip the material parameter because there's already one in the HTML
-        continue;
-      } else if (param.type == "Int" || param.type == "Float" || param.type == "Even" || param.type == "Odd") {
-        paramInput = document.createElement("input");
-        paramInput.setAttribute("id", param.id);
-        paramInput.setAttribute("type", "range");
-        paramInput.setAttribute("min", param.min);
-        paramInput.setAttribute("max", param.max);
-        paramInput.setAttribute("value", param.value);
-        if (param.type == "Int") paramInput.setAttribute("step", 1);
-        else if (param.type == "Even" || param.type == "Odd") paramInput.setAttribute("step", 2);
-        else paramInput.setAttribute("step", 1 / Math.pow(10, param.decimalplaces));
-        paramInput.onchange = function() {
-          api.parameters.updateAsync({
-            id: param.id,
-            value: this.value
-          });
-        };
-      } else if (param.type == "Bool") {
-        paramInput = document.createElement("input");
-        paramInput.setAttribute("id", param.id);
-        paramInput.setAttribute("type", "checkbox");
-        paramInput.setAttribute("unchecked", param.value);
-        paramInput.onchange = function() {
-          console.log(this);
-          api.parameters.updateAsync({
-            id: param.id,
-            value: this.checked
-          });
-        };
-      } else if (param.type == "String") {
-        paramInput = document.createElement("input");
-        paramInput.setAttribute("id", param.id);
-        paramInput.setAttribute("type", "text");
-        paramInput.setAttribute("value", param.value);
-        paramInput.onchange = function() {
-          api.parameters.updateAsync({
-            id: param.id,
-            value: this.value
-          });
-        };
-      } else if (param.type == "Color") {
-        paramInput = document.createElement("input");
-        paramInput.setAttribute("id", param.id);
-        paramInput.setAttribute("type", "color");
-        paramInput.setAttribute("value", param.value);
-        paramInput.onchange = function() {
-          api.parameters.updateAsync({
-            id: param.id,
-            value: this.value
-          });
-        };
-      } else if (param.type == "StringList") {
-        paramInput = document.createElement("select");
-        paramInput.setAttribute("id", param.id);
-        for (let j = 0; j < param.choices.length; j++) {
-          let option = document.createElement("option");
-          option.setAttribute("value", j);
-          option.setAttribute("name", param.choices[j]);
-          option.innerHTML = param.choices[j];
-          if (param.value == j) option.setAttribute("selected", "");
-          paramInput.appendChild(option);
-        }
-        paramInput.onchange = function() {
-          api.parameters.updateAsync({
-            id: param.id,
-            value: this.value
-          });
-        };
-      }
-      if (param.hidden) paramDiv.setAttribute("hidden", "");
-      paramDiv.appendChild(label);
-      paramDiv.appendChild(paramInput);
-      // append different part of params to different blocks
-      if (i >= 0 && i <= 2) {
-        sizingDiv.appendChild(paramDiv);
-      } else if (i >= 3 && i <= 5) {
-        materialDiv.appendChild(paramDiv);
-      } else if (i >= 6 && i <= 11) {
-        doorDiv.appendChild(paramDiv);
-      } else {
-        spaceDiv.appendChild(paramDiv);
-      }
-    }
   }
 });
 
@@ -145,49 +53,13 @@ api.scene.addEventListener(api.scene.EVENTTYPE.VISIBILITY_ON, function() {
 // 							 when user clicked submit.
 ************************************************************************/
 function exportFile() {
+  var userEmail = document.getElementById('email').value;
   api.parameters.updateAsync({
     // PDF maker startup. (id corresponds to PDF maker)
-    id: 'd9d4958d-da98-4e04-a279-b0ff47569d71',
-    value: true
-  });
-  setTimeout(() => {
-    exportAction('paramCSV');
-  }, 2000);
-  setTimeout(() => {
-    exportAction('fileDownload');
-  }, 5000);
-}
-
-/************************************************************************
-// exportAction(exportName): inner function that executes the actual
-//													 export action request to SD's API
-// @exportName - specifies what type of export action it is considering
-************************************************************************/
-
-function exportAction(exportName) {
-  api.exports.requestAsync({
-    name: exportName
-  }).then(
-    function(response) {
-      let link = response.data.content[0].href;
-      window.location = link;
-    }
-  );
-}
-
-// apply user's choice in picking the material of their choice (onclick with HTML element)
-var applyOption = function(opt) {
-  api.parameters.updateAsync({
-    id: "7f00fbb0-586e-47c4-9b3b-c7b96af5a8fa",
-    value: opt
-  }).then(function() {
-    api.scene.camera.updateAsync(initCamera);
-    leftTrans.transformations[0].rotationDegree = 90;
-    rightTrans.transformations[0].rotationDegree = -90;
+    name: 'enter email',
+    value: userEmail
   });
 }
-
-
 /************************************************************************
 // validateForm(): function that sets a validation for email input group.
 //								 It also sends export action codes to shapeDiver
@@ -196,7 +68,8 @@ var applyOption = function(opt) {
 
 function validateForm() {
   var emailInput = document.getElementById('email');
-  var email =  emailInput.value;
+  var submitButton = document.getElementById('button-submit');
+  var email = emailInput.value;
   var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   // check if email format is invalid
   if (email == "" || !re.test(email)) {
@@ -212,8 +85,17 @@ function validateForm() {
     // Set input group to 'is-valid' status
     emailInput.classList.add('is-valid');
     document.querySelector('.invlalid-feedback').innerHTML = "";
-    window.location.href = "finish.html";
-    return true;
+    // change button status after successful update
+    submitButton.innerHTML = "完成!"
+    submitButton.setAttribute("style", "background: linear-gradient(to right, #5ead07 0%, #5ead07 50%, #5ead07 100%); cursor: default;");
+    submitButton.disabled = 'disabled';
+    // update user's email to SD param and redirect to finish page
+    exportFile();
+    api.exports.requestAsync({name: "data email"}).then( function(response) {
+        console.log(response);
+        window.location.href = "finish.html";
+      }
+    );
   }
 }
 

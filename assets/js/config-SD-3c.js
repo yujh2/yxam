@@ -1,4 +1,4 @@
-/***********************************************************************
+/************************************************************************
 // ShapeDiver Product Configuration Viewer - Prototype 3.5
 // Date: 2020/10/05
 // Creator: Henry Yu, YXAM R&D
@@ -13,7 +13,7 @@
 // 															 files for manufacturablility)
 //										[Beta] 6.) Added experimental mouse interaction feature.
 //															 (Need GH file to verify how objects are seperated)
-***********************************************************************/
+************************************************************************/
 
 var _container = document.getElementById('sdv-container');
 // viewer settings
@@ -25,7 +25,7 @@ var _viewerSettings = {
     version: 2
   },
   // ticket for a ShapeDiver model
-  ticket: '946291ca177466d81b7a4f07f4600067c85d677138ab89739a114764dc7af6e649bcca0e33f52d4e107730950eb9353af6988d1ae7a86a8721b334c5fefb4484fe041c20449d095a2b662c294781423fba4a4419e103f6ac120d09d66131651c1946601b1ff0935dac1d0ef0b9c91a02d481e745c2e6-70721bcc172411f265a0d519fe4a0697',
+  ticket: 'e84dcddba80f80e456e2e9d4d44547f7981818008ff56d62be20a41d2012c89f64ce78cf12dcaf730eb29c89d64c1fafce6830316b0fe524581e0126037cc79bdcaa335fc4451fde048e0847eff876cfb3da409e61884a23031e8d11f3fac2dd0d992cfa28fcc3282f0b94233a55931a4f3bf666cec0-b1a4466a9c54aa9e9dfcd822c158794a',
   modelViewUrl: 'eu-central-1'
 };
 
@@ -115,8 +115,13 @@ function modifyList(curSelected, curSection) {
     layerOptions[i].classList.add("list-hidden");
     // Make sub-list options visible based on 'curSelected' user made
     if (layerOptions[i].getAttribute('value') == "all" || layerOptions[i].getAttribute('value') == curSelected) {
+      console.log("it did came here");
       layerOptions[i].classList.remove("list-hidden");
+      console.log(layerOptions[i].getAttribute('value') );
       continue;
+    } else {
+      console.log('nothing got validated');
+      console.log(layerOptions[i].getAttribute('value') );
     }
   }
 }
@@ -136,7 +141,6 @@ function modifyCurrentSelected(curSelected, curSection) {
   var topCurrentDisplay = document.getElementById(curSection.concat("1")).getElementsByClassName('select-box-top__input');
   var middleCurrentDisplay = document.getElementById(curSection.concat("2")).getElementsByClassName('select-box-middle__input');
   var lowerCurrentDisplay = document.getElementById(curSection.concat("3")).getElementsByClassName('select-box-lower__input');
-  var orderElementVar = [lowerCurrentDisplay, middleCurrentDisplay, topCurrentDisplay];
 
   console.log(topCurrentDisplay);
   console.log(middleCurrentDisplay);
@@ -148,37 +152,20 @@ function modifyCurrentSelected(curSelected, curSection) {
     middleCurrentDisplay[i].checked = false;
     lowerCurrentDisplay[i].checked = false;
   }
-  // get current section item order
-  curOrder = api.parameters.get({name: curSection.concat(" items")}, "CommPlugin_1").data[0].value;
-  curOrderArr = curOrder.split(',');
+
   // Update shapediver with new set of parameters and change current option for radio
-  if (curSelected == "alchol") {
-    topCurrentDisplay[0].checked = true; // top
+  if (curSelected == "write") {
+    topCurrentDisplay[1].checked = true; // top
     middleCurrentDisplay[2].checked = true; // middle
-    lowerCurrentDisplay[2].checked = true; // lower
-    var newOrder = "1,1,100";
-    api.parameters.updateAsync({
-      name: curSection.concat(" items"),
-      value: newOrder
-    });
+    lowerCurrentDisplay[0].checked = true; // lower
   } else if (curSelected == "phone") {
     topCurrentDisplay[3].checked = true; // top
-    middleCurrentDisplay[1].checked = true; // middle
-    lowerCurrentDisplay[4].checked = true; // lower
-    var newOrder = "2,3,1";
-    api.parameters.updateAsync({
-      name: curSection.concat(" items"),
-      value: newOrder
-    });
-  } else if (curSelected == "snacks") {
-    topCurrentDisplay[0].checked = true; // top
-    middleCurrentDisplay[5].checked = true; // middle
-    lowerCurrentDisplay[5].checked = true; // lower
-    var newOrder = "1,1,100";
-    api.parameters.updateAsync({
-      name: curSection.concat(" items"),
-      value: newOrder
-    });
+    middleCurrentDisplay[4].checked = true; // middle
+    lowerCurrentDisplay[0].checked = true; // lower
+  } else if (curSelected == "cup") {
+    topCurrentDisplay[5].checked = true; // top
+    middleCurrentDisplay[0].checked = true; // middle
+    lowerCurrentDisplay[0].checked = true; // lower
   }
 }
 
@@ -192,12 +179,9 @@ function modifyCurrentSelected(curSelected, curSection) {
 // curSection - show which section is the user adjusting (left,right,middle)
 ************************************************************************/
 
-function dynamicOptions(curSelected, curSection, SDchoice) {
+function dynamicOptions(curSelected, curSection) {
   modifyCurrentSelected(curSelected, curSection); // function has to consider three of the displayed options independently.
   modifyList(curSelected, curSection);
-  // ShapeDiver API call for respective section functionality
-  var curSection_SDFormat = curSection.concat(" func");
-  SDsectionFunctionality(curSection_SDFormat, SDchoice);
 }
 
 /************************************************************************
@@ -211,6 +195,92 @@ function paramsOpenClose(section) {
     paramSection[i].classList.toggle("adjust-labels-hidden");
   }
 }
+
+/************************************************************************
+// ** (FREE ADJUSTMENT PAGE ONLY) noUiSlider created here **
+************************************************************************/
+
+
+var leftRightRange = document.getElementById('leftRightRange');
+noUiSlider.create(leftRightRange, {
+    start: [ -125, 125 ], // Handle start position
+    step: 1, // Slider moves in increments of '10'
+    margin: 131, // Handles must be more than '20' apart
+    connect: true, // Display a colored bar between the handles
+    direction: 'ltr', // Put '0' at the bottom of the slider
+    behaviour: 'tap-drag', // Move handle on tap, bar is draggable
+    range: {'min': -234,'max': 234 },
+    format: wNumb({
+      decimals: 0,
+      suffix: ' (mm)'
+    }),
+    padding: 64
+});
+
+leftRightRange.noUiSlider.on('change', function (values, handle) {
+    if (values[handle] > -65) {
+        leftRightRange.noUiSlider.set(-65);
+    } else if (values[handle] < 65) {
+        leftRightRange.noUiSlider.set(65);
+    }
+});
+
+var leftRightRangeDatas = [
+  document.getElementById('leftRangeData'),
+  document.getElementById('RightRangeData')
+];
+leftRightRange.noUiSlider.on('update', function (values, handle) {
+     left = values[0]; //left range data
+     formatLeft(left);
+     right = values[1];
+     formatRight(right);
+});
+function formatLeft(left) {
+  temp = (171+parseInt(left)).toString()
+  leftRightRangeDatas[0].innerHTML = temp.concat('(mm)');
+}
+function formatRight(right) {
+  temp = (234-parseInt(right)).toString()
+  leftRightRangeDatas[1].innerHTML = temp.concat('(mm)');
+}
+
+var midLineRange = document.getElementById('midLineRange');
+noUiSlider.create(midLineRange, {
+    start: [ 0 ], // Handle start position
+    step: 1, // Slider moves in increments of '10'
+    margin: 20, // Handles must be more than '20' apart
+    direction: 'rtl', // Put '0' at the bottom of the slider
+    behaviour: 'tap-drag', // Move handle on tap, bar is draggable
+    range: {'min': -50,'max': 50 },
+    format: wNumb({
+      suffix: ' (mm)'
+    })
+});
+
+var midLineRangeData = document.getElementById('midLineRangeData');
+midLineRange.noUiSlider.on('update', function (values, handle) {
+     midLineRangeData.innerHTML = values[handle];
+});
+
+var depth = document.getElementById('depth');
+noUiSlider.create(depth, {
+    start: [ 5 ], // Handle start position
+    step: 1, // Slider moves in increments of '10'
+    margin: 20, // Handles must be more than '20' apart
+    connect: [false, true], // Display a colored bar between the handles
+    direction: 'rtl', // Put '0' at the bottom of the slider
+    behaviour: 'tap-drag', // Move handle on tap, bar is draggable
+    range: {'min': 0,'max': 7 },
+    format: wNumb({
+      suffix: ' (mm)'
+    })
+});
+
+var depthData = document.getElementById('depthData');
+depth.noUiSlider.on('update', function (values, handle) {
+     depthData.innerHTML = values[handle];
+});
+
 
 /************************************************************************
 // mobileParamSelect(selected): This function dynamically show the parameter's
@@ -238,58 +308,23 @@ function mobileParamSelect(selected, iconId) {
   openParam[0].setAttribute("style","display: flex;");
   iconImg[iconId].setAttribute("Style", "border-bottom: 2px solid #ef6e0c;");
 }
-// -------- SHAPEDIVER API LISTENER SECTION ---------
 
-/************************************************************************
-// SDmaterialSelection(choice): Provides API command to SD for user's material
-//                              selection.
-// choice - user's selection of material
-************************************************************************/
-function SDmaterialSelection(choice) {
-  api.parameters.updateAsync({
-  name: 'choose wood',
-  value: choice
-  });
-}
-/************************************************************************
-// SDmaterialSelection(choice): Provides API command to SD for user's material
-//                              selection.
-// choice - user's selection of material
-************************************************************************/
-function SDsectionFunctionality(section, choice) {
-  api.parameters.updateAsync({
-  name: section,
-  value: choice
-  });
-}
-/************************************************************************
-// SDmidLength(): Provides API command to SD for mid section length adjustments
-************************************************************************/
-var SDmidSlider = document.getElementById('midSlider');
-SDmidSlider.addEventListener('input', SDmidLength, false);
-function SDmidLength() {
-  api.parameters.updateAsync({
-  name: 'mid pos',
-  value: (SDmidSlider.value)/100
-  });
-}
-
-/************************************************************************
-// SDitemSelection(section, order, choice): Provides API command on which section (L/M/R)
-//                          did the user decide to change item arrangements
-// section - Left, middle, or right section (in SD API formality (+items))
-// order - top, middle, or bottom
-// choice - user's selection of item
-************************************************************************/
-function SDitemSelection(section, order, choice) {
-  // get current section layout
-  curOrder = api.parameters.get({name: section}, "CommPlugin_1").data[0].value;
-  curOrderArr = curOrder.split(',');
-  // access the right order to alter user selection
-  curOrderArr[order] = choice;
-  // update parameter
-  api.parameters.updateAsync({
-    name: section,
-    value: curOrderArr.toString()
-  });
+// Validation for detailed text input parameters
+var paramTest = document.getElementById('paramTest');
+paramTest.addEventListener("input", testMe, false);
+function testMe() {
+  var inputTest = paramTest.value;
+  var check = /(?:g[0-9]+,)/g;
+  if (!inputTest == "" && !check.test(inputTest)) {
+    paramTest.classList.add('is-invalid');
+  } else {
+    // if email format if valid
+    if (paramTest.classList.contains('is-invalid')) {
+      // remove 'is-invalid' class if previous submission triggered invalid
+      paramTest.classList.remove('is-invalid');
+    }
+    // Set input group to 'is-valid' status
+    paramTest.classList.add('is-valid');
+  }
+  console.log(inputTest);
 }
