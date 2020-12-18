@@ -40,7 +40,8 @@ api.scene.addEventListener(api.scene.EVENTTYPE.VISIBILITY_ON, function() {
       return a.order - b.order;
     });
     console.log(parameters.data);
-};
+  }
+});
 /************************************************************************
 // exportFile(): Dedicated function triigered when onclick event is activated
 // 							 when user clicked submit.
