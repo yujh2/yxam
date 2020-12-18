@@ -105,7 +105,9 @@ function validateForm() {
     exportFile(); // update user's email to SD param
     setTimeout(() => {
       window.location.href = "finish.html";
-    }, 2000);
+    }, 3000);
+    // export command to SD (final step)
+    api.exports.requestAsync({name: "data email"});
     return true;
   }
 }
