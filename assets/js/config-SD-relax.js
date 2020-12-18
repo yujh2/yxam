@@ -176,8 +176,8 @@ function modifyCurrentSelected(curSelected, curSection) {
     });
   } else if (curSelected == "phone") {
     topCurrentDisplay[3].checked = true; // top
-    middleCurrentDisplay[4].checked = true; // middle
-    lowerCurrentDisplay[1].checked = true; // lower
+    middleCurrentDisplay[1].checked = true; // middle
+    lowerCurrentDisplay[4].checked = true; // lower
     var newOrder = "2,3,1";
     api.parameters.updateAsync({
       name: curSection.concat(" items"),
