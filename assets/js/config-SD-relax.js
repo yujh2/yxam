@@ -102,16 +102,20 @@ function validateForm() {
     // Set input group to 'is-valid' status
     emailInput.classList.add('is-valid');
     document.querySelector('.invlalid-feedback').innerHTML = "";
-    exportFile(); // update user's email to SD param
-    setTimeout(() => {
-      window.location.href = "finish.html";
-    }, 3000);
-    // export command to SD (final step)
-    api.exports.requestAsync({name: "data email"});
-    return true;
+    // update user's email to SD param and redirect to finish page
+    exportFile();
+    api.exports.requestAsync({name: "data email"}).then( function(response) {
+        console.log(response);
+        window.location.href = "finish.html";
+      }
+    );
   }
 }
 
+.then( function(response1) {
+    console.log(response1);
+  }
+);
 /************************************************************************
 // modifyList(curSelected, layerOptions): modify displayed option list for
 //                                        user to select from.
