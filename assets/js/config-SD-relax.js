@@ -381,6 +381,6 @@ function SDitemSelection(section, order, choice) {
   // update parameter
   api.parameters.updateAsync({
     name: section,
-    value: choice
+    value: choice.toString()
   });
 }
