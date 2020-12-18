@@ -105,7 +105,7 @@ function validateForm() {
     document.querySelector('.invlalid-feedback').innerHTML = "";
     // change button status after successful update
     submitButton.innerHTML = "完成!"
-    submitButton.setAttribute("style", "background: linear-gradient(to right, #5ead07 0%, #5ead07 50%, #5ead07 100%);");
+    submitButton.setAttribute("style", "background: linear-gradient(to right, #5ead07 0%, #5ead07 50%, #5ead07 100%); cursor: default;");
     submitButton.disabled = 'disabled';
     // update user's email to SD param and redirect to finish page
     exportFile();
