@@ -53,17 +53,12 @@ api.scene.addEventListener(api.scene.EVENTTYPE.VISIBILITY_ON, function() {
 // 							 when user clicked submit.
 ************************************************************************/
 function exportFile() {
+  var userEmail = document.getElementById('email').value;
   api.parameters.updateAsync({
     // PDF maker startup. (id corresponds to PDF maker)
-    id: 'd9d4958d-da98-4e04-a279-b0ff47569d71',
-    value: true
+    name: 'enter email',
+    value: userEmail
   });
-  setTimeout(() => {
-    exportAction('paramCSV');
-  }, 2000);
-  setTimeout(() => {
-    exportAction('fileDownload');
-  }, 5000);
 }
 
 /************************************************************************
@@ -107,7 +102,10 @@ function validateForm() {
     // Set input group to 'is-valid' status
     emailInput.classList.add('is-valid');
     document.querySelector('.invlalid-feedback').innerHTML = "";
-    window.location.href = "finish.html";
+    exportFile(); // update user's email to SD param
+    setTimeout(() => {
+      window.location.href = "finish.html";
+    }, 2000);
     return true;
   }
 }
