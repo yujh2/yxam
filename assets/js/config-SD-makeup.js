@@ -232,13 +232,9 @@ leftRightRange.noUiSlider.on('change', function (values, handle) {
   // compare individual values
   if (Math.abs(tempLeft[0]) < 65) {
     // left reset minimum
-    console.log('left went over');
-    console.log(-65, tempRight[0]);
     leftRightRange.noUiSlider.set([-65, tempRight[0]]);
   } else if (tempRight[0] < 65) {
     // right reset minimum
-    console.log('right went over');
-    console.log(tempLeft[0],65);
     leftRightRange.noUiSlider.set([-tempLeft[0],65]);
   }
 });
