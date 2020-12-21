@@ -26,7 +26,9 @@ var _viewerSettings = {
   },
   // ticket for a ShapeDiver model
   ticket: '946291ca177466d81b7a4f07f4600067c85d677138ab89739a114764dc7af6e649bcca0e33f52d4e107730950eb9353af6988d1ae7a86a8721b334c5fefb4484fe041c20449d095a2b662c294781423fba4a4419e103f6ac120d09d66131651c1946601b1ff0935dac1d0ef0b9c91a02d481e745c2e6-70721bcc172411f265a0d519fe4a0697',
-  modelViewUrl: 'eu-central-1'
+  modelViewUrl: 'eu-central-1',
+  showControlsInitial: true,
+  showSettingsInitial: false,
 };
 
 // create the viewer, get back an API v2 object
@@ -47,6 +49,22 @@ api.scene.addEventListener(api.scene.EVENTTYPE.VISIBILITY_ON, function() {
     console.log(parameters.data);
   }
 });
+api.state.addEventListener(api.state.EVENTTYPE.BUSY, function(){
+  document.getElementById('loader').hidden = false;
+});
+api.state.addEventListener(api.state.EVENTTYPE.IDLE, function(){
+  document.getElementById('loader').hidden = true;
+});
+// there is a slight chance that loading has been completed already
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initSdvApp, false);
+} else {
+  initSdvApp();
+}
+
+function updateParam(val){
+  api.parameters.updateAsync({name: 'Count V', value: val})
+};
 
 /************************************************************************
 // exportFile(): Dedicated function triigered when onclick event is activated
