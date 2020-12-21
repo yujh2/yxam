@@ -14,49 +14,42 @@
 //										[Beta] 6.) Added experimental mouse interaction feature.
 //															 (Need GH file to verify how objects are seperated)
 ***********************************************************************/
-// ShapeDiver Viewer initialization
-var initSdvApp = function() {
-  let _container = document.getElementById('sdv-container');
-  // viewer settings
-  let _viewerSettings = {
-    // container to use
-    container: _container,
-    // when creating the viewer, we want to get back an API v2 object
-    api: {
-      version: 2
-    },
-    // ticket for a ShapeDiver model
-    ticket: '946291ca177466d81b7a4f07f4600067c85d677138ab89739a114764dc7af6e649bcca0e33f52d4e107730950eb9353af6988d1ae7a86a8721b334c5fefb4484fe041c20449d095a2b662c294781423fba4a4419e103f6ac120d09d66131651c1946601b1ff0935dac1d0ef0b9c91a02d481e745c2e6-70721bcc172411f265a0d519fe4a0697',
-    modelViewUrl: 'eu-central-1',
-    showControlsInitial: true,
-    showSettingsInitial: false,
-  };
-  // create the viewer, get back an API v2 object
-  var api = new SDVApp.ParametricViewer(_viewerSettings);
-  var viewerInit = false;
-  var parameters;
-  api.scene.addEventListener(api.scene.EVENTTYPE.VISIBILITY_ON, function() {
-    if (!viewerInit) {
-      parameters = api.parameters.get();
-      parameters.data.sort(function(a, b) {
-        return a.order - b.order;
-      });
-      console.log(parameters.data);
-    }
-  });
-  api.state.addEventListener(api.state.EVENTTYPE.BUSY, function(){
-    document.getElementById('loader').hidden = false;
-  });
-  api.state.addEventListener(api.state.EVENTTYPE.IDLE, function(){
-    document.getElementById('loader').hidden = true;
-  });
+
+var _container = document.getElementById('sdv-container');
+// viewer settings
+var _viewerSettings = {
+  // container to use
+  container: _container,
+  // when creating the viewer, we want to get back an API v2 object
+  api: {
+    version: 2
+  },
+  // ticket for a ShapeDiver model
+  ticket: '946291ca177466d81b7a4f07f4600067c85d677138ab89739a114764dc7af6e649bcca0e33f52d4e107730950eb9353af6988d1ae7a86a8721b334c5fefb4484fe041c20449d095a2b662c294781423fba4a4419e103f6ac120d09d66131651c1946601b1ff0935dac1d0ef0b9c91a02d481e745c2e6-70721bcc172411f265a0d519fe4a0697',
+  modelViewUrl: 'eu-central-1',
+  showControlsInitial: true,
+  showSettingsInitial: false,
 };
-// there is a slight chance that loading has been completed already
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initSdvApp, false);
-} else {
-  initSdvApp();
-}
+
+// create the viewer, get back an API v2 object
+var api = new SDVApp.ParametricViewer(_viewerSettings);
+var viewerInit = false;
+var parameters;
+api.scene.addEventListener(api.scene.EVENTTYPE.VISIBILITY_ON, function() {
+  if (!viewerInit) {
+    parameters = api.parameters.get();
+    parameters.data.sort(function(a, b) {
+      return a.order - b.order;
+    });
+    console.log(parameters.data);
+  }
+});
+api.state.addEventListener(api.state.EVENTTYPE.BUSY, function(){
+  document.getElementById('loader').hidden = false;
+});
+api.state.addEventListener(api.state.EVENTTYPE.IDLE, function(){
+  document.getElementById('loader').hidden = true;
+});
 
 /************************************************************************
 // exportFile(): Dedicated function triigered when onclick event is activated
