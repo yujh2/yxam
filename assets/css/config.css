@@ -697,7 +697,7 @@ html,body,main {
   }
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 1200px) {
+@media only screen and (max-width: 1200px) {
   .loader {
     top: 19%;
     left: 44%;
