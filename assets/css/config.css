@@ -689,17 +689,18 @@ html,body,main {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (max-width: 600px) {
-  .loader {
-    top: 19%;
-    left: 33%;
-  }
-}
-/* Small devices (portrait tablets and large phones, 600px and up) */
+
+/* Small devices (portrait tablets and large phones, 1200px and up) */
 @media only screen and (max-width: 1200px) {
   .loader {
     top: 19%;
     left: 44%;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+  .loader {
+    top: 19%;
+    left: 37%;
   }
 }
