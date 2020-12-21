@@ -16,9 +16,9 @@
 ***********************************************************************/
 // ShapeDiver Viewer initialization
 var initSdvApp = function() {
-  var _container = document.getElementById('sdv-container');
+  let _container = document.getElementById('sdv-container');
   // viewer settings
-  var _viewerSettings = {
+  let _viewerSettings = {
     // container to use
     container: _container,
     // when creating the viewer, we want to get back an API v2 object
