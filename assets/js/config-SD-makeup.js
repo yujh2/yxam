@@ -26,7 +26,9 @@ var _viewerSettings = {
   },
   // ticket for a ShapeDiver model
   ticket: 'ccd2646e722f15988c5d0b0c36ea45c2b63c648066b47f2137a830a32a13fe16b07fe165c4911e912fb59901529159e58a847f3b01b33376f8b8254b110774895894678a75770c76cc7449e8fb7ee3910b2229b9279f75c5ea8d0a3e63c08c831eaaf137dc313b2465cae4ac32533f5135b9dc861e3e-f147b32f33e856659d3b1b6ca919c3df',
-  modelViewUrl: 'eu-central-1'
+  modelViewUrl: 'eu-central-1',
+  showControlsInitial: true,
+  showSettingsInitial: false
 };
 
 // create the viewer, get back an API v2 object
@@ -46,6 +48,12 @@ api.scene.addEventListener(api.scene.EVENTTYPE.VISIBILITY_ON, function() {
     });
     console.log(parameters.data);
   }
+});
+api.state.addEventListener(api.state.EVENTTYPE.BUSY, function(){
+  document.getElementById('loader').hidden = false;
+});
+api.state.addEventListener(api.state.EVENTTYPE.IDLE, function(){
+  document.getElementById('loader').hidden = true;
 });
 
 /************************************************************************

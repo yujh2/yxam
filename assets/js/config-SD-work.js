@@ -26,7 +26,9 @@ var _viewerSettings = {
   },
   // ticket for a ShapeDiver model
   ticket: '4cf97e14db724ee6375f884cb305b25f757809b83060c20bc38ac3506c5d74f676e3b04c3fdfbc45a0d7ce6f1c2be9569c80cff356aca0aa58f4ea7551869edabf98365e54c56f649234b85e0d06ead18a6dcd6028a2018c37dbd747fac935b18511f451652dcf945d6e140895b58da09f2534880b6d-c6714e68b869d8771b5c2dc0041e51b8',
-  modelViewUrl: 'eu-central-1'
+  modelViewUrl: 'eu-central-1',
+  showControlsInitial: true,
+  showSettingsInitial: false,
 };
 
 // create the viewer, get back an API v2 object
@@ -35,17 +37,18 @@ var viewerInit = false;
 var parameters;
 api.scene.addEventListener(api.scene.EVENTTYPE.VISIBILITY_ON, function() {
   if (!viewerInit) {
-    // set up different blocks for parameters
-    var sizingDiv = document.getElementById("sizing-param-knobs");
-    var materialDiv = document.getElementById("material-param-knobs");
-    var doorDiv = document.getElementById("door-param-knobs");
-    var spaceDiv = document.getElementById("space-param-knobs");
     parameters = api.parameters.get();
     parameters.data.sort(function(a, b) {
       return a.order - b.order;
     });
     console.log(parameters.data);
   }
+});
+api.state.addEventListener(api.state.EVENTTYPE.BUSY, function(){
+  document.getElementById('loader').hidden = false;
+});
+api.state.addEventListener(api.state.EVENTTYPE.IDLE, function(){
+  document.getElementById('loader').hidden = true;
 });
 
 /************************************************************************

@@ -28,7 +28,7 @@ var _viewerSettings = {
   ticket: '946291ca177466d81b7a4f07f4600067c85d677138ab89739a114764dc7af6e649bcca0e33f52d4e107730950eb9353af6988d1ae7a86a8721b334c5fefb4484fe041c20449d095a2b662c294781423fba4a4419e103f6ac120d09d66131651c1946601b1ff0935dac1d0ef0b9c91a02d481e745c2e6-70721bcc172411f265a0d519fe4a0697',
   modelViewUrl: 'eu-central-1',
   showControlsInitial: true,
-  showSettingsInitial: false,
+  showSettingsInitial: false
 };
 
 // create the viewer, get back an API v2 object
