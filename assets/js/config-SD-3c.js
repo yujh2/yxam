@@ -221,11 +221,21 @@ noUiSlider.create(leftRightRange, {
 });
 
 leftRightRange.noUiSlider.on('change', function (values, handle) {
-    if (values[handle] > -65) {
-        leftRightRange.noUiSlider.set(-65);
-    } else if (values[handle] < 65) {
-        leftRightRange.noUiSlider.set(65);
-    }
+  // obtain individual values
+  var tempLeft = values[0].match(/(\d+)/);
+  var tempRight = values[1].match(/(\d+)/);
+  // compare individual values
+  if (Math.abs(tempLeft[0]) < 65) {
+    // left reset minimum
+    console.log('left went over');
+    console.log(-65, tempRight[0]);
+    leftRightRange.noUiSlider.set([-65, tempRight[0]]);
+  } else if (tempRight[0] < 65) {
+    // right reset minimum
+    console.log('right went over');
+    console.log(tempLeft[0],65);
+    leftRightRange.noUiSlider.set([-tempLeft[0],65]);
+  }
 });
 
 var leftRightRangeDatas = [
@@ -239,7 +249,7 @@ leftRightRange.noUiSlider.on('update', function (values, handle) {
      formatRight(right);
 });
 function formatLeft(left) {
-  temp = (171+parseInt(left)).toString()
+  temp = (234+parseInt(left)).toString()
   leftRightRangeDatas[0].innerHTML = temp.concat('(mm)');
 }
 function formatRight(right) {
