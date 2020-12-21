@@ -702,5 +702,7 @@ html,body,main {
   .loader {
     top: 19%;
     left: 37%;
+    border: 3px solid #fcf5e6;
+    border-top: 3px solid #ff7600;
   }
 }
