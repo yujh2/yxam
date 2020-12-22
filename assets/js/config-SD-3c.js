@@ -206,7 +206,7 @@ function paramsOpenClose(section) {
 
 var leftRightRange = document.getElementById('leftRightRange');
 noUiSlider.create(leftRightRange, {
-    start: [ -125, 125 ], // Handle start position
+    start: [ -187, 167 ], // Handle start position
     step: 1, // Slider moves in increments of '10'
     margin: 131, // Handles must be more than '20' apart
     connect: true, // Display a colored bar between the handles
