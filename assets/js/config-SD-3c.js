@@ -319,7 +319,7 @@ function mobileParamSelect(selected, iconId) {
 }
 
 // Validation for detailed text input parameters
-var paramTest = document.getElementById('paramTest');
+var paramTest = document.getElementById('ind-column-count');
 paramTest.addEventListener("input", testMe, false);
 function testMe() {
   var inputTest = paramTest.value;
