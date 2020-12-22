@@ -214,7 +214,6 @@ html,body,main {
   .param-icon_mobile {
     flex: 1;
     display: flex;
-    justify-content: center;
   }
   .param-icon {
     display: none;
