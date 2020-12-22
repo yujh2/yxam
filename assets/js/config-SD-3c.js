@@ -206,7 +206,7 @@ function paramsOpenClose(section) {
 
 var leftRightRange = document.getElementById('leftRightRange');
 noUiSlider.create(leftRightRange, {
-    start: [ -187, 167 ], // Handle start position
+    start: [ -121, 67], // Handle start position
     step: 1, // Slider moves in increments of '10'
     margin: 131, // Handles must be more than '20' apart
     connect: true, // Display a colored bar between the handles
@@ -259,10 +259,10 @@ leftRightRange.noUiSlider.on('update', function (values, handle) {
      formatRight(right);
      api.parameters.updateAsync([{
        name: 'adj left',
-       value: tempLeft[0] + 191
+       value: left.match(/(\d+)/)[0] + 191
      }, {
        name: 'adj right',
-       value: tempRight[0] - 191
+       value: right.match(/(\d+)/)[0] - 191
      }]);
 });
 function formatLeft(left) {
@@ -278,11 +278,10 @@ var midLineRange = document.getElementById('midLineRange');
 noUiSlider.create(midLineRange, {
     start: [ 30 ], // Handle start position
     step: 1, // Slider moves in increments of '10'
-    margin: 20, // Handles must be more than '20' apart
-    direction: 'rtl', // Put '0' at the bottom of the slider
-    behaviour: 'tap-drag', // Move handle on tap, bar is draggable
-    range: {'min': -25,'max': 30 },
+    direction: 'ltr', // Put '0' at the bottom of the slider
+    range: {'min': [-25],'max': [30] },
     format: wNumb({
+      decimals: 0,
       suffix: ' (mm)'
     })
 });
@@ -301,10 +300,10 @@ noUiSlider.create(depth, {
     start: [ 10 ], // Handle start position
     step: 1, // Slider moves in increments of '10'
     margin: 20, // Handles must be more than '20' apart
-    connect: [false, true], // Display a colored bar between the handles
-    direction: 'rtl', // Put '0' at the bottom of the slider
+    connect: [true, false], // Display a colored bar between the handles
+    direction: 'ltr', // Put '0' at the bottom of the slider
     behaviour: 'tap-drag', // Move handle on tap, bar is draggable
-    range: {'min': 5,'max': 14 },
+    range: {'min': [5],'max': [14] },
     format: wNumb({
       suffix: ' (mm)'
     })
