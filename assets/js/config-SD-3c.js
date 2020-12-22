@@ -376,11 +376,12 @@ SDrowCount.addEventListener('input', function() {
 // SDconnectBlocks: API variable for SD to choose which blocks to connect
 //                  into bigger area
 ************************************************************************/
-var SDconnectBlocks = document.getElementById('connect-blocks');
+var SDconnectBlocksTemp = document.getElementById('connect-blocks');
+var SDconnectBlocks = SDconnectBlocksTemp.value.split('&');
 SDconnectBlocks.addEventListener('input', function() {
   api.parameters.updateAsync({
     name: 'combine items',
-    value: SDconnectBlocks.value
+    value: SDconnectBlocks.toString()
   });
 });
 
