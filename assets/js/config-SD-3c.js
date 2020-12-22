@@ -259,10 +259,10 @@ leftRightRange.noUiSlider.on('update', function (values, handle) {
      formatRight(right);
      api.parameters.updateAsync([{
        name: 'adj left',
-       value: parseInt(left.match(/(-*\d+)/)[0]) + 125
+       value: parseInt(left) + 125
      }, {
        name: 'adj right',
-       value: parseInt(right.match(/(-*\d+)/)[0]) - 125
+       value: parseInt(right) - 125
      }]);
 });
 function formatLeft(left) {
