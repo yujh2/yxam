@@ -673,7 +673,7 @@ html,body,main {
   width: 100px;
   height: 100px;
   -webkit-animation: spin 2s linear infinite;
-  animation: spin 1s cubic-bezier(0.42, 0.21, 0.55, 0.85) infinite;
+  animation: spin 1.5s cubic-bezier(0.42, 0.21, 0.55, 0.85) infinite;
   position: absolute;
   top: 41%;
   left: calc(60% - 30%);
