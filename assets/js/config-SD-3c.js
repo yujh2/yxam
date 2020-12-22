@@ -269,6 +269,10 @@ noUiSlider.create(midLineRange, {
 var midLineRangeData = document.getElementById('midLineRangeData');
 midLineRange.noUiSlider.on('update', function (values, handle) {
      midLineRangeData.innerHTML = values[handle];
+     api.parameters.updateAsync({
+       name: 'adj long mid',
+       value: values[handle].match(/(\d+)/)[0]
+     });
 });
 
 var depth = document.getElementById('depth');
@@ -288,6 +292,10 @@ noUiSlider.create(depth, {
 var depthData = document.getElementById('depthData');
 depth.noUiSlider.on('update', function (values, handle) {
      depthData.innerHTML = values[handle];
+     api.parameters.updateAsync({
+       name: 'grid depth',
+       value: values[handle].match(/(\d+)/)[0]
+     });
 });
 
 
@@ -317,26 +325,6 @@ function mobileParamSelect(selected, iconId) {
   openParam[0].setAttribute("style","display: flex;");
   iconImg[iconId].setAttribute("Style", "border-bottom: 2px solid #ef6e0c;");
 }
-
-// // Validation for detailed text input parameters
-// var paramTest = document.getElementById('ind-column-count');
-// paramTest.addEventListener("input", testMe, false);
-// function testMe() {
-//   var inputTest = paramTest.value;
-//   var check = /g[0-2]*[0-9]+;/;
-//   if (!inputTest == "" && !check.test(inputTest)) {
-//     paramTest.classList.add('is-invalid');
-//   } else {
-//     // if email format if valid
-//     if (paramTest.classList.contains('is-invalid')) {
-//       // remove 'is-invalid' class if previous submission triggered invalid
-//       paramTest.classList.remove('is-invalid');
-//     }
-//     // Set input group to 'is-valid' status
-//     paramTest.classList.add('is-valid');
-//   }
-//   console.log(inputTest);
-// }
 
 // -------- SHAPEDIVER API LISTENER SECTION ---------
 
