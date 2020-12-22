@@ -378,7 +378,7 @@ SDrowCount.addEventListener('input', function() {
 ************************************************************************/
 var SDconnectBlocksTemp = document.getElementById('connect-blocks');
 var SDconnectBlocks = SDconnectBlocksTemp.value.split('&');
-SDconnectBlocks.addEventListener('input', function() {
+SDconnectBlocksTemp.addEventListener('input', function() {
   api.parameters.updateAsync({
     name: 'combine items',
     value: SDconnectBlocks.toString()
