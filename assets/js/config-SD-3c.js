@@ -291,7 +291,7 @@ midLineRange.noUiSlider.on('update', function (values, handle) {
      midLineRangeData.innerHTML = values[handle];
      api.parameters.updateAsync({
        name: 'adj long mid',
-       value: values[handle].match(/(\d+)/)[0]
+       value: values[handle].match(/(-*\d+)/)[0]
      });
 });
 
