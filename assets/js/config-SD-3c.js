@@ -351,3 +351,61 @@ function SDmaterialSelection(choice) {
   value: choice
   });
 }
+/************************************************************************
+// SDrowCount: API variable for SD to change number of rows universally
+//             throughout all blocks
+************************************************************************/
+var SDrowCount = document.getElementById('row-count');
+SDrowCount.addEventListener('input', function() {
+  api.parameters.updateAsync({
+    name: 'B',
+    value: SDrowCount.value
+  });
+});
+
+// ---------- TEXT INPUT TYPE PARAMS -------------
+/************************************************************************
+// SDconnectBlocks: API variable for SD to choose which blocks to connect
+//                  into bigger area
+************************************************************************/
+var SDconnectBlocks = document.getElementById('connect-blocks');
+SDconnectBlocks.addEventListener('input', function() {
+  api.parameters.updateAsync({
+    name: 'combine items',
+    value: SDconnectBlocks.value
+  });
+});
+
+/************************************************************************
+// SDindColumnCount: API variable for SD to change number of columns individually
+//                   for dedicated blocks
+************************************************************************/
+var SDindColumnCount = document.getElementById('ind-column-count');
+SDindColumnCount.addEventListener('input', function() {
+  api.parameters.updateAsync({
+    name: 'separate num,amount',
+    value: SDindColumnCount.value
+  });
+});
+/************************************************************************
+// SDsquare2circle: API variable for SD to change specific default suqare
+//                  slots into circle slots
+************************************************************************/
+var SDsquare2circle = document.getElementById('square-to-circle');
+SDsquare2circle.addEventListener('input', function() {
+  api.parameters.updateAsync({
+    name: 'circles',
+    value: SDsquare2circle.value
+  });
+});
+/************************************************************************
+// SDcircle2hole: API variable for SD to change specific default circle
+//                  slots into circle holes
+************************************************************************/
+var SDcircle2hole = document.getElementById('circle-to-hole');
+SDcircle2hole.addEventListener('input', function() {
+  api.parameters.updateAsync({
+    name: 'holes',
+    value: SDcircle2hole.value
+  });
+});

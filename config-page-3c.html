@@ -46,10 +46,10 @@
       <div class="param1 param-switch_mobile" style="display: flex;">
         <div class="param-icon">
         <!-- Illustrative icon for param goes here -->
-        <img src="assets\img\membrane-line.svg" alt="plant" href="#" data-toggle="tooltip" data-placement="left" title="兩種高級質感木材任你選擇!">
+        <img src="assets\img\membrane-line.svg" alt="plant">
         </div>
         <div class="param-adjust">
-          <h1 style="cursor: default;" class="param-stay-open_mobile">木種就選擇</h1>
+          <h1 style="cursor: default;" class="param-stay-open_mobile" href="#" data-toggle="tooltip" data-placement="right" title="兩種高級質感木材任你選擇!">木種就選擇</h1>
           <div id="materialOptions">
             <!--   First material: Dark Wood -->
             <div id="material1" class="material-card" onclick="SDmaterialSelection(0)">
@@ -108,7 +108,7 @@
             <div class="connect-box-param slider-block">
               <p class="connect-box__title" style="min-width: 106px;">打通區塊</p>
               <div class="input-group input-group-sm mb-3" style="flex-grow: 1; margin-bottom: 0.5rem !important;">
-                <input placeholder="ex: 1,3; 1,4" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                <input id="connect-blocks" placeholder="ex: 1,3; 1,4" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
               </div>
             </div>
             <div class="index-show-check">
@@ -135,19 +135,19 @@
             <div class="connect-box-param slider-block">
               <p class="connect-box__title" style="min-width: 106px;">區塊小格數量</p>
               <div class="input-group input-group-sm mb-3" style="flex-grow: 1; margin-bottom: 0.5rem !important;">
-                <input id="paramTest" placeholder="ex: 1,3;6,1;4,1" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                <input id="ind-column-count" placeholder="ex: 1,3;6,1;4,1" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
               </div>
             </div>
             <div class="connect-box-param slider-block">
               <p class="connect-box__title" style="min-width: 106px;">方格變圓格</p>
               <div class="input-group input-group-sm mb-3" style="flex-grow: 1; margin-bottom: 0.5rem !important;">
-                <input placeholder="ex: g1,g2,g3,g4,g5,g6" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                <input id="square-to-circle" placeholder="ex: g1,g2,g3,g4,g5,g6" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
               </div>
             </div>
             <div class="connect-box-param slider-block">
               <p class="connect-box__title" style="min-width: 106px;">圓格變圓洞</p>
               <div class="input-group input-group-sm mb-3" style="flex-grow: 1; margin-bottom: 0.5rem !important;">
-                <input placeholder="ex: g1,g2,g3,g4,g5,g6" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                <input id="circle-to-hole" placeholder="ex: g1,g2,g3,g4,g5,g6" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
               </div>
             </div>
           </div>
