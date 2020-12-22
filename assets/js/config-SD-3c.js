@@ -233,14 +233,14 @@ leftRightRange.noUiSlider.on('change', function (values, handle) {
       value: 60
     }, {
       name: 'adj right',
-      value: parseint(tempRight[0]) - 125
+      value: parseInt(tempRight[0]) - 125
     }]);
   } else if (Math.abs(tempRight[0]) < 65) {
     // right reset minimum
     leftRightRange.noUiSlider.set([tempLeft[0],65]);
     api.parameters.updateAsync([{
       name: 'adj left',
-      value: parseint(tempLeft[0]) + 125
+      value: parseInt(tempLeft[0]) + 125
     }, {
       name: 'adj right',
       value: -60
@@ -259,10 +259,10 @@ leftRightRange.noUiSlider.on('update', function (values, handle) {
      formatRight(right);
      api.parameters.updateAsync([{
        name: 'adj left',
-       value: parseint(left.match(/(-*\d+)/)[0]) + 125
+       value: parseInt(left.match(/(-*\d+)/)[0]) + 125
      }, {
        name: 'adj right',
-       value: parseint(right.match(/(-*\d+)/)[0]) - 125
+       value: parseInt(right.match(/(-*\d+)/)[0]) - 125
      }]);
 });
 function formatLeft(left) {
