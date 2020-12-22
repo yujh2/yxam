@@ -258,7 +258,7 @@ html,body,main {
 }
 
 .adjust-labels-left, .adjust-labels-right, .adjust-labels-middle, .adjust-labels {
-  margin: 10px;
+  margin: 12px;
 }
 
 .adjust-labels-left p, .adjust-labels-right p, .adjust-labels-middle p, .adjust-labels p {
