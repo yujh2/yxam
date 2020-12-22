@@ -220,33 +220,33 @@ noUiSlider.create(leftRightRange, {
     padding: 64
 });
 
-leftRightRange.noUiSlider.on('change', function (values, handle) {
-  // obtain individual values
-  var tempLeft = values[0].match(/(\d+)/);
-  var tempRight = values[1].match(/(\d+)/);
-  // compare individual values
-  if (Math.abs(tempLeft[0]) < 65) {
-    // left reset minimum
-    leftRightRange.noUiSlider.set([-65, tempRight[0]]);
-    api.parameters.updateAsync([{
-      name: 'adj left',
-      value: 60
-    }, {
-      name: 'adj right',
-      value: tempRight[0] - 191
-    }]);
-  } else if (tempRight[0] < 65) {
-    // right reset minimum
-    leftRightRange.noUiSlider.set([-tempLeft[0],65]);
-    api.parameters.updateAsync([{
-      name: 'adj left',
-      value: tempLeft[0] + 191
-    }, {
-      name: 'adj right',
-      value: -60
-    }]);
-  }
-});
+// leftRightRange.noUiSlider.on('change', function (values, handle) {
+//   // obtain individual values
+//   var tempLeft = values[0].match(/(\d+)/);
+//   var tempRight = values[1].match(/(\d+)/);
+//   // compare individual values
+//   if (Math.abs(tempLeft[0]) < 65) {
+//     // left reset minimum
+//     leftRightRange.noUiSlider.set([-65, tempRight[0]]);
+//     api.parameters.updateAsync([{
+//       name: 'adj left',
+//       value: 60
+//     }, {
+//       name: 'adj right',
+//       value: tempRight[0] - 191
+//     }]);
+//   } else if (tempRight[0] < 65) {
+//     // right reset minimum
+//     leftRightRange.noUiSlider.set([-tempLeft[0],65]);
+//     api.parameters.updateAsync([{
+//       name: 'adj left',
+//       value: tempLeft[0] + 191
+//     }, {
+//       name: 'adj right',
+//       value: -60
+//     }]);
+//   }
+// });
 
 var leftRightRangeDatas = [
   document.getElementById('leftRangeData'),
