@@ -409,3 +409,27 @@ SDcircle2hole.addEventListener('input', function() {
     value: SDcircle2hole.value
   });
 });
+
+/************************************************************************
+// SDblockNumber: API variable for SD to switch on and off the number index
+//                for blocks in the viewer
+************************************************************************/
+var SDblockNumber = document.getElementById('customSwitch1');
+SDblockNumber.addEventListener('click', function() {
+  api.parameters.updateAsync({
+    name: 'num Toggle',
+    value: SDblockNumber.checked
+  })
+});
+
+/************************************************************************
+// SDgridNumber: API variable for SD to switch on and off the number index
+//                for each grid (small boxes/holes) in the viewer
+************************************************************************/
+var SDgridNumber = document.getElementById('customSwitch1');
+SDgridNumber.addEventListener('click', function() {
+  api.parameters.updateAsync({
+    name: 'grid num Toggle',
+    value: SDgridNumber.checked
+  })
+});
