@@ -426,7 +426,7 @@ SDblockNumber.addEventListener('click', function() {
 // SDgridNumber: API variable for SD to switch on and off the number index
 //                for each grid (small boxes/holes) in the viewer
 ************************************************************************/
-var SDgridNumber = document.getElementById('customSwitch1');
+var SDgridNumber = document.getElementById('customSwitch2');
 SDgridNumber.addEventListener('click', function() {
   api.parameters.updateAsync({
     name: 'grid num Toggle',
