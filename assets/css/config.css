@@ -607,7 +607,7 @@ html,body,main {
 
 .double-slider-row {
   display: flex;
-  gap: 10px;
+  gap: 14px;
 }
 
 .slider-block {

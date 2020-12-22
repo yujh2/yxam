@@ -228,9 +228,23 @@ leftRightRange.noUiSlider.on('change', function (values, handle) {
   if (Math.abs(tempLeft[0]) < 65) {
     // left reset minimum
     leftRightRange.noUiSlider.set([-65, tempRight[0]]);
+    api.parameters.updateAsync([{
+      name: 'adj left',
+      value: 60
+    }, {
+      name: 'adj right',
+      value: tempRight[0] - 191
+    }]);
   } else if (tempRight[0] < 65) {
     // right reset minimum
     leftRightRange.noUiSlider.set([-tempLeft[0],65]);
+    api.parameters.updateAsync([{
+      name: 'adj left',
+      value: tempLeft[0] + 191
+    }, {
+      name: 'adj right',
+      value: -60
+    }]);
   }
 });
 
@@ -243,6 +257,13 @@ leftRightRange.noUiSlider.on('update', function (values, handle) {
      formatLeft(left);
      right = values[1];
      formatRight(right);
+     api.parameters.updateAsync([{
+       name: 'adj left',
+       value: tempLeft[0] + 191
+     }, {
+       name: 'adj right',
+       value: tempRight[0] - 191
+     }]);
 });
 function formatLeft(left) {
   temp = (234+parseInt(left)).toString()
@@ -255,12 +276,12 @@ function formatRight(right) {
 
 var midLineRange = document.getElementById('midLineRange');
 noUiSlider.create(midLineRange, {
-    start: [ 0 ], // Handle start position
+    start: [ 30 ], // Handle start position
     step: 1, // Slider moves in increments of '10'
     margin: 20, // Handles must be more than '20' apart
     direction: 'rtl', // Put '0' at the bottom of the slider
     behaviour: 'tap-drag', // Move handle on tap, bar is draggable
-    range: {'min': -50,'max': 50 },
+    range: {'min': -25,'max': 30 },
     format: wNumb({
       suffix: ' (mm)'
     })
@@ -277,13 +298,13 @@ midLineRange.noUiSlider.on('update', function (values, handle) {
 
 var depth = document.getElementById('depth');
 noUiSlider.create(depth, {
-    start: [ 5 ], // Handle start position
+    start: [ 10 ], // Handle start position
     step: 1, // Slider moves in increments of '10'
     margin: 20, // Handles must be more than '20' apart
     connect: [false, true], // Display a colored bar between the handles
     direction: 'rtl', // Put '0' at the bottom of the slider
     behaviour: 'tap-drag', // Move handle on tap, bar is draggable
-    range: {'min': 0,'max': 7 },
+    range: {'min': 5,'max': 14 },
     format: wNumb({
       suffix: ' (mm)'
     })
