@@ -220,33 +220,33 @@ noUiSlider.create(leftRightRange, {
     padding: 64
 });
 
-// leftRightRange.noUiSlider.on('change', function (values, handle) {
-//   // obtain individual values
-//   var tempLeft = values[0].match(/(\d+)/);
-//   var tempRight = values[1].match(/(\d+)/);
-//   // compare individual values
-//   if (Math.abs(tempLeft[0]) < 65) {
-//     // left reset minimum
-//     leftRightRange.noUiSlider.set([-65, tempRight[0]]);
-//     api.parameters.updateAsync([{
-//       name: 'adj left',
-//       value: 60
-//     }, {
-//       name: 'adj right',
-//       value: tempRight[0] - 191
-//     }]);
-//   } else if (tempRight[0] < 65) {
-//     // right reset minimum
-//     leftRightRange.noUiSlider.set([-tempLeft[0],65]);
-//     api.parameters.updateAsync([{
-//       name: 'adj left',
-//       value: tempLeft[0] + 191
-//     }, {
-//       name: 'adj right',
-//       value: -60
-//     }]);
-//   }
-// });
+leftRightRange.noUiSlider.on('change', function (values, handle) {
+  // obtain individual values
+  var tempLeft = values[0].match(/(-*\d+)/);
+  var tempRight = values[1].match(/(-*\d+)/);
+  // compare individual values
+  if (Math.abs(tempLeft[0]) < 65) {
+    // left reset minimum
+    leftRightRange.noUiSlider.set([-65, tempRight[0]]);
+    api.parameters.updateAsync([{
+      name: 'adj left',
+      value: 60
+    }, {
+      name: 'adj right',
+      value: tempRight[0] - 191
+    }]);
+  } else if (tempRight[0] < 65) {
+    // right reset minimum
+    leftRightRange.noUiSlider.set([-tempLeft[0],65]);
+    api.parameters.updateAsync([{
+      name: 'adj left',
+      value: tempLeft[0] + 191
+    }, {
+      name: 'adj right',
+      value: -60
+    }]);
+  }
+});
 
 var leftRightRangeDatas = [
   document.getElementById('leftRangeData'),
@@ -259,10 +259,10 @@ leftRightRange.noUiSlider.on('update', function (values, handle) {
      formatRight(right);
      api.parameters.updateAsync([{
        name: 'adj left',
-       value: left.match(/(\d+)/)[0] + 191
+       value: left.match(/(-*\d+)/)[0] + 191
      }, {
        name: 'adj right',
-       value: right.match(/(\d+)/)[0] - 191
+       value: right.match(/(-*\d+)/)[0] - 191
      }]);
 });
 function formatLeft(left) {
@@ -314,7 +314,7 @@ depth.noUiSlider.on('update', function (values, handle) {
      depthData.innerHTML = values[handle];
      api.parameters.updateAsync({
        name: 'grid depth',
-       value: values[handle].match(/(\d+)/)[0]
+       value: values[handle].match(/(-*\d+)/)[0]
      });
 });
 
