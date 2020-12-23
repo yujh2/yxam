@@ -657,8 +657,11 @@ html,body,main {
 }
 
 @media only screen and (max-width: 450px) {
-  .row-count-param, .connect-box-param, .index-show-check {
+  .row-count-param, .connect-box-param {
     display: block;
+  }
+  .index-show-check {
+    margin: 0;
   }
   #row-count {
     width: 100%;
