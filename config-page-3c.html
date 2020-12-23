@@ -96,15 +96,6 @@
                 <p id="depthData" class="slider-value"></p>
               </div>
             </div>
-            <div class="row-count-param slider-block">
-              <p style="margin-left: 0; margin-right: 10px;">區塊橫格數量</p>
-              <select name="row-count" id="row-count">
-                <option value="1">&nbsp;1 橫格/塊</option>
-                <option value="2" selected>&nbsp;2 橫格/塊</option>
-                <option value="3">&nbsp;3 橫格/塊</option>
-                <option value="4">&nbsp;4 橫格/塊</option>
-              </select>
-            </div>
             <div class="connect-box-param slider-block">
               <p class="connect-box__title" style="min-width: 106px;">打通區塊</p>
               <div class="input-group input-group-sm mb-3" style="flex-grow: 1; margin-bottom: 0.5rem !important;">
@@ -133,10 +124,19 @@
           <h1 onclick="paramsOpenClose('right')" class="param-stay-open_mobile">格子設計</h1>
           <div class="adjust-labels-right adjust-labels-hidden">
             <div class="connect-box-param slider-block">
-              <p class="connect-box__title" style="min-width: 106px;">區塊直格數量</p>
+              <p class="connect-box__title" style="min-width: 106px;">橫向分隔數量</p>
               <div class="input-group input-group-sm mb-3" style="flex-grow: 1; margin-bottom: 0.5rem !important;">
                 <input id="ind-column-count" value="1,3;6,1;4,1" type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
               </div>
+            </div>
+            <div class="row-count-param slider-block">
+              <p class="connect-box__title" style="margin-left: 0; margin-right: 10px;">直向分隔數量</p>
+              <select name="row-count" id="row-count">
+                <option value="1">&nbsp;1 格/區塊</option>
+                <option value="2" selected>&nbsp;2 格/區塊</option>
+                <option value="3">&nbsp;3 格/區塊</option>
+                <option value="4">&nbsp;4 格/區塊</option>
+              </select>
             </div>
             <div class="connect-box-param slider-block">
               <p class="connect-box__title" style="min-width: 106px;">方格變圓格</p>

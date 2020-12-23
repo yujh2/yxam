@@ -261,7 +261,7 @@ html,body,main {
 }
 
 .adjust-labels-left p, .adjust-labels-right p, .adjust-labels-middle p, .adjust-labels p {
-  margin-bottom: 0.2rem;
+  margin: 0.2rem 0;
   font-weight: 700;
   color: #424242de;
 }
@@ -620,10 +620,11 @@ html,body,main {
 #row-count {
   border: 1px solid #ced4da;
   background-color: white;
-  border-radius: 3px;
+  border-radius: 0.2rem;
   color: #6f747a;
   flex-grow: 1;
   height: 31px;
+  margin-bottom: 0.5rem;
 }
 .connect-box-param {
   display: flex;
