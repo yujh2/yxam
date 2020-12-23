@@ -211,12 +211,12 @@ function paramsOpenClose(section) {
 
 var leftRightRange = document.getElementById('leftRightRange');
 noUiSlider.create(leftRightRange, {
-    start: [ -125, 125 ], // Handle start position
+    start: [ -121, 67], // Handle start position
     step: 1, // Slider moves in increments of '10'
     margin: 131, // Handles must be more than '20' apart
     connect: true, // Display a colored bar between the handles
     direction: 'ltr', // Put '0' at the bottom of the slider
-    behaviour: 'tap-drag', // Move handle on tap, bar is draggable
+    behaviour: 'tap-drag', // Move handle on tap, bar is draggable .
     range: {'min': -234,'max': 234 },
     format: wNumb({
       decimals: 0,
@@ -227,15 +227,29 @@ noUiSlider.create(leftRightRange, {
 
 leftRightRange.noUiSlider.on('change', function (values, handle) {
   // obtain individual values
-  var tempLeft = values[0].match(/(\d+)/);
-  var tempRight = values[1].match(/(\d+)/);
+  var tempLeft = values[0].match(/(-*\d+)/);
+  var tempRight = values[1].match(/(-*\d+)/);
   // compare individual values
   if (Math.abs(tempLeft[0]) < 65) {
     // left reset minimum
     leftRightRange.noUiSlider.set([-65, tempRight[0]]);
-  } else if (tempRight[0] < 65) {
+    api.parameters.updateAsync([{
+      name: 'adj left',
+      value: 60
+    }, {
+      name: 'adj right',
+      value: parseInt(tempRight[0]) - 125
+    }]);
+  } else if (Math.abs(tempRight[0]) < 65) {
     // right reset minimum
-    leftRightRange.noUiSlider.set([-tempLeft[0],65]);
+    leftRightRange.noUiSlider.set([tempLeft[0],65]);
+    api.parameters.updateAsync([{
+      name: 'adj left',
+      value: parseInt(tempLeft[0]) + 125
+    }, {
+      name: 'adj right',
+      value: -60
+    }]);
   }
 });
 
@@ -248,25 +262,31 @@ leftRightRange.noUiSlider.on('update', function (values, handle) {
      formatLeft(left);
      right = values[1];
      formatRight(right);
+     api.parameters.updateAsync([{
+       name: 'adj left',
+       value: parseInt(left) + 125
+     }, {
+       name: 'adj right',
+       value: parseInt(right) - 125
+     }]);
 });
 function formatLeft(left) {
-  temp = (171+parseInt(left)).toString()
-  leftRightRangeDatas[0].innerHTML = temp.concat('(mm)');
+  temp = (234+parseInt(left)).toString()
+  leftRightRangeDatas[0].innerHTML = temp.concat(' (mm)');
 }
 function formatRight(right) {
   temp = (234-parseInt(right)).toString()
-  leftRightRangeDatas[1].innerHTML = temp.concat('(mm)');
+  leftRightRangeDatas[1].innerHTML = temp.concat(' (mm)');
 }
 
 var midLineRange = document.getElementById('midLineRange');
 noUiSlider.create(midLineRange, {
-    start: [ 0 ], // Handle start position
+    start: [ -2 ], // Handle start position
     step: 1, // Slider moves in increments of '10'
-    margin: 20, // Handles must be more than '20' apart
-    direction: 'rtl', // Put '0' at the bottom of the slider
-    behaviour: 'tap-drag', // Move handle on tap, bar is draggable
-    range: {'min': -50,'max': 50 },
+    direction: 'ltr', // Put '0' at the bottom of the slider
+    range: {'min': [-25],'max': [30] },
     format: wNumb({
+      decimals: 0,
       suffix: ' (mm)'
     })
 });
@@ -274,17 +294,21 @@ noUiSlider.create(midLineRange, {
 var midLineRangeData = document.getElementById('midLineRangeData');
 midLineRange.noUiSlider.on('update', function (values, handle) {
      midLineRangeData.innerHTML = values[handle];
+     api.parameters.updateAsync({
+       name: 'adj long mid',
+       value: values[handle].match(/(-*\d+)/)[0]
+     });
 });
 
 var depth = document.getElementById('depth');
 noUiSlider.create(depth, {
-    start: [ 5 ], // Handle start position
+    start: [ 10 ], // Handle start position
     step: 1, // Slider moves in increments of '10'
     margin: 20, // Handles must be more than '20' apart
-    connect: [false, true], // Display a colored bar between the handles
-    direction: 'rtl', // Put '0' at the bottom of the slider
+    connect: [true, false], // Display a colored bar between the handles
+    direction: 'ltr', // Put '0' at the bottom of the slider
     behaviour: 'tap-drag', // Move handle on tap, bar is draggable
-    range: {'min': 0,'max': 7 },
+    range: {'min': [5],'max': [14] },
     format: wNumb({
       suffix: ' (mm)'
     })
@@ -293,6 +317,10 @@ noUiSlider.create(depth, {
 var depthData = document.getElementById('depthData');
 depth.noUiSlider.on('update', function (values, handle) {
      depthData.innerHTML = values[handle];
+     api.parameters.updateAsync({
+       name: 'grid depth',
+       value: values[handle].match(/(\d+)/)[0]
+     });
 });
 
 
@@ -323,26 +351,6 @@ function mobileParamSelect(selected, iconId) {
   iconImg[iconId].setAttribute("Style", "border-bottom: 2px solid #ef6e0c;");
 }
 
-// Validation for detailed text input parameters
-var paramTest = document.getElementById('paramTest');
-paramTest.addEventListener("input", testMe, false);
-function testMe() {
-  var inputTest = paramTest.value;
-  var check = /(?:g[0-9]+,)/g;
-  if (!inputTest == "" && !check.test(inputTest)) {
-    paramTest.classList.add('is-invalid');
-  } else {
-    // if email format if valid
-    if (paramTest.classList.contains('is-invalid')) {
-      // remove 'is-invalid' class if previous submission triggered invalid
-      paramTest.classList.remove('is-invalid');
-    }
-    // Set input group to 'is-valid' status
-    paramTest.classList.add('is-valid');
-  }
-  console.log(inputTest);
-}
-
 // -------- SHAPEDIVER API LISTENER SECTION ---------
 
 /************************************************************************
@@ -356,3 +364,86 @@ function SDmaterialSelection(choice) {
   value: choice
   });
 }
+/************************************************************************
+// SDrowCount: API variable for SD to change number of rows universally
+//             throughout all blocks
+************************************************************************/
+var SDrowCount = document.getElementById('row-count');
+SDrowCount.addEventListener('input', function() {
+  api.parameters.updateAsync({
+    name: 'B',
+    value: SDrowCount.value
+  });
+});
+
+// ---------- TEXT INPUT TYPE PARAMS -------------
+/************************************************************************
+// SDconnectBlocks: API variable for SD to choose which blocks to connect
+//                  into bigger area
+************************************************************************/
+var SDconnectBlocksTemp = document.getElementById('connect-blocks');
+SDconnectBlocksTemp.addEventListener('input', function() {
+  var SDconnectBlocks = SDconnectBlocksTemp.value.split('&');
+  api.parameters.updateAsync({
+    name: 'combine items',
+    value: SDconnectBlocks.toString()
+  });
+});
+
+/************************************************************************
+// SDindColumnCount: API variable for SD to change number of columns individually
+//                   for dedicated blocks
+************************************************************************/
+var SDindColumnCount = document.getElementById('ind-column-count');
+SDindColumnCount.addEventListener('input', function() {
+  api.parameters.updateAsync({
+    name: 'separate num,amount',
+    value: SDindColumnCount.value
+  });
+});
+/************************************************************************
+// SDsquare2circle: API variable for SD to change specific default suqare
+//                  slots into circle slots
+************************************************************************/
+var SDsquare2circle = document.getElementById('square-to-circle');
+SDsquare2circle.addEventListener('input', function() {
+  api.parameters.updateAsync({
+    name: 'circles',
+    value: SDsquare2circle.value
+  });
+});
+/************************************************************************
+// SDcircle2hole: API variable for SD to change specific default circle
+//                  slots into circle holes
+************************************************************************/
+var SDcircle2hole = document.getElementById('circle-to-hole');
+SDcircle2hole.addEventListener('input', function() {
+  api.parameters.updateAsync({
+    name: 'holes',
+    value: SDcircle2hole.value
+  });
+});
+
+/************************************************************************
+// SDblockNumber: API variable for SD to switch on and off the number index
+//                for blocks in the viewer
+************************************************************************/
+var SDblockNumber = document.getElementById('customSwitch1');
+SDblockNumber.addEventListener('click', function() {
+  api.parameters.updateAsync({
+    name: 'num Toggle',
+    value: SDblockNumber.checked
+  })
+});
+
+/************************************************************************
+// SDgridNumber: API variable for SD to switch on and off the number index
+//                for each grid (small boxes/holes) in the viewer
+************************************************************************/
+var SDgridNumber = document.getElementById('customSwitch2');
+SDgridNumber.addEventListener('click', function() {
+  api.parameters.updateAsync({
+    name: 'grid num Toggle',
+    value: SDgridNumber.checked
+  })
+});
