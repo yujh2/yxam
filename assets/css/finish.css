@@ -81,6 +81,7 @@ html,body {
 @media (max-width: 796px) {
   .contact {
     display: block;
+    margin: 0 10% 5%;
   }
   #section-2 h3 {
     font-size: 0.8em;
