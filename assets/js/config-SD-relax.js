@@ -295,5 +295,4 @@ function SDitemSelection(section, order, choice) {
     name: section,
     value: curOrderArr.toString()
   });
-  console.log(curOrderArr.toString());
 }
