@@ -101,7 +101,7 @@ function validateForm() {
     exportFile();
     api.exports.requestAsync({name: "data email"}).then( function(response) {
         console.log(response);
-        window.location.href = "finish.html";
+        window.location.href = "finish-post-config.html";
       }
     );
   }
