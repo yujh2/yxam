@@ -1,18 +1,3 @@
-/* CSS HEX
---bisque: #ffe5c3ff;
---powder-blue: #a9d2d5ff;
---dark-slate-gray: #2f4f4fff;
---royal-blue-dark: #102571ff;
---celtic-blue: #226ce0ff;
-
-CSS HSL
---bisque: hsla(34, 100%, 88%, 1);
---powder-blue: hsla(184, 34%, 75%, 1);
---dark-slate-gray: hsla(180, 25%, 25%, 1);
---royal-blue-dark: hsla(227, 75%, 25%, 1);
---celtic-blue: hsla(217, 75%, 51%, 1);
-*/
-
 @font-face{
     font-family:'Montserrat';
     src:url("fonts/Montserrat-Black.eot");
