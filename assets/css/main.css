@@ -1185,8 +1185,6 @@ Design Methodolodies
 
 /* Create four equal columns that sits next to each other */
 .column {
-  -ms-flex: 25%; /* IE10 */
-  flex: 25%;
   position: relative;
   padding: 10px;
   margin: auto;
@@ -1383,7 +1381,6 @@ Design Methodolodies
 /* (Design Methodolody) - The Modal (demo & thumbnail section)
 -----------------------------------------*/
 .row-demo {
-  margin: auto;
   width: 100%;
   max-width: 1200px;
   display: flex;
@@ -1394,16 +1391,17 @@ Design Methodolodies
   width: 100%;
   height: 100px;
   object-fit: cover;
+  margin: 0 !important;
 }
 
 
 div.demo-product1, div.demo-product2, div.demo-product3, div.demo-product4 {
   margin-left: 0.5%;
   margin-right: 0.5%;
-  margin-top: 5px;
   width: auto;
   height: auto;
   padding: 10px;
+  flex: 1;
 }
 
 .active,
@@ -1420,7 +1418,31 @@ figure.column {
 
 
 @media screen and (min-width: 900px) {
-
+  .modal-content {
+    display: flex;
+    padding-bottom: 1%;
+  }
+  div.demo-product1, div.demo-product2, div.demo-product3, div.demo-product4 {
+    flex: 0;
+  }
+  .mySlides-product1, .mySlides-product2,
+  .mySlides-product3, .mySlides-product4 {
+    flex-grow: 1;
+    margin-right: 10px;
+    width: 100%;
+  }
+  .modal-image-full {
+    max-height: 650px;
+    height: 69vh;
+  }
+  .row-demo {
+    flex-direction: column;
+    width: 15%;
+    flex-grow: 0;
+  }
+  .prev, .next {
+    display: none;
+  }
   .gallery {
     width: 900px;
   }
@@ -1430,15 +1452,6 @@ figure.column {
     max-width: 500px;
     object-fit: cover;
    }
-}
-
-@media screen and (max-width: 900px) {
-  .modal-image-full {
-    height: 60vw;
-  }
-  .modal {
-    padding-top: 0;
-  }
 }
 
 @media screen and (max-width: 600px) {
@@ -1462,6 +1475,11 @@ figure.column {
     .makeup-layout {
       padding: 20px 24px;
     }
+}
+@media screen and (max-width: 900px) {
+  .modal-image-full {
+    height: 60vw;
+  }
 }
 
 /*
@@ -1867,6 +1885,7 @@ Tutorial Section (YouTube iFrame)
   text-decoration: none;
   text-align: center;
   line-height: 2.4;
+  margin: auto;
 }
 
 .button-submit-yes:hover {
@@ -1919,6 +1938,7 @@ background: linear-gradient(to right,#91896a 5%,#eeab6ed6 60%,#fc6154 100%);
   text-decoration: none;
   text-align: center;
   line-height: 2.4;
+  margin: auto;
 }
 
 .button-submit-custom:hover {
