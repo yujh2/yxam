@@ -29,6 +29,44 @@ html,body {
 #section-1 {
   cursor: default;
 }
+.email-row {
+  margin: auto 20px auto 5px;
+  position: relative;
+}
+
+.button-submit {
+  -webkit-appearance: none;
+  background: -webkit-gradient(to right, #a2ccb6 0%, #fceeb5 50%, #ee786e 100%);
+  background: linear-gradient(to right, #226CE0 0%, #226CE0 50%, #ee786e 100%);
+  background-size: 500%;
+  border: none;
+  border-radius: 0.3rem;
+  box-shadow: 2px 2px 5px 2px #88888833;
+  color: #fff;
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 2.4rem;
+  letter-spacing: 0.05em;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 100%;
+}
+
+.button-submit:hover {
+  animation-name: gradient;
+  -webkit-animation-name: gradient;
+  animation-duration: 0.4s;
+  -webkit-animation-duration: 0.4s;
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+}
 
 #section-2 {
   margin: 5% 15%;
@@ -85,5 +123,74 @@ html,body {
   }
   #section-2 h3 {
     font-size: 0.8em;
+  }
+}
+
+
+.finish-greeting-block {
+  position: absolute;
+  display: inline-block;
+  border: 2px solid white;
+  border-radius: 10px;
+  width: 30em; /*Try around different unit and sclae to find best fit (use fixed lengths)*/
+  height: 415px;
+  top: 50%;
+  margin-top: -203px;
+  left: 50%;
+  margin-left: -15em;
+  background-color: #372c1d5c;
+}
+.greeting-icon, .greeting-text, .email-row {
+  margin: 20px 28px;
+  width: auto;
+/*   height: 8vh; */
+}
+.greeting-text h1 {
+  color: white;
+  text-align: center;
+  font-weight: 400;
+}
+.greeting-text p {
+  color: white;
+  text-align: center;
+  font-weight: 300;
+  margin: 10px 50px;
+}
+.greeting-icon img {
+  position: relative;
+  margin: 10px 40% 0;
+  width: auto;
+  height: 90px;
+}
+
+@media (max-width: 600px) {
+  .finish-greeting-block {
+    width: 20em;
+    margin-left: -10em;
+  }
+  .greeting-icon, .greeting-text, .email-row {
+  }
+  .greeting-text h1 {
+    font-size: 2rem;
+  }
+  .greeting-text p {
+  }
+  .greeting-icon img {
+    margin: 10px 37% 0;
+    height: 75px;
+  }
+}
+@media (max-width: 400px) {
+  .finish-greeting-block {
+    left: 37.5vh;
+  }
+  .greeting-icon, .greeting-text, .email-row {
+  }
+  .greeting-text h1 {
+    font-size: 2rem;
+  }
+  .greeting-text p {
+  }
+  .greeting-icon img {
   }
 }

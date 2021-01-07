@@ -14,13 +14,68 @@
   <meta name="viewport" content="width=device-width height=device-height">
   <meta name="description" content="Homepage for an amazing customizable product 客製化 家具 創新 產品 收納 澄洋產品設計">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="assets/css/finish.css">
 </head>
 
 <body>
-    <a id="section-1" href="#section-2">
+  <a id="section-1">
+    <div class="finish-greeting-block">
+      <div class="greeting-icon">
+        <img src="assets\img\thank-you-icon.svg" alt="thankyou">
+      </div>
+      <div class="greeting-text">
+        <h1>感謝您的參與!</h1>
+        <p>立即填寫並參加抽獎<br>就有機會把專屬你的suitU帶回家!</p>
+      </div>
+      <!-- Email entry and submit column -->
+      <div class="email-row">
+        <div class="email-submit">
+          <div class="col-md-15">
+            <div class="form-group">
+              <input id="email" type="email" class="form-control" aria-describedby="emailHelp" placeholder="您的電子郵件" style="box-shadow: 2px 2px 5px 2px #88888833; background-color: #fbf9f1;">
+            </div>
+          </div>
+        </div>
+        <button id="button-submit" class="button-submit" onclick="validateForm()">完成送出</button>
+        <small id="emailHelp" class="form-text" style="color: white; text-align: center; font-weight: 100;">不用擔心, 您的電子郵件僅供抽獎目的做使用</small>
+        <!-- Current placeholder for invalid or empty email -->
+        <small class="invlalid-feedback form-text" style="color: red; text-align: center;"></small>
+      </div>
+    </div>
+    <script>
+      function validateForm() {
+        var emailInput = document.getElementById('email');
+        var submitButton = document.getElementById('button-submit');
+        var email = emailInput.value;
+        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        // check if email format is invalid
+        if (email == "" || !re.test(email)) {
+          document.querySelector('.invlalid-feedback').innerHTML = "電子郵件空白或格式不符";
+          emailInput.classList.add('is-invalid');
+          return false;
+        } else {
+          // if email format if valid
+          if (emailInput.classList.contains('is-invalid')) {
+            // remove 'is-invalid' class if previous submission triggered invalid
+            emailInput.classList.remove('is-invalid');
+          }
+          // Set input group to 'is-valid' status
+          emailInput.classList.add('is-valid');
+          document.querySelector('.invlalid-feedback').innerHTML = "";
+          // change button status after successful update
+          submitButton.innerHTML = "完成!"
+          submitButton.setAttribute("style", "background: linear-gradient(to right, #5ead07 0%, #5ead07 50%, #5ead07 100%); cursor: default;");
+          submitButton.disabled = 'disabled';
+          window.location.href = "#section-2";
+        }
+      }
+    </script>
     <div class="finish-cover">
-      <img src="assets\img\thank-you-cheers.png" alt="finish cover">
+      <img src="assets\img\thank-you-cheers-default.png" alt="finish cover">
     </div>
   </a>
   <div id="section-2">
@@ -49,6 +104,10 @@
     </div>
   </div>
 </body>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">	</script>
 <!-- Site footer -->
 <footer class="site-footer contact">
   <h3 style="padding-bottom: 20px"> 澄洋產品設計有限公司 | 版權所有 | <a href="index.html">回首頁</a></h3>
