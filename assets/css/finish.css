@@ -135,6 +135,12 @@ html,body {
   #section-2 h3 {
     font-size: 0.8em;
   }
+  #section-2 h2 {
+    font-size: 1em;
+  }
+  .contact h2 {
+    font-size: 1em;
+  }
 }
 
 
