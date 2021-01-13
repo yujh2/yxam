@@ -239,9 +239,21 @@ body{
     opacity:.35;
     z-index:10
 }
+.mobile-design-start {
+  display: none;
+}
 @media (max-width: 1180px){
     .l-side-nav{
         display:none
+    }
+    .mobile-design-start {
+      display: block;
+      width: 100%;
+      text-align: center;
+      color: black;
+      font-size: 1.7rem;
+      margin-bottom: 0;
+      font-weight: 300;
     }
 }
 .l-main-content{
@@ -312,7 +324,7 @@ body{
         display:flex
     }
 }
-@media (max-width: 600px) and (min-width: 480px) and (max-height: 580px){
+@media (max-width: 600px) and (max-height: 580px){
     .device-notification{
         display:-webkit-box;
         display:-webkit-flex;
@@ -989,6 +1001,7 @@ Design Methodolodies
         max-width:100%
     }
 }
+
 .about--banner{
     display: inline-flex;
     position:relative;
