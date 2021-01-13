@@ -94,6 +94,10 @@ html,body {
   font-size: 1.7rem;
   color: #66562f;
 }
+
+.form p {
+  color: #66562f;
+}
 .contact {
   display: flex;
   text-align: center;
@@ -125,6 +129,9 @@ html,body {
 }
 
 @media (max-width: 796px) {
+  .form p {
+    font-size: 0.5em;
+  }
   .contact {
     display: block;
     margin: 0 10% 5%;
