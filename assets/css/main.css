@@ -929,6 +929,15 @@ body{
 .work--lockup .slider--prev{
     left:0
 }
+.continue-sign {
+  filter: invert(1);
+  width: 30px;
+  opacity: 0.5;
+  position: absolute;
+  left: -15px;
+  margin-left: 50%;
+  top: 90vh;
+}
 @media (max-width: 900px){
     .work--lockup .slider--item-image{
         width:120px;
