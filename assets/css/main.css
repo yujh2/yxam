@@ -938,6 +938,7 @@ body{
   margin-left: 50%;
   top: 90vh;
 }
+
 @media (max-width: 900px){
     .work--lockup .slider--item-image{
         width:120px;
@@ -965,6 +966,15 @@ body{
     }
     .work--lockup .slider--next,.work--lockup .slider--prev{
         top:70%;
+    }
+}
+@media (max-width: 400px){
+    .slider--item-image {
+      width: 145px !important;
+      height: 145px !important;
+    }
+    .continue-sign {
+      opacity: 0.2;
     }
 }
 @media (max-width: 600px){
