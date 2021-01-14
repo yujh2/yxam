@@ -250,10 +250,10 @@ body{
       display: block;
       width: 100%;
       text-align: center;
-      color: black;
+      font-weight: 900;
+      color: #a98f70;
       font-size: 1.4rem;
       margin-bottom: 0;
-      font-weight: 300;
     }
 }
 .l-main-content{
