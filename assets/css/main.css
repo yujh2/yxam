@@ -948,7 +948,7 @@ body{
         height:240px
     }
     .work--lockup .slider--next,.work--lockup .slider--prev{
-        top: 65%;
+        top: 70%;
     }
 }
 @media (max-width: 767px){
@@ -964,7 +964,7 @@ body{
         height:190px
     }
     .work--lockup .slider--next,.work--lockup .slider--prev{
-        top:65%;
+        top:70%;
     }
 }
 @media (max-width: 600px){
