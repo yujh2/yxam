@@ -386,7 +386,7 @@ body{
     display:-ms-flexbox;
     display:flex;
     width:100%;
-    height:125px;
+    height:100px;
     -webkit-box-align:center;
     -webkit-align-items:center;
     -ms-flex-align:center;
@@ -408,6 +408,10 @@ body{
     align-items:center;
     text-decoration:none;
     color:#fff
+}
+.header--logo img {
+    width: 240px;
+    margin-top: 14px;
 }
 .header--logo p{
     margin:0 0 0 10px;
@@ -485,6 +489,9 @@ body{
 @media (max-width: 767px){
     .header--cta{
         display:none
+    }
+    .header--logo img {
+        width: 200px;
     }
 }
 .side-nav{
@@ -591,7 +598,7 @@ body{
 }
 .intro--banner{
     position:relative;
-    height:515px;
+    height:455px;
 }
 .intro--banner::before{
     content:"";
