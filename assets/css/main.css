@@ -494,6 +494,11 @@ body{
         width: 200px;
     }
 }
+@media (min-height: 900px){
+  .header {
+    height: 160px;
+  }
+}
 .side-nav{
     position:relative;
     display:-webkit-box;
