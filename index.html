@@ -25,394 +25,419 @@
   <script src="assets\js\lightbox.js"></script>
 </head>
 <body>
+<!-- Load Facebook SDK for JavaScript -->
+  <div id="fb-root"></div>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        xfbml            : true,
+        version          : 'v9.0'
+      });
+    };
 
-<!-- notification for small viewports and landscape oriented smartphones -->
-<div class="device-notification">
-    <h2 style="font-size: 2.5em;">喔不...&#128549;</h2>
-  <p class="device-notification--message">看來您目前的螢幕大小不適合瀏覽我們為你準備的精彩內容。為了讓每位使用者都擁有最佳的體驗，請將手機轉為直向或使用更大的螢幕來體驗都阿鶴的網站喔!</p>
-</div>
+    (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/zh_TW/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
 
-<div class="perspective effect-rotate-left">
-  <div class="container"><div class="outer-nav--return"></div>
-    <div id="viewport" class="l-viewport">
-      <div class="l-wrapper">
-        <header class="header">
-          <!-- header logo section (top-left) -->
-          <a class="header--logo">
-          <!-- Logo and title goes here -->
-          <img src="assets\img\logo.png" alt="logo">
-          </a>
-          <!-- <image class="header--cta cta"></image> (originlly as a button to go to next page)-->
-          <div class="header--nav-toggle">
-            <span></span>
-          </div>
-        </header>
-        <nav class="l-side-nav">
-          <ul class="side-nav">
-            <li class="is-active"><span>體驗起點</span></li>
-            <li><span>設計理念</span></li>
-            <li><span>開始設計</span></li>
+  <!-- Your Chat Plugin code -->
+  <div class="fb-customerchat"
+    attribution=setup_tool
+    page_id="100426988728935"
+    theme_color="#6699cc"
+    logged_in_greeting="您好! 歡迎來到我們的客製體驗活動。任何問題都可以跟我們詢問喔!"
+    logged_out_greeting="您好! 歡迎來到我們的客製體驗活動。任何問題都可以跟我們詢問喔!">
+  </div>
+  <!-- notification for small viewports and landscape oriented smartphones -->
+  <div class="device-notification">
+      <h2 style="font-size: 2.5em;">喔不...&#128549;</h2>
+    <p class="device-notification--message">看來您目前的螢幕大小不適合瀏覽我們為你準備的精彩內容。為了讓每位使用者都擁有最佳的體驗，請將手機轉為直向或使用更大的螢幕來體驗都阿鶴的網站喔!</p>
+  </div>
+
+  <div class="perspective effect-rotate-left">
+    <div class="container"><div class="outer-nav--return"></div>
+      <div id="viewport" class="l-viewport">
+        <div class="l-wrapper">
+          <header class="header">
+            <!-- header logo section (top-left) -->
+            <a class="header--logo">
+            <!-- Logo and title goes here -->
+            <img src="assets\img\logo.png" alt="logo">
+            </a>
+            <!-- <image class="header--cta cta"></image> (originlly as a button to go to next page)-->
+            <div class="header--nav-toggle">
+              <span></span>
+            </div>
+          </header>
+          <nav class="l-side-nav">
+            <ul class="side-nav">
+              <li class="is-active"><span>體驗起點</span></li>
+              <li><span>設計理念</span></li>
+              <li><span>開始設計</span></li>
+            </ul>
+          </nav>
+          <ul class="l-main-content main-content">
+            <!-- Home Page Section -->
+            <li class="l-section section section--is-active">
+              <div class="intro">
+                <div class="intro--banner">
+                  <p>愛怎麼收 就怎麼收</p>
+                  <h1>誰說收納不能<br>隨心所欲?</h1>
+                  <button class="cta" style="color: #26354f;">開始體驗
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                    <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                      <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
+                    </g>
+                    </svg>
+                    <span class="btn-background"></span>
+                  </button>
+                  <img src="assets\img\homepage-visual-1.png" alt="Welcome">
+                </div>
+                <!-- Description below in Home Page -->
+                <div class="intro--options">
+                  <a>
+                    <h3>+ FOR WORK</h3>
+                    <p>有條理的陳列上班必備文具及小物，讓你在工作上得心應手</p>
+                  </a>
+                  <a>
+                    <h3>+ FOR RELAX &amp; 3C</h3>
+                    <p>美麗呈現點心時光，還有凹槽可將手機立著擺，追劇不漏拍!</p>
+                  </a>
+                  <a>
+                    <h3>+ FOR MAKEUP</h3>
+                    <p>輕鬆歸納日常彩妝，讓化妝品也能擁有自己的伸展台</p>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <!-- Design Methodolodies & Ideas Section -->
+            <li class="l-section section">
+              <div class="work" style="color: Black;">
+                <div class="work--lockup">
+                  <!-- Slider for project porfolio -->
+                  <ul class="slider">
+                    <!-- Slider Item 1 :  -->
+                    <li class="slider--item slider--item-center">
+                      <a>
+                        <p class="slider--item-title">客製化設計</p>
+                        <p class="slider--item-description" style="font-size: 31px; font-weight: 900; color: #a98f70;">
+                        線上客製排版及功能組合，輕鬆收納都阿鶴!
+                        </p>
+                        <p class="slider--item-description">
+                        無論是辦公桌、梳妝台、書桌、或是餐桌上的每個角落，我們細心觀察著一切周遭的收納習慣，並研發出多種適合每日使用的收納功能，任君挑選。您可以利用都阿鶴獨特的客製化平台進行客製體驗，結合最適合您的功能與排列方式，設計出富有個人色彩的質感收納架!
+                        </p>
+                        <div class="slider--item-image">
+                          <img src="assets\img\web-design.svg" alt="customizable features">
+                        </div>
+                      </a>
+                    </li>
+                    <!-- Slider Item 2 :  -->
+                    <li class="slider--item slider--item-right">
+                      <a>
+                        <p class="slider--item-title">桌上空間大升級</p>
+                        <p class="slider--item-description" style="font-size: 31px; font-weight: 900; color: #a98f70;">
+                        堅固的增高腳座，不再受限於平面收納!
+                        </p>
+                        <p class="slider--item-description">
+                        覺得桌上的空間永遠不夠放嗎? 免煩惱! 都阿鶴團隊精心研發的實木增高腳座，讓原本只有平面的收納範圍向上升級成兩層多元的收納空間。收納架的長度也貼心設計符合普遍市售電腦鍵盤的大小，給您最專注的最有效率的辦公空間。
+                        </p>
+                        <div class="slider--item-image">
+                          <img src="assets\img\up-arrows.svg" alt="space upgrade">
+                        </div>
+                      </a>
+                    </li>
+                    <!-- Slider Item 3 :  -->
+                    <li class="slider--item slider--item-left">
+                      <a>
+                        <p class="slider--item-title">高雅木質感</p>
+                        <p class="slider--item-description" style="font-size: 31px; font-weight: 900; color: #a98f70;">
+                        講究細節的實木工藝，展現您生活的品味
+                        </p>
+                        <p class="slider--item-description">
+                        為了追求使用上最佳的細緻質感，我們選用高級的實木進行精密加工，並嚴格把關每個步驟及竭盡可能降低任何製作上的誤差。收納架最終呈現的實木天然紋理，保證滿足您內心對大自然最純粹的嚮往，表現出質感木作的沉穩氣息。
+                        </p>
+                        <div class="slider--item-image">
+                          <img style="transform: rotate(45deg);" src="assets\img\floor.svg" alt="premium materials">
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="slider--prev">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                    <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                      <path d="M561,1169C525,1155,10,640,3,612c-3-13,1-36,8-52c8-15,134-145,281-289C527,41,562,10,590,10c22,0,41,9,61,29
+                      c55,55,49,64-163,278L296,510h575c564,0,576,0,597,20c46,43,37,109-18,137c-19,10-159,13-590,13l-565,1l182,180
+                      c101,99,187,188,193,199c16,30,12,57-12,84C631,1174,595,1183,561,1169z"/>
+                    </g>
+                    </svg>
+                  </div>
+                  <div class="slider--next">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                    <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                      <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
+                    </g>
+                    </svg>
+                  </div>
+                </div>
+                <div style="width: 100%; text-align: center;">
+                  <img class="continue-sign" src="assets\img\down-arrow.svg" alt="arrow down">
+                </div>
+              </div>
+            </li>
+            <!-- Product photos and related multimedia Section-->
+            <li class="l-section section">
+              <div class="about">
+                <p class="mobile-design-start">開始設計!</p>
+                <!-- Main banner at the middle -->
+                <div class="about--banner">
+                  <!-- Images used to open the lightbox -->
+                  <div class="gallery grid-container">
+                      <div class="overlay column">
+                        <figure class="column"><img src="assets\img\productpicTHUMB-1-relax.jpg" onclick="openModal(1);currentSlide(1,1)"/></figure>
+                        <a class="relax-layout product-des">RELAX</a>
+                      </div>
+                      <div class="overlay column">
+                        <figure class="column"><img src="assets\img\productpicTHUMB-1-makeup.jpg" onclick="openModal(2);currentSlide(1,2)"/></figure>
+                        <a class=" makeup-layout product-des">MAKEUP</a>
+                      </div>
+                      <div class="overlay column">
+                        <figure class="column"><img src="assets\img\productpicTHUMB-1-work.jpg" onclick="openModal(3);currentSlide(1,3)"/></figure>
+                        <a class="work-layout product-des">WORK</a>
+                      </div>
+                      <div class="overlay column">
+                        <figure class="column"><img src="assets\img\productpicTHUMB-1-3c.jpg" onclick="openModal(4);currentSlide(1,4)"/></figure>
+                        <a class="tech-layout product-des">TECH/3C</a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- The Modal/Lightbox for product 1 (Relax) -->
+                  <div id="myModal-product1" class="modal">
+                    <span class="close cursor" onclick="closeModal(1)">&times;</span>
+                    <div class="modal-content">
+                      <div class="mySlides-product1">
+                        <div class="numbertext">1 / 4</div>
+                        <img class="modal-image-full" src="assets\img\productpic-1-relax.jpg" style="width:100%; object-fit: contain;">
+                      </div>
+                      <div class="mySlides-product1">
+                        <div class="numbertext">2 / 4</div>
+                        <img class="modal-image-full" src="assets\img\productpic-2-relax.jpg" style="width:100%; object-fit: contain;">
+                      </div>
+                      <div class="mySlides-product1">
+                        <div class="numbertext">3 / 4</div>
+                        <img class="modal-image-full" src="assets\img\productpic-3-relax.jpg" style="width:100%; object-fit: contain;">
+                      </div>
+                      <div class="mySlides-product1">
+                        <div class="numbertext">4 / 4</div>
+                        <img class="modal-image-full" src="assets\img\productpic-4-relax.jpg" style="width:100%; object-fit: contain;">
+                      </div>
+                      <!-- Next/previous controls -->
+                      <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+                      <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+                      <!-- Thumbnail image controls -->
+                      <div class="row-demo" style="color: hsl(0, 0%, 17%, 80%);">
+                        <div class="demo-product1 column">
+                          <img class="thumbnail" src="assets\img\productpicTHUMB-1-relax.jpg" onclick="currentSlide(1, 1)">
+                        </div>
+                        <div class="column demo-product1">
+                          <img class="thumbnail" src="assets\img\productpicTHUMB-2-relax.jpg" onclick="currentSlide(2, 1)">
+                        </div>
+                        <div class="column demo-product1">
+                          <img class="thumbnail" src="assets\img\productpicTHUMB-3-relax.jpg" onclick="currentSlide(3, 1)">
+                        </div>
+                        <div class="column demo-product1">
+                          <img class="thumbnail" src="assets\img\productpicTHUMB-4-relax.jpg" onclick="currentSlide(4, 1)">
+                        </div>
+                      </div>
+                    </div>
+                    <!-- user's choice button (leads to configurator) -->
+                    <div class="button-submit-row">
+                      <!-- remember to add some kind of check to record this decision -->
+                      <a class="button-submit-yes row-demo" href="finish-default-relax.html">&#128077; 賀! 這款</a>
+                      <a class="button-submit-custom row-demo" href="config-page-relax.html">&#9997; 我想客製</a>
+                    </div>
+                  </div>
+
+                  <!-- The Modal/Lightbox for product 2 (Makeup) -->
+                  <div id="myModal-product2" class="modal">
+                    <span class="close cursor" onclick="closeModal(2)">&times;</span>
+                    <div class="modal-content">
+
+                      <div class="mySlides-product2">
+                        <div class="numbertext">1 / 4</div>
+                        <img class="modal-image-full" src="assets\img\productpic-1-makeup.jpg" style="width:100%; object-fit: contain;">
+                      </div>
+
+                      <div class="mySlides-product2">
+                        <div class="numbertext">2 / 4</div>
+                        <img class="modal-image-full" src="assets\img\productpic-2-makeup.jpg" style="width:100%; object-fit: contain;">
+                      </div>
+
+                      <div class="mySlides-product2">
+                        <div class="numbertext">3 / 4</div>
+                        <img class="modal-image-full" src="assets\img\productpic-3-makeup.jpg" style="width:100%; object-fit: contain;">
+                      </div>
+
+                      <div class="mySlides-product2">
+                        <div class="numbertext">4 / 4</div>
+                        <img class="modal-image-full" src="assets\img\productpic-4-makeup.jpg" style="width:100%; object-fit: contain;">
+                      </div>
+
+                      <!-- Next/previous controls -->
+                      <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
+                      <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
+
+                      <!-- Thumbnail image controls -->
+                      <div class="row-demo" style="color: hsl(0, 0%, 17%, 80%);">
+                        <div class="column demo-product2">
+                          <img class="thumbnail" src="assets\img\productpicTHUMB-1-makeup.jpg" onclick="currentSlide(1, 2)" alt="Nature">
+                        </div>
+
+                        <div class="column demo-product2">
+                          <img class="thumbnail" src="assets\img\productpicTHUMB-2-makeup.jpg" onclick="currentSlide(2, 2)" alt="Snow">
+                        </div>
+
+                        <div class="column demo-product2">
+                          <img class="thumbnail" src="assets\img\productpicTHUMB-3-makeup.jpg" onclick="currentSlide(3, 2)" alt="Mountains">
+                        </div>
+                        <div class="column demo-product2">
+                          <img class="thumbnail" src="assets\img\productpicTHUMB-4-makeup.jpg" onclick="currentSlide(4, 2)" alt="Lights">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="button-submit-row">
+                      <!-- remember to add some kind of check to record this decision -->
+                      <a class="button-submit-yes row-demo" href="finish-default-makeup.html">&#128077; 賀! 這款</a>
+                      <a class="button-submit-custom row-demo" href="config-page-makeup.html">&#9997; 我想客製</a>
+                    </div>
+                  </div>
+
+                  <!-- The Modal/Lightbox for product 3 (Work)-->
+                  <div id="myModal-product3" class="modal">
+                    <span class="close cursor" onclick="closeModal(3)">&times;</span>
+                    <div class="modal-content">
+
+                      <div class="mySlides-product3">
+                        <div class="numbertext">1 / 4</div>
+                        <img class="modal-image-full" src="assets\img\productpic-1-work.jpg" style="width:100%; object-fit: contain;">
+                      </div>
+
+                      <div class="mySlides-product3">
+                        <div class="numbertext">2 / 4</div>
+                        <img class="modal-image-full" src="assets\img\productpic-2-work.jpg" style="width:100%; object-fit: contain;">
+                      </div>
+
+                      <div class="mySlides-product3">
+                        <div class="numbertext">3 / 4</div>
+                        <img class="modal-image-full" src="assets\img\productpic-3-work.jpg" style="width:100%; object-fit: contain;">
+                      </div>
+
+                      <div class="mySlides-product3">
+                        <div class="numbertext">4 / 4</div>
+                        <img class="modal-image-full" src="assets\img\productpic-4-work.jpg" style="width:100%; object-fit: contain;">
+                      </div>
+
+                      <!-- Next/previous controls -->
+                      <a class="prev" onclick="plusSlides(-1, 3)">&#10094;</a>
+                      <a class="next" onclick="plusSlides(1, 3)">&#10095;</a>
+
+                      <!-- Thumbnail image controls -->
+                      <div class="row-demo" style="color: hsl(0, 0%, 17%, 80%);">
+                        <div class="column demo-product3">
+                          <img class="thumbnail" src="assets\img\productpicTHUMB-1-work.jpg" onclick="currentSlide(1, 3)">
+                        </div>
+
+                        <div class="column demo-product2">
+                          <img class="thumbnail" src="assets\img\productpicTHUMB-2-work.jpg" onclick="currentSlide(2, 3)">
+                        </div>
+
+                        <div class="column demo-product3">
+                          <img class="thumbnail" src="assets\img\productpicTHUMB-3-work.jpg" onclick="currentSlide(3, 3)">
+                        </div>
+                        <div class="column demo-product3">
+                          <img class="thumbnail" src="assets\img\productpicTHUMB-4-work.jpg" onclick="currentSlide(4, 3)" >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="button-submit-row">
+                      <!-- remember to add some kind of check to record this decision -->
+                      <a class="button-submit-yes row-demo" href="finish-default-work.html">&#128077; 賀! 這款</a>
+                      <a class="button-submit-custom row-demo" href="config-page-work.html">&#9997; 我想客製</a>
+                    </div>
+                  </div>
+
+                  <!-- The Modal/Lightbox for product 4 (Tech/3C)-->
+                  <div id="myModal-product4" class="modal">
+                    <span class="close cursor" onclick="closeModal(4)">&times;</span>
+                    <div class="modal-content">
+
+                      <div class="mySlides-product4">
+                        <div class="numbertext">1 / 4</div>
+                        <img class="modal-image-full" src="assets\img\productpic-1-3c.jpg" style="width:100%; object-fit: contain;">
+                      </div>
+
+                      <div class="mySlides-product4">
+                        <div class="numbertext">2 / 4</div>
+                        <img class="modal-image-full" src="assets\img\productpic-2-3c.jpg" style="width:100%; object-fit: contain;">
+                      </div>
+
+                      <div class="mySlides-product4">
+                        <div class="numbertext">3 / 4</div>
+                        <img class="modal-image-full" src="assets\img\productpic-3-3c.jpg" style="width:100%; object-fit: contain;">
+                      </div>
+
+                      <div class="mySlides-product4">
+                        <div class="numbertext">4 / 4</div>
+                        <img class="modal-image-full" src="assets\img\productpic-4-3c.jpg" style="width:100%; object-fit: contain;">
+                      </div>
+
+                      <!-- Next/previous controls -->
+                      <a class="prev" onclick="plusSlides(-1, 4)">&#10094;</a>
+                      <a class="next" onclick="plusSlides(1, 4)">&#10095;</a>
+
+                      <!-- Thumbnail image controls -->
+                      <div class="row-demo" style="color: hsl(0, 0%, 17%, 80%);">
+                        <div class="column demo-product4">
+                          <img class="thumbnail" src="assets\img\productpicTHUMB-1-3c.jpg" onclick="currentSlide(1, 4)">
+                        </div>
+
+                        <div class="column demo-product4">
+                          <img class="thumbnail" src="assets\img\productpicTHUMB-2-3c.jpg" onclick="currentSlide(2, 4)">
+                        </div>
+
+                        <div class="column demo-product4">
+                          <img class="thumbnail" src="assets\img\productpicTHUMB-3-3c.jpg" onclick="currentSlide(3, 4)">
+                        </div>
+                        <div class="column demo-product4">
+                          <img class="thumbnail" src="assets\img\productpicTHUMB-4-3c.jpg" onclick="currentSlide(4, 4)">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="button-submit-row">
+                      <!-- remember to add some kind of check to record this decision -->
+                      <a class="button-submit-yes row-demo" href="finish-default-3c.html">&#128077; 賀! 這款</a>
+                      <a class="button-submit-custom row-demo" href="config-page-3c.html">&#9997; 我想客製</a>
+                    </div>
+                  </div>
+                </div>
+            </li>
           </ul>
-        </nav>
-        <ul class="l-main-content main-content">
-          <!-- Home Page Section -->
-          <li class="l-section section section--is-active">
-            <div class="intro">
-              <div class="intro--banner">
-                <p>愛怎麼收 就怎麼收</p>
-                <h1>誰說收納不能<br>隨心所欲?</h1>
-                <button class="cta" style="color: #26354f;">開始體驗
-                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
-                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-                    <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
-                  </g>
-                  </svg>
-                  <span class="btn-background"></span>
-                </button>
-                <img src="assets\img\homepage-visual-1.png" alt="Welcome">
-              </div>
-              <!-- Description below in Home Page -->
-              <div class="intro--options">
-                <a>
-                  <h3>+ FOR WORK</h3>
-                  <p>有條理的陳列上班必備文具及小物，讓你在工作上得心應手</p>
-                </a>
-                <a>
-                  <h3>+ FOR RELAX &amp; 3C</h3>
-                  <p>美麗呈現點心時光，還有凹槽可將手機立著擺，追劇不漏拍!</p>
-                </a>
-                <a>
-                  <h3>+ FOR MAKEUP</h3>
-                  <p>輕鬆歸納日常彩妝，讓化妝品也能擁有自己的伸展台</p>
-                </a>
-              </div>
-            </div>
-          </li>
-          <!-- Design Methodolodies & Ideas Section -->
-          <li class="l-section section">
-            <div class="work" style="color: Black;">
-              <div class="work--lockup">
-                <!-- Slider for project porfolio -->
-                <ul class="slider">
-                  <!-- Slider Item 1 :  -->
-                  <li class="slider--item slider--item-center">
-                    <a>
-                      <p class="slider--item-title">客製化設計</p>
-                      <p class="slider--item-description" style="font-size: 31px; font-weight: 900; color: #a98f70;">
-                      線上客製排版及功能組合，輕鬆收納都阿鶴!
-                      </p>
-                      <p class="slider--item-description">
-                      無論是辦公桌、梳妝台、書桌、或是餐桌上的每個角落，我們細心觀察著一切周遭的收納習慣，並研發出多種適合每日使用的收納功能，任君挑選。您可以利用都阿鶴獨特的客製化平台進行客製體驗，結合最適合您的功能與排列方式，設計出富有個人色彩的質感收納架!
-                      </p>
-                      <div class="slider--item-image">
-                        <img src="assets\img\web-design.svg" alt="customizable features">
-                      </div>
-                    </a>
-                  </li>
-                  <!-- Slider Item 2 :  -->
-                  <li class="slider--item slider--item-right">
-                    <a>
-                      <p class="slider--item-title">桌上空間大升級</p>
-                      <p class="slider--item-description" style="font-size: 31px; font-weight: 900; color: #a98f70;">
-                      堅固的增高腳座，不再受限於平面收納!
-                      </p>
-                      <p class="slider--item-description">
-                      覺得桌上的空間永遠不夠放嗎? 免煩惱! 都阿鶴團隊精心研發的實木增高腳座，讓原本只有平面的收納範圍向上升級成兩層多元的收納空間。收納架的長度也貼心設計符合普遍市售電腦鍵盤的大小，給您最專注的最有效率的辦公空間。
-                      </p>
-                      <div class="slider--item-image">
-                        <img src="assets\img\up-arrows.svg" alt="space upgrade">
-                      </div>
-                    </a>
-                  </li>
-                  <!-- Slider Item 3 :  -->
-                  <li class="slider--item slider--item-left">
-                    <a>
-                      <p class="slider--item-title">高雅木質感</p>
-                      <p class="slider--item-description" style="font-size: 31px; font-weight: 900; color: #a98f70;">
-                      講究細節的實木工藝，展現您生活的品味
-                      </p>
-                      <p class="slider--item-description">
-                      為了追求使用上最佳的細緻質感，我們選用高級的實木進行精密加工，並嚴格把關每個步驟及竭盡可能降低任何製作上的誤差。收納架最終呈現的實木天然紋理，保證滿足您內心對大自然最純粹的嚮往，表現出質感木作的沉穩氣息。
-                      </p>
-                      <div class="slider--item-image">
-                        <img style="transform: rotate(45deg);" src="assets\img\floor.svg" alt="premium materials">
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-                <div class="slider--prev">
-                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                  viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
-                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-                    <path d="M561,1169C525,1155,10,640,3,612c-3-13,1-36,8-52c8-15,134-145,281-289C527,41,562,10,590,10c22,0,41,9,61,29
-                    c55,55,49,64-163,278L296,510h575c564,0,576,0,597,20c46,43,37,109-18,137c-19,10-159,13-590,13l-565,1l182,180
-                    c101,99,187,188,193,199c16,30,12,57-12,84C631,1174,595,1183,561,1169z"/>
-                  </g>
-                  </svg>
-                </div>
-                <div class="slider--next">
-                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
-                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
-                    <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
-                  </g>
-                  </svg>
-                </div>
-              </div>
-              <div style="width: 100%; text-align: center;">
-                <img class="continue-sign" src="assets\img\down-arrow.svg" alt="arrow down">
-              </div>
-            </div>
-          </li>
-          <!-- Product photos and related multimedia Section-->
-          <li class="l-section section">
-            <div class="about">
-              <p class="mobile-design-start">開始設計!</p>
-              <!-- Main banner at the middle -->
-              <div class="about--banner">
-                <!-- Images used to open the lightbox -->
-                <div class="gallery grid-container">
-                    <div class="overlay column">
-                      <figure class="column"><img src="assets\img\productpicTHUMB-1-relax.jpg" onclick="openModal(1);currentSlide(1,1)"/></figure>
-                      <a class="relax-layout product-des">RELAX</a>
-                    </div>
-                    <div class="overlay column">
-                      <figure class="column"><img src="assets\img\productpicTHUMB-1-makeup.jpg" onclick="openModal(2);currentSlide(1,2)"/></figure>
-                      <a class=" makeup-layout product-des">MAKEUP</a>
-                    </div>
-                    <div class="overlay column">
-                      <figure class="column"><img src="assets\img\productpicTHUMB-1-work.jpg" onclick="openModal(3);currentSlide(1,3)"/></figure>
-                      <a class="work-layout product-des">WORK</a>
-                    </div>
-                    <div class="overlay column">
-                      <figure class="column"><img src="assets\img\productpicTHUMB-1-3c.jpg" onclick="openModal(4);currentSlide(1,4)"/></figure>
-                      <a class="tech-layout product-des">TECH/3C</a>
-                    </div>
-                  </div>
-                </div>
-                <!-- The Modal/Lightbox for product 1 (Relax) -->
-                <div id="myModal-product1" class="modal">
-                  <span class="close cursor" onclick="closeModal(1)">&times;</span>
-                  <div class="modal-content">
-                    <div class="mySlides-product1">
-                      <div class="numbertext">1 / 4</div>
-                      <img class="modal-image-full" src="assets\img\productpic-1-relax.jpg" style="width:100%; object-fit: contain;">
-                    </div>
-                    <div class="mySlides-product1">
-                      <div class="numbertext">2 / 4</div>
-                      <img class="modal-image-full" src="assets\img\productpic-2-relax.jpg" style="width:100%; object-fit: contain;">
-                    </div>
-                    <div class="mySlides-product1">
-                      <div class="numbertext">3 / 4</div>
-                      <img class="modal-image-full" src="assets\img\productpic-3-relax.jpg" style="width:100%; object-fit: contain;">
-                    </div>
-                    <div class="mySlides-product1">
-                      <div class="numbertext">4 / 4</div>
-                      <img class="modal-image-full" src="assets\img\productpic-4-relax.jpg" style="width:100%; object-fit: contain;">
-                    </div>
-                    <!-- Next/previous controls -->
-                    <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
-                    <!-- Thumbnail image controls -->
-                    <div class="row-demo" style="color: hsl(0, 0%, 17%, 80%);">
-                      <div class="demo-product1 column">
-                        <img class="thumbnail" src="assets\img\productpicTHUMB-1-relax.jpg" onclick="currentSlide(1, 1)">
-                      </div>
-                      <div class="column demo-product1">
-                        <img class="thumbnail" src="assets\img\productpicTHUMB-2-relax.jpg" onclick="currentSlide(2, 1)">
-                      </div>
-                      <div class="column demo-product1">
-                        <img class="thumbnail" src="assets\img\productpicTHUMB-3-relax.jpg" onclick="currentSlide(3, 1)">
-                      </div>
-                      <div class="column demo-product1">
-                        <img class="thumbnail" src="assets\img\productpicTHUMB-4-relax.jpg" onclick="currentSlide(4, 1)">
-                      </div>
-                    </div>
-                  </div>
-                  <!-- user's choice button (leads to configurator) -->
-                  <div class="button-submit-row">
-                    <!-- remember to add some kind of check to record this decision -->
-                    <a class="button-submit-yes row-demo" href="finish-default-relax.html">&#128077; 賀! 這款</a>
-                    <a class="button-submit-custom row-demo" href="config-page-relax.html">&#9997; 我想客製</a>
-                  </div>
-                </div>
-
-                <!-- The Modal/Lightbox for product 2 (Makeup) -->
-                <div id="myModal-product2" class="modal">
-                  <span class="close cursor" onclick="closeModal(2)">&times;</span>
-                  <div class="modal-content">
-
-                    <div class="mySlides-product2">
-                      <div class="numbertext">1 / 4</div>
-                      <img class="modal-image-full" src="assets\img\productpic-1-makeup.jpg" style="width:100%; object-fit: contain;">
-                    </div>
-
-                    <div class="mySlides-product2">
-                      <div class="numbertext">2 / 4</div>
-                      <img class="modal-image-full" src="assets\img\productpic-2-makeup.jpg" style="width:100%; object-fit: contain;">
-                    </div>
-
-                    <div class="mySlides-product2">
-                      <div class="numbertext">3 / 4</div>
-                      <img class="modal-image-full" src="assets\img\productpic-3-makeup.jpg" style="width:100%; object-fit: contain;">
-                    </div>
-
-                    <div class="mySlides-product2">
-                      <div class="numbertext">4 / 4</div>
-                      <img class="modal-image-full" src="assets\img\productpic-4-makeup.jpg" style="width:100%; object-fit: contain;">
-                    </div>
-
-                    <!-- Next/previous controls -->
-                    <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
-
-                    <!-- Thumbnail image controls -->
-                    <div class="row-demo" style="color: hsl(0, 0%, 17%, 80%);">
-                      <div class="column demo-product2">
-                        <img class="thumbnail" src="assets\img\productpicTHUMB-1-makeup.jpg" onclick="currentSlide(1, 2)" alt="Nature">
-                      </div>
-
-                      <div class="column demo-product2">
-                        <img class="thumbnail" src="assets\img\productpicTHUMB-2-makeup.jpg" onclick="currentSlide(2, 2)" alt="Snow">
-                      </div>
-
-                      <div class="column demo-product2">
-                        <img class="thumbnail" src="assets\img\productpicTHUMB-3-makeup.jpg" onclick="currentSlide(3, 2)" alt="Mountains">
-                      </div>
-                      <div class="column demo-product2">
-                        <img class="thumbnail" src="assets\img\productpicTHUMB-4-makeup.jpg" onclick="currentSlide(4, 2)" alt="Lights">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="button-submit-row">
-                    <!-- remember to add some kind of check to record this decision -->
-                    <a class="button-submit-yes row-demo" href="finish-default-makeup.html">&#128077; 賀! 這款</a>
-                    <a class="button-submit-custom row-demo" href="config-page-makeup.html">&#9997; 我想客製</a>
-                  </div>
-                </div>
-
-                <!-- The Modal/Lightbox for product 3 (Work)-->
-                <div id="myModal-product3" class="modal">
-                  <span class="close cursor" onclick="closeModal(3)">&times;</span>
-                  <div class="modal-content">
-
-                    <div class="mySlides-product3">
-                      <div class="numbertext">1 / 4</div>
-                      <img class="modal-image-full" src="assets\img\productpic-1-work.jpg" style="width:100%; object-fit: contain;">
-                    </div>
-
-                    <div class="mySlides-product3">
-                      <div class="numbertext">2 / 4</div>
-                      <img class="modal-image-full" src="assets\img\productpic-2-work.jpg" style="width:100%; object-fit: contain;">
-                    </div>
-
-                    <div class="mySlides-product3">
-                      <div class="numbertext">3 / 4</div>
-                      <img class="modal-image-full" src="assets\img\productpic-3-work.jpg" style="width:100%; object-fit: contain;">
-                    </div>
-
-                    <div class="mySlides-product3">
-                      <div class="numbertext">4 / 4</div>
-                      <img class="modal-image-full" src="assets\img\productpic-4-work.jpg" style="width:100%; object-fit: contain;">
-                    </div>
-
-                    <!-- Next/previous controls -->
-                    <a class="prev" onclick="plusSlides(-1, 3)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1, 3)">&#10095;</a>
-
-                    <!-- Thumbnail image controls -->
-                    <div class="row-demo" style="color: hsl(0, 0%, 17%, 80%);">
-                      <div class="column demo-product3">
-                        <img class="thumbnail" src="assets\img\productpicTHUMB-1-work.jpg" onclick="currentSlide(1, 3)">
-                      </div>
-
-                      <div class="column demo-product2">
-                        <img class="thumbnail" src="assets\img\productpicTHUMB-2-work.jpg" onclick="currentSlide(2, 3)">
-                      </div>
-
-                      <div class="column demo-product3">
-                        <img class="thumbnail" src="assets\img\productpicTHUMB-3-work.jpg" onclick="currentSlide(3, 3)">
-                      </div>
-                      <div class="column demo-product3">
-                        <img class="thumbnail" src="assets\img\productpicTHUMB-4-work.jpg" onclick="currentSlide(4, 3)" >
-                      </div>
-                    </div>
-                  </div>
-                  <div class="button-submit-row">
-                    <!-- remember to add some kind of check to record this decision -->
-                    <a class="button-submit-yes row-demo" href="finish-default-work.html">&#128077; 賀! 這款</a>
-                    <a class="button-submit-custom row-demo" href="config-page-work.html">&#9997; 我想客製</a>
-                  </div>
-                </div>
-
-                <!-- The Modal/Lightbox for product 4 (Tech/3C)-->
-                <div id="myModal-product4" class="modal">
-                  <span class="close cursor" onclick="closeModal(4)">&times;</span>
-                  <div class="modal-content">
-
-                    <div class="mySlides-product4">
-                      <div class="numbertext">1 / 4</div>
-                      <img class="modal-image-full" src="assets\img\productpic-1-3c.jpg" style="width:100%; object-fit: contain;">
-                    </div>
-
-                    <div class="mySlides-product4">
-                      <div class="numbertext">2 / 4</div>
-                      <img class="modal-image-full" src="assets\img\productpic-2-3c.jpg" style="width:100%; object-fit: contain;">
-                    </div>
-
-                    <div class="mySlides-product4">
-                      <div class="numbertext">3 / 4</div>
-                      <img class="modal-image-full" src="assets\img\productpic-3-3c.jpg" style="width:100%; object-fit: contain;">
-                    </div>
-
-                    <div class="mySlides-product4">
-                      <div class="numbertext">4 / 4</div>
-                      <img class="modal-image-full" src="assets\img\productpic-4-3c.jpg" style="width:100%; object-fit: contain;">
-                    </div>
-
-                    <!-- Next/previous controls -->
-                    <a class="prev" onclick="plusSlides(-1, 4)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1, 4)">&#10095;</a>
-
-                    <!-- Thumbnail image controls -->
-                    <div class="row-demo" style="color: hsl(0, 0%, 17%, 80%);">
-                      <div class="column demo-product4">
-                        <img class="thumbnail" src="assets\img\productpicTHUMB-1-3c.jpg" onclick="currentSlide(1, 4)">
-                      </div>
-
-                      <div class="column demo-product4">
-                        <img class="thumbnail" src="assets\img\productpicTHUMB-2-3c.jpg" onclick="currentSlide(2, 4)">
-                      </div>
-
-                      <div class="column demo-product4">
-                        <img class="thumbnail" src="assets\img\productpicTHUMB-3-3c.jpg" onclick="currentSlide(3, 4)">
-                      </div>
-                      <div class="column demo-product4">
-                        <img class="thumbnail" src="assets\img\productpicTHUMB-4-3c.jpg" onclick="currentSlide(4, 4)">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="button-submit-row">
-                    <!-- remember to add some kind of check to record this decision -->
-                    <a class="button-submit-yes row-demo" href="finish-default-3c.html">&#128077; 賀! 這款</a>
-                    <a class="button-submit-custom row-demo" href="config-page-3c.html">&#9997; 我想客製</a>
-                  </div>
-                </div>
-              </div>
-          </li>
-        </ul>
+        </div>
       </div>
     </div>
+    <!-- Outer Navigation Pop-up Side list -->
+    <ul class="outer-nav">
+      <li class="is-active">體驗起點</li>
+      <li>設計理念</li>
+      <li>開始設計</li>
+    </ul>
   </div>
-  <!-- Outer Navigation Pop-up Side list -->
-  <ul class="outer-nav">
-    <li class="is-active">體驗起點</li>
-    <li>設計理念</li>
-    <li>開始設計</li>
-  </ul>
-</div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
-<script src="assets/js/functions-min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
+  <script src="assets/js/functions-min.js"></script>
 </body>
 </html>

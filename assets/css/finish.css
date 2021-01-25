@@ -68,7 +68,7 @@ html,body {
 }
 
 #section-2 {
-  margin: 4% 25%;
+  margin: 3% 25%;
   text-align: center;
   line-height: 1.7;
 }
@@ -94,7 +94,14 @@ html,body {
   font-size: 1.7rem;
   color: #66562f;
 }
-
+.logo-section {
+  width: 400px;
+}
+@media (max-width: 900px) {
+  .logo-section {
+    width: 300px;
+  }
+}
 .form p {
   color: #66562f;
 }
