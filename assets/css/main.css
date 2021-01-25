@@ -1,76 +1,7 @@
 @font-face{
     font-family:'Montserrat';
-    src:url("fonts/Montserrat-Black.eot");
-    src:local("☺"),url("fonts/Montserrat-Black.woff") format("woff"),url("fonts/Montserrat-Black.ttf") format("truetype"),url("fonts/Montserrat-Black.svg") format("svg");
-    font-weight:900;
-    font-style:normal
-}
-@font-face{
-    font-family:'Montserrat';
-    src:url("fonts/Montserrat-Bold.eot");
-    src:local("☺"),url("fonts/Montserrat-Bold.woff") format("woff"),url("fonts/Montserrat-Bold.ttf") format("truetype"),url("fonts/Montserrat-Bold.svg") format("svg");
-    font-weight:700;
-    font-style:normal
-}
-@font-face{
-    font-family:'Montserrat';
     src:url("fonts/Montserrat-Regular.eot");
     src:local("☺"),url("fonts/Montserrat-Regular.woff") format("woff"),url("fonts/Montserrat-Regular.ttf") format("truetype"),url("fonts/Montserrat-Regular.svg") format("svg");
-    font-weight:400;
-    font-style:normal
-}
-@font-face{
-    font-family:'Montserrat';
-    src:url("fonts/Montserrat-Light.eot");
-    src:local("☺"),url("fonts/Montserrat-Light.woff") format("woff"),url("fonts/Montserrat-Light.ttf") format("truetype"),url("fonts/Montserrat-Light.svg") format("svg");
-    font-weight:300;
-    font-style:normal
-}
-@font-face{
-    font-family:'Noto Sans TC';
-    src:url("fonts/NotoSansTC-Light.otf");
-    font-weight:100;
-    font-style:normal
-}
-@font-face{
-    font-family:'Noto Sans TC';
-    src:url("fonts/NotoSansTC-Regular.otf");
-    font-weight:400;
-    font-style:normal
-}
-@font-face{
-    font-family:'Noto Sans TC';
-    src:url("fonts/NotoSansTC-Thin.otf");
-    font-weight:300;
-    font-style:normal
-}
-@font-face{
-    font-family:'Cinzel';
-    src:url("fonts/Cinzel-VariableFont_wght.ttf");
-    font-weight:500;
-    font-style:normal
-}
-@font-face{
-    font-family:'Fjalla One';
-    src:url("fonts/FjallaOne-Regular.ttf");
-    font-weight:400;
-    font-style:normal
-}
-@font-face{
-    font-family:'Montserrat Alternates';
-    src:url("fonts/MontserratAlternates-Regular.ttf");
-    font-weight:400;
-    font-style:normal
-}
-@font-face{
-    font-family:'Montserrat Alternates';
-    src:url("fonts/MontserratAlternates-Regular.ttf");
-    font-weight:400;
-    font-style:normal
-}
-@font-face{
-    font-family:'Roboto Slab';
-    src:url("fonts/RobotoSlab-VariableFont_wght.ttf");
     font-weight:400;
     font-style:normal
 }
@@ -1303,14 +1234,14 @@ Design Methodolodies
 }
 
 .relax-layout {
-  font-family: "Montserrat Alternates";
+  font-family: "Roboto Slab";
   padding: 10px;
   border: 2px solid white;
   letter-spacing: 3.5px;
   padding: 20px 30px;
 }
 .makeup-layout {
-  font-family: "Cinzel";
+  font-family: "Roboto Slab";
   font-weight: 300;
   letter-spacing: 1px !important;
   padding: 10px;
@@ -1325,7 +1256,7 @@ Design Methodolodies
   padding: 20px 33px;
 }
 .tech-layout {
-  font-family: "Fjalla One";
+  font-family: "Roboto Slab";
   padding: 10px;
   border: 2px solid white;
   letter-spacing: 3.5px;
