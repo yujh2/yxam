@@ -25,32 +25,31 @@
   <script src="assets\js\lightbox-min.js" defer></script>
 </head>
 <body>
-  <!-- Load Facebook SDK for JavaScript -->
-        <div id="fb-root"></div>
-        <script>
-          window.fbAsyncInit = function() {
-            FB.init({
-              xfbml            : true,
-              version          : 'v9.0'
-            });
-          };
-
-          (function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = 'https://connect.facebook.net/zh_TW/sdk/xfbml.customerchat.js';
-          fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
-
-        <!-- Your Chat Plugin code -->
-        <div class="fb-customerchat"
-          attribution=setup_tool
-          page_id="100426988728935"
+<!-- Load Facebook SDK for JavaScript -->
+  <!-- <div id="fb-root"></div>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        xfbml            : true,
+        version          : 'v9.0'
+      });
+    };
+    (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/zh_TW/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script> -->
+  <!-- Your Chat Plugin code -->
+  <!-- <div class="fb-customerchat"
+    attribution=setup_tool
+    page_id="100426988728935"
     theme_color="#6699cc"
     logged_in_greeting="您好! 歡迎來到我們的客製體驗活動。任何問題都可以跟我們詢問喔!"
     logged_out_greeting="您好! 歡迎來到我們的客製體驗活動。任何問題都可以跟我們詢問喔!">
-        </div>
+  </div> -->
+  <!-- notification for small viewports and landscape oriented smartphones -->
   <div class="device-notification">
       <h2 style="font-size: 2.5em;">喔不...&#128549;</h2>
     <p class="device-notification--message">看來您目前的螢幕大小不適合瀏覽我們為你準備的精彩內容。為了讓每位使用者都擁有最佳的體驗，請將手機轉為直向或使用更大的螢幕來體驗我們的網站喔!</p>
