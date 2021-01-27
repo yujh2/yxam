@@ -11,6 +11,24 @@
     font-weight:400;
     font-style:normal
 }
+@font-face{
+    font-family:'Noto Sans TC';
+    src:url("fonts/NotoSansTC-Thin.otf");
+    font-weight:100;
+    font-style:normal
+}
+@font-face{
+    font-family:'Noto Sans TC';
+    src:url("fonts/NotoSansTC-Light.otf");
+    font-weight:300;
+    font-style:normal
+}
+@font-face{
+    font-family:'Noto Sans TC';
+    src:url("fonts/NotoSansTC-Regular.otf");
+    font-weight:400;
+    font-style:normal
+}
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 html{
     font-family:sans-serif;
