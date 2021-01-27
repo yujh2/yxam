@@ -216,19 +216,37 @@ body{
   height: 36px;
   margin: 0 4px;
 }
-/* .close-pop:hover,
-.close-pop:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-} */
 /* All modal content styling (initial popup) */
 .modal-cotent-pop-info {
   text-align: center;
   color: black;
 }
+.modal-cotent-pop-info h1 {
+  font-size: 2.2em;
+}
+.modal-cotent-pop-info p {
+  font-size: 1.1em;
+}
 .modal-content-pop-image {
   margin: 3.5% 44%;
+}
+.modal-content-sub-title {
+  margin: 0 30%;
+  font-size: 1.4em;
+}
+@media (max-width: 767px) {
+  .modal-cotent-pop-info h1 {
+    font-size: 1.5em;
+  }
+  .modal-content-sub-title {
+    font-size: 1.1em;
+    margin-bottom: 20%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  .modal-content-pop-image {
+    margin: 23% 37% 3.5%;
+  }
 }
 .l-viewport{
     position:relative;
