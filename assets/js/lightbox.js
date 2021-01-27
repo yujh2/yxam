@@ -1,20 +1,16 @@
-// FOR INITIAL POPUP
+// --- For disclaimer Modal ---
 // Get the modal
 var modal_pop = document.getElementById("myModal");
-
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close-pop")[0];
-
 // When the user clicks on the button, open the modal
 window.addEventListener("DOMContentLoaded", function() {
   modal_pop.style.display = "block";
 });
-
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal_pop.style.display = "none";
 }
-
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal_pop) {
@@ -22,7 +18,7 @@ window.onclick = function(event) {
   }
 }
 
-
+// --- For product picture Modal ---
 // Open the Modal
 function openModal(i) {
   var idName = "myModal-product".concat(i);
