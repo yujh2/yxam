@@ -108,6 +108,9 @@
             <div class="select-box__sections">
               <div class="select-box" id="left1">
                 <div class="select-box__current" tabindex="2">
+                  <div class="select-box__value"><input class="select-box-top__input" type="radio" id="1.5" value="1.5" name="left-arrange1"/>
+                    <p class="select-box__input-text">(無)</p>
+                  </div>
                   <div class="select-box__value"><input class="select-box-top__input" type="radio" id="2" value="2" name="left-arrange1"/>
                     <p class="select-box__input-text">彈性空間</p>
                   </div>
@@ -127,16 +130,20 @@
                     <p class="select-box__input-text">馬克杯</p>
                   </div><img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true" /></div>
                 <ul class="select-box__list">
-                  <li class="left-list" value="all"><label class="select-box-left__option" value="all" for="2" aria-hidden="aria-hidden">彈性空間</label></li>
-                  <li class="left-list" value="write"><label class="select-box-left__option" value="write" for="3" aria-hidden="aria-hidden">筆筒</label></li>
-                  <li class="left-list" value="write"><label class="select-box-left__option" value="write" for="4" aria-hidden="aria-hidden">便利貼</label></li>
-                  <li class="left-list list-hidden" value="phone"><label class="select-box-left__option" value="phone" for="5" aria-hidden="aria-hidden">手機立著放</label></li>
-                  <li class="left-list list-hidden" value="phone"><label class="select-box-left__option" value="phone" for="6" aria-hidden="aria-hidden">手機躺著放</label></li>
-                  <li class="left-list list-hidden" value="cup"><label class="select-box-left__option" value="cup" for="7" aria-hidden="aria-hidden">馬克杯</label></li>
+                  <li class="left-list" value="all"><label class="select-box-left__option" value="all" for="5" aria-hidden="aria-hidden" onclick="SDitemSelection('left items', 2, 100)">(無)</label></li>
+                  <li class="left-list" value="all"><label class="select-box-left__option" value="all" for="2" aria-hidden="aria-hidden" onclick="SDitemSelection('left items', 2, 3)">彈性空間</label></li>
+                  <li class="left-list" value="write"><label class="select-box-left__option" value="write" for="3" aria-hidden="aria-hidden" onclick="SDitemSelection('left items', 2, 1)">筆筒</label></li>
+                  <li class="left-list" value="write"><label class="select-box-left__option" value="write" for="4" aria-hidden="aria-hidden" onclick="SDitemSelection('left items', 2, 2)">便利貼</label></li>
+                  <li class="left-list list-hidden" value="phone"><label class="select-box-left__option" value="phone" for="5" aria-hidden="aria-hidden" onclick="SDitemSelection('left items', 2, 1)">手機立著放</label></li>
+                  <li class="left-list list-hidden" value="phone"><label class="select-box-left__option" value="phone" for="6" aria-hidden="aria-hidden" onclick="SDitemSelection('left items', 2, 2)">手機躺著放</label></li>
+                  <li class="left-list list-hidden" value="cup"><label class="select-box-left__option" value="cup" for="7" aria-hidden="aria-hidden" onclick="SDitemSelection('left items', 2, 1)">馬克杯</label></li>
                 </ul>
               </div>
               <div class="select-box" id="left2">
                 <div class="select-box__current" tabindex="3">
+                  <div class="select-box__value"><input class="select-box-middle__input" type="radio" id="7.5" value="7.5" name="left-arrange2" />
+                    <p class="select-box__input-text">(無)</p>
+                  </div>
                   <div class="select-box__value"><input class="select-box-middle__input" type="radio" id="8" value="8" name="left-arrange2" />
                     <p class="select-box__input-text">彈性空間</p>
                   </div>
@@ -156,17 +163,21 @@
                     <p class="select-box__input-text">馬克杯</p>
                   </div><img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true" /></div>
                 <ul class="select-box__list">
-                  <li class="left-list" value="all"><label class="select-box-left__option" for="8" aria-hidden="aria-hidden">彈性空間</label></li>
-                  <li class="left-list" value="write"><label class="select-box-left__option" for="9" aria-hidden="aria-hidden">筆筒</label></li>
-                  <li class="left-list" value="write"><label class="select-box-left__option" for="10" aria-hidden="aria-hidden">便利貼</label></li>
-                  <li class="left-list list-hidden" value="phone"><label class="select-box-left__option" for="11" aria-hidden="aria-hidden">手機立著放</label></li>
-                  <li class="left-list list-hidden" value="phone"><label class="select-box-left__option" for="12" aria-hidden="aria-hidden">手機躺著放</label></li>
-                  <li class="left-list list-hidden" value="cup"><label class="select-box-left__option" for="13" aria-hidden="aria-hidden">馬克杯</label></li>
+                  <li class="left-list" value="all"><label class="select-box-left__option" for="7.5" aria-hidden="aria-hidden" onclick="SDitemSelection('left items', 0, 100)">(無)</label></li>
+                  <li class="left-list" value="all"><label class="select-box-left__option" for="8" aria-hidden="aria-hidden" onclick="SDitemSelection('left items', 0, 3)">彈性空間</label></li>
+                  <li class="left-list" value="write"><label class="select-box-left__option" for="9" aria-hidden="aria-hidden" onclick="SDitemSelection('left items', 0, 1)">筆筒</label></li>
+                  <li class="left-list" value="write"><label class="select-box-left__option" for="10" aria-hidden="aria-hidden" onclick="SDitemSelection('left items', 0, 2)">便利貼</label></li>
+                  <li class="left-list list-hidden" value="phone"><label class="select-box-left__option" for="11" aria-hidden="aria-hidden" onclick="SDitemSelection('left items', 0, 1)">手機立著放</label></li>
+                  <li class="left-list list-hidden" value="phone"><label class="select-box-left__option" for="12" aria-hidden="aria-hidden" onclick="SDitemSelection('left items', 0, 2)">手機躺著放</label></li>
+                  <li class="left-list list-hidden" value="cup"><label class="select-box-left__option" for="13" aria-hidden="aria-hidden" onclick="SDitemSelection('left items', 0, 1)">馬克杯</label></li>
                 </ul>
               </div>
               <div class="select-box" id="left3">
                 <div class="select-box__current" tabindex="4">
-                  <div class="select-box__value"><input class="select-box-lower__input" type="radio" id="14" value="14" name="left-arrange3" checked="checked"/>
+                  <div class="select-box__value"><input class="select-box-lower__input" type="radio" id="13.5" value="13.5" name="left-arrange3" checked="checked"/>
+                    <p class="select-box__input-text">(無)</p>
+                  </div>
+                  <div class="select-box__value"><input class="select-box-lower__input" type="radio" id="14" value="14" name="left-arrange3"/>
                     <p class="select-box__input-text">彈性空間</p>
                   </div>
                   <div class="select-box__value"><input class="select-box-lower__input" type="radio" id="15" value="15" name="left-arrange3" />
@@ -185,6 +196,7 @@
                     <p class="select-box__input-text">馬克杯</p>
                   </div><img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true" /></div>
                 <ul class="select-box__list">
+                  <li class="left-list" value="all"><label class="select-box-left__option" for="13.5" aria-hidden="aria-hidden">(無)</label></li>
                   <li class="left-list" value="all"><label class="select-box-left__option" for="14" aria-hidden="aria-hidden">彈性空間</label></li>
                   <li class="left-list" value="write"><label class="select-box-left__option" for="15" aria-hidden="aria-hidden">筆筒</label></li>
                   <li class="left-list" value="write"><label class="select-box-left__option" for="16" aria-hidden="aria-hidden">便利貼</label></li>
