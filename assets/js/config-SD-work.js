@@ -1,4 +1,4 @@
-/************************************************************************
+/***********************************************************************
 // ShapeDiver Product Configuration Viewer - Prototype 3.5
 // Date: 2020/10/05
 // Creator: Henry Yu, YXAM R&D
@@ -13,7 +13,7 @@
 // 															 files for manufacturablility)
 //										[Beta] 6.) Added experimental mouse interaction feature.
 //															 (Need GH file to verify how objects are seperated)
-************************************************************************/
+***********************************************************************/
 
 var _container = document.getElementById('sdv-container');
 // viewer settings
@@ -28,7 +28,7 @@ var _viewerSettings = {
   ticket: '923a49814eaf5c47a2e31b9d29f5c48961906ab405319976c0cbac75ea74f570cae92b39f12e12ed84bdd73038ab337fce648cd6f31e3504a88c25a1f66c7e4dc4ed393a771199289c039e2c77849f1ed933befc13c0b72dcc461a1a1c8d927733e8ffcb59a66a469d554f1b279aee090aeba5213e1f-0d1b77a1371b63109e7861b2371bef52',
   modelViewUrl: 'eu-central-1',
   showControlsInitial: true,
-  showSettingsInitial: false,
+  showSettingsInitial: false
 };
 
 // create the viewer, get back an API v2 object
@@ -63,7 +63,6 @@ function exportFile() {
     value: userEmail
   });
 }
-
 /************************************************************************
 // validateForm(): function that sets a validation for email input group.
 //								 It also sends export action codes to shapeDiver
@@ -119,13 +118,8 @@ function modifyList(curSelected, curSection) {
     layerOptions[i].classList.add("list-hidden");
     // Make sub-list options visible based on 'curSelected' user made
     if (layerOptions[i].getAttribute('value') == "all" || layerOptions[i].getAttribute('value') == curSelected) {
-      console.log("it did came here");
       layerOptions[i].classList.remove("list-hidden");
-      console.log(layerOptions[i].getAttribute('value') );
       continue;
-    } else {
-      console.log('nothing got validated');
-      console.log(layerOptions[i].getAttribute('value') );
     }
   }
 }
@@ -145,6 +139,7 @@ function modifyCurrentSelected(curSelected, curSection) {
   var topCurrentDisplay = document.getElementById(curSection.concat("1")).getElementsByClassName('select-box-top__input');
   var middleCurrentDisplay = document.getElementById(curSection.concat("2")).getElementsByClassName('select-box-middle__input');
   var lowerCurrentDisplay = document.getElementById(curSection.concat("3")).getElementsByClassName('select-box-lower__input');
+  var orderElementVar = [lowerCurrentDisplay, middleCurrentDisplay, topCurrentDisplay];
 
   console.log(topCurrentDisplay);
   console.log(middleCurrentDisplay);
@@ -156,25 +151,38 @@ function modifyCurrentSelected(curSelected, curSection) {
     middleCurrentDisplay[i].checked = false;
     lowerCurrentDisplay[i].checked = false;
   }
-
+  // get current section item order
+  curOrder = api.parameters.get({name: curSection.concat(" items")}, "CommPlugin_1").data[0].value;
+  curOrderArr = curOrder.split(',');
   // Update shapediver with new set of parameters and change current option for radio
-  if (curSelected == "write") {
-    topCurrentDisplay[1].checked = true; // top
+  if (curSelected == "alchol") {
+    topCurrentDisplay[0].checked = true; // top
     middleCurrentDisplay[2].checked = true; // middle
-    lowerCurrentDisplay[0].checked = true; // lower
+    lowerCurrentDisplay[2].checked = true; // lower
+    var newOrder = "1,1,100";
+    api.parameters.updateAsync({
+      name: curSection.concat(" items"),
+      value: newOrder
+    });
   } else if (curSelected == "phone") {
     topCurrentDisplay[3].checked = true; // top
-    middleCurrentDisplay[4].checked = true; // middle
-    lowerCurrentDisplay[0].checked = true; // lower
-  } else if (curSelected == "cup") {
-    topCurrentDisplay[5].checked = true; // top
-    middleCurrentDisplay[0].checked = true; // middle
-    lowerCurrentDisplay[0].checked = true; // lower
+    middleCurrentDisplay[1].checked = true; // middle
+    lowerCurrentDisplay[4].checked = true; // lower
+    var newOrder = "2,3,1";
+    api.parameters.updateAsync({
+      name: curSection.concat(" items"),
+      value: newOrder
+    });
+  } else if (curSelected == "snacks") {
+    topCurrentDisplay[0].checked = true; // top
+    middleCurrentDisplay[5].checked = true; // middle
+    lowerCurrentDisplay[5].checked = true; // lower
+    var newOrder = "1,1,100";
+    api.parameters.updateAsync({
+      name: curSection.concat(" items"),
+      value: newOrder
+    });
   }
-  // Update shapediver with new set of parameters and change current display selection for radio
-  // [ concat 'curSection' with 1, 2, 3 to only clearup the specific side that user changed ]
-  // [ get left1, left2, left3 by id and seperately iterate inside and clear all 'checked'.]
-  // [ set 'checked' status for options with designated id ] -> organize a list of combos first
 }
 
 
@@ -187,9 +195,12 @@ function modifyCurrentSelected(curSelected, curSection) {
 // curSection - show which section is the user adjusting (left,right,middle)
 ************************************************************************/
 
-function dynamicOptions(curSelected, curSection) {
+function dynamicOptions(curSelected, curSection, SDchoice) {
   modifyCurrentSelected(curSelected, curSection); // function has to consider three of the displayed options independently.
   modifyList(curSelected, curSection);
+  // ShapeDiver API call for respective section functionality
+  var curSection_SDFormat = curSection.concat(" func");
+  SDsectionFunctionality(curSection_SDFormat, SDchoice);
 }
 
 /************************************************************************
@@ -229,4 +240,59 @@ function mobileParamSelect(selected, iconId) {
   // add "selected param" with display=flex inline css
   openParam[0].setAttribute("style","display: flex;");
   iconImg[iconId].setAttribute("Style", "border-bottom: 2px solid #ef6e0c;");
+}
+// -------- SHAPEDIVER API LISTENER SECTION ---------
+
+/************************************************************************
+// SDmaterialSelection(choice): Provides API command to SD for user's material
+//                              selection.
+// choice - user's selection of material
+************************************************************************/
+function SDmaterialSelection(choice) {
+  api.parameters.updateAsync({
+  name: 'choose wood',
+  value: choice
+  });
+}
+/************************************************************************
+// SDmaterialSelection(choice): Provides API command to SD for user's material
+//                              selection.
+// choice - user's selection of material
+************************************************************************/
+function SDsectionFunctionality(section, choice) {
+  api.parameters.updateAsync({
+  name: section,
+  value: choice
+  });
+}
+/************************************************************************
+// SDmidLength(): Provides API command to SD for mid section length adjustments
+************************************************************************/
+var SDmidSlider = document.getElementById('midSlider');
+SDmidSlider.addEventListener('input', SDmidLength, false);
+function SDmidLength() {
+  api.parameters.updateAsync({
+  name: 'mid pos',
+  value: (SDmidSlider.value)/100
+  });
+}
+
+/************************************************************************
+// SDitemSelection(section, order, choice): Provides API command on which section (L/M/R)
+//                          did the user decide to change item arrangements
+// section - Left, middle, or right section (in SD API formality (+items))
+// order - top, middle, or bottom
+// choice - user's selection of item
+************************************************************************/
+function SDitemSelection(section, order, choice) {
+  // get current section layout
+  curOrder = api.parameters.get({name: section}, "CommPlugin_1").data[0].value;
+  curOrderArr = curOrder.split(',');
+  // access the right order to alter user selection
+  curOrderArr[order] = choice;
+  // update parameter
+  api.parameters.updateAsync({
+    name: section,
+    value: curOrderArr.toString()
+  });
 }
