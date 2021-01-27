@@ -245,6 +245,10 @@ body{
   text-align: center;
   color: black;
 }
+.modal-content-sub-title {
+  margin: 0 30%;
+  font-size: 1.4em;
+}
 .modal-cotent-pop-info h1 {
   font-size: 2.2em;
 }
@@ -253,10 +257,6 @@ body{
 }
 .modal-content-pop-image {
   margin: 3.5% 44%;
-}
-.modal-content-sub-title {
-  margin: 0 30%;
-  font-size: 1.4em;
 }
 @media (max-width: 767px) {
   .modal-cotent-pop-info h1 {
