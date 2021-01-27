@@ -6,7 +6,7 @@ var modal_pop = document.getElementById("myModal");
 var span = document.getElementsByClassName("close-pop")[0];
 
 // When the user clicks on the button, open the modal
-window.addEventListener("load", function() {
+window.addEventListener("DOMContentLoaded", function() {
   modal_pop.style.display = "block";
 });
 
