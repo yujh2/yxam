@@ -155,17 +155,17 @@ function modifyCurrentSelected(curSelected, curSection) {
   curOrder = api.parameters.get({name: curSection.concat(" items")}, "CommPlugin_1").data[0].value;
   curOrderArr = curOrder.split(',');
   // Update shapediver with new set of parameters and change current option for radio
-  if (curSelected == "alchol") {
+  if (curSelected == "write") {
     topCurrentDisplay[0].checked = true; // top
-    middleCurrentDisplay[2].checked = true; // middle
+    middleCurrentDisplay[3].checked = true; // middle
     lowerCurrentDisplay[2].checked = true; // lower
-    var newOrder = "1,1,100";
+    var newOrder = "1,2,100";
     api.parameters.updateAsync({
       name: curSection.concat(" items"),
       value: newOrder
     });
   } else if (curSelected == "phone") {
-    topCurrentDisplay[3].checked = true; // top
+    topCurrentDisplay[5].checked = true; // top
     middleCurrentDisplay[1].checked = true; // middle
     lowerCurrentDisplay[4].checked = true; // lower
     var newOrder = "2,3,1";
@@ -173,11 +173,11 @@ function modifyCurrentSelected(curSelected, curSection) {
       name: curSection.concat(" items"),
       value: newOrder
     });
-  } else if (curSelected == "snacks") {
+  } else if (curSelected == "cup") {
     topCurrentDisplay[0].checked = true; // top
-    middleCurrentDisplay[5].checked = true; // middle
-    lowerCurrentDisplay[5].checked = true; // lower
-    var newOrder = "1,1,100";
+    middleCurrentDisplay[6].checked = true; // middle
+    lowerCurrentDisplay[1].checked = true; // lower
+    var newOrder = "3,1,100";
     api.parameters.updateAsync({
       name: curSection.concat(" items"),
       value: newOrder
