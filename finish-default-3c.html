@@ -24,6 +24,7 @@
 </head>
 
 <body>
+  <div id="sdv-container" style="display: none;"></div>
   <div id="fb-root"></div>
   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v9.0" nonce="970Ni0T0"></script>
   <a id="section-1">
@@ -51,13 +52,26 @@
       </div>
     </div>
     <script>
-      var initSdvApp = function() {
-        let settings = {
-          ticket: '8186128bfaa2baf6d63778fc0cd5ae835053d90e10eff3c8febe239b5ab71495625e31b5e82abdda0d72e2f5de07d729678baa6cca69b8fcc326b53aa528157ceee74f661f2a8236287c2ce01ca577c413474084e2d75fd917a476a795d5e510ce06caf2754da734881b22ae6d5a9d4eeb1021d306ef-bae3338d7fe6964dd6b7d0610843f257',
-          modelViewUrl: 'eu-central-1'
-        };
-        window.api = new SDVApp.ParametricViewer(settings);
+      var _container = document.getElementById('sdv-container');
+      // viewer settings
+      var _viewerSettings = {
+        // container to use
+        container: _container,
+        // when creating the viewer, we want to get back an API v2 object
+        api: {
+          version: 2
+        },
+        // ticket for a ShapeDiver model
+        ticket: '8186128bfaa2baf6d63778fc0cd5ae835053d90e10eff3c8febe239b5ab71495625e31b5e82abdda0d72e2f5de07d729678baa6cca69b8fcc326b53aa528157ceee74f661f2a8236287c2ce01ca577c413474084e2d75fd917a476a795d5e510ce06caf2754da734881b22ae6d5a9d4eeb1021d306ef-bae3338d7fe6964dd6b7d0610843f257',
+        modelViewUrl: 'eu-central-1',
+        showControlsInitial: true,
+        showSettingsInitial: false
       };
+
+      // create the viewer, get back an API v2 object
+      var api = new SDVApp.ParametricViewer(_viewerSettings);
+      var viewerInit = false;
+
       /************************************************************************
       // exportFile(): Dedicated function triigered when onclick event is activated
       // 							 when user clicked submit.
