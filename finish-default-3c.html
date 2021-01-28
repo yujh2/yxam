@@ -113,7 +113,7 @@
           submitButton.disabled = 'disabled';
           window.location.href = "#section-2";
           exportFile();
-          initSdvApp.exports.requestAsync({name: "data email"}).then( function(response) {
+          api.exports.requestAsync({name: "data email"}).then( function(response) {
               console.log(response);
           });
         }
