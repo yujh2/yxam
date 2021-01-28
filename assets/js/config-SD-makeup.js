@@ -25,7 +25,7 @@ var _viewerSettings = {
     version: 2
   },
   // ticket for a ShapeDiver model
-  ticket: '037bcc0487bd8f9274dc1ecc587c71c135c550dcb1995989ca44ed5f08934b89fad7a424336fde270195ba96e6ac4d6f1ab3d85133a9c711d994cb7b5914390d0198ccfc2dac36b90f4f148ab010b707850c4e973a915dba3fd8b08044d1396167edca630bbdf941d9f8b9f7de428ab3af8ddd685cf6-cedcf7b235051d3f2d6759fc973c3cdc',
+  ticket: 'ef070ecb57d1898598586a6d74ebabb829f7bd2f0ecfb3ce7de77aa1a43072bf3bc969538c8e18967024b59e152033cc6e307d69a55018da51166c4cb2d0d7cc56a55caf13ba7aedac0490e39cf3aa64127cb0ee96d45704e03a5d7ac38ee5706867fdf5b1a5df0241abbb6fc17d735616efda8893af-595c6f4f1002cc741cc6fbb9453a8599',
   modelViewUrl: 'eu-central-1',
   showControlsInitial: true,
   showSettingsInitial: false
