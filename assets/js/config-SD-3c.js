@@ -25,7 +25,7 @@ var _viewerSettings = {
     version: 2
   },
   // ticket for a ShapeDiver model
-  ticket: 'e84dcddba80f80e456e2e9d4d44547f7981818008ff56d62be20a41d2012c89f64ce78cf12dcaf730eb29c89d64c1fafce6830316b0fe524581e0126037cc79bdcaa335fc4451fde048e0847eff876cfb3da409e61884a23031e8d11f3fac2dd0d992cfa28fcc3282f0b94233a55931a4f3bf666cec0-b1a4466a9c54aa9e9dfcd822c158794a',
+  ticket: '7e223dd61a907701bd66ffb560fc68410f844fab91a218d3aafbf60d0b873a67dcf827460bc3d59692a75d4daa240c55bb19afff639819b3a6d0e70846f13cadbe0148d392289505727d738437d7cdc219d5593c51d8c575efc547f11d42d783f6cc6fd9127e69830be07e87c3af7f9aa78d9d06d476-ed311a5d8d287cf4bec086b4295fd0b6',
   modelViewUrl: 'eu-central-1',
   showControlsInitial: true,
   showSettingsInitial: false
@@ -297,7 +297,7 @@ midLineRange.noUiSlider.on('update', function (values, handle) {
 
 var depth = document.getElementById('depth');
 noUiSlider.create(depth, {
-    start: [ 10 ], // Handle start position
+    start: [ 13 ], // Handle start position
     step: 1, // Slider moves in increments of '10'
     margin: 20, // Handles must be more than '20' apart
     connect: [true, false], // Display a colored bar between the handles
