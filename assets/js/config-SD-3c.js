@@ -41,7 +41,7 @@ api.scene.addEventListener(api.scene.EVENTTYPE.VISIBILITY_ON, function() {
     parameters.data.sort(function(a, b) {
       return a.order - b.order;
     });
-    console.log(parameters.data);
+    //console.log(parameters.data);
   }
 });
 api.state.addEventListener(api.state.EVENTTYPE.BUSY, function(){
@@ -95,7 +95,7 @@ function validateForm() {
     // update user's email to SD param and redirect to finish page
     exportFile();
     api.exports.requestAsync({name: "data email"}).then( function(response) {
-        console.log(response);
+        //console.log(response);
         window.location.href = "finish-post-config.html";
       }
     );
@@ -118,13 +118,13 @@ function modifyList(curSelected, curSection) {
     layerOptions[i].classList.add("list-hidden");
     // Make sub-list options visible based on 'curSelected' user made
     if (layerOptions[i].getAttribute('value') == "all" || layerOptions[i].getAttribute('value') == curSelected) {
-      console.log("it did came here");
+      //console.log("it did came here");
       layerOptions[i].classList.remove("list-hidden");
-      console.log(layerOptions[i].getAttribute('value') );
+      //console.log(layerOptions[i].getAttribute('value') );
       continue;
     } else {
-      console.log('nothing got validated');
-      console.log(layerOptions[i].getAttribute('value') );
+      //console.log('nothing got validated');
+      //console.log(layerOptions[i].getAttribute('value') );
     }
   }
 }
@@ -145,9 +145,9 @@ function modifyCurrentSelected(curSelected, curSection) {
   var middleCurrentDisplay = document.getElementById(curSection.concat("2")).getElementsByClassName('select-box-middle__input');
   var lowerCurrentDisplay = document.getElementById(curSection.concat("3")).getElementsByClassName('select-box-lower__input');
 
-  console.log(topCurrentDisplay);
-  console.log(middleCurrentDisplay);
-  console.log(lowerCurrentDisplay);
+  //console.log(topCurrentDisplay);
+  //console.log(middleCurrentDisplay);
+  //console.log(lowerCurrentDisplay);
 
   // clear all previous selections in current display
   for (i = 0; i < topCurrentDisplay.length; i++) {

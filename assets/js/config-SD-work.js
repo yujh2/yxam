@@ -41,7 +41,7 @@ api.scene.addEventListener(api.scene.EVENTTYPE.VISIBILITY_ON, function() {
     parameters.data.sort(function(a, b) {
       return a.order - b.order;
     });
-    console.log(parameters.data);
+    //console.log(parameters.data);
   }
 });
 api.state.addEventListener(api.state.EVENTTYPE.BUSY, function(){
@@ -95,7 +95,7 @@ function validateForm() {
     // update user's email to SD param and redirect to finish page
     exportFile();
     api.exports.requestAsync({name: "data email"}).then( function(response) {
-        console.log(response);
+        //console.log(response);
         window.location.href = "finish-post-config.html";
       }
     );
@@ -141,9 +141,9 @@ function modifyCurrentSelected(curSelected, curSection) {
   var lowerCurrentDisplay = document.getElementById(curSection.concat("3")).getElementsByClassName('select-box-lower__input');
   var orderElementVar = [lowerCurrentDisplay, middleCurrentDisplay, topCurrentDisplay];
 
-  console.log(topCurrentDisplay);
-  console.log(middleCurrentDisplay);
-  console.log(lowerCurrentDisplay);
+  //console.log(topCurrentDisplay);
+  //console.log(middleCurrentDisplay);
+  //console.log(lowerCurrentDisplay);
 
   // clear all previous selections in current display
   for (i = 0; i < topCurrentDisplay.length; i++) {
