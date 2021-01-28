@@ -165,9 +165,9 @@ function modifyCurrentSelected(curSelected, curSection) {
       value: newOrder
     });
   } else if (curSelected == "phone") {
-    topCurrentDisplay[5].checked = true; // top
+    topCurrentDisplay[4].checked = true; // top
     middleCurrentDisplay[1].checked = true; // middle
-    lowerCurrentDisplay[4].checked = true; // lower
+    lowerCurrentDisplay[5].checked = true; // lower
     var newOrder = "2,3,1";
     api.parameters.updateAsync({
       name: curSection.concat(" items"),
