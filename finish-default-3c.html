@@ -51,15 +51,20 @@
       </div>
     </div>
     <script>
-      var api = new SDVApp.ParametricViewer(_viewerSettings);
-      var viewerInit = false;
+      var initSdvApp = function() {
+        let settings = {
+          ticket: '8186128bfaa2baf6d63778fc0cd5ae835053d90e10eff3c8febe239b5ab71495625e31b5e82abdda0d72e2f5de07d729678baa6cca69b8fcc326b53aa528157ceee74f661f2a8236287c2ce01ca577c413474084e2d75fd917a476a795d5e510ce06caf2754da734881b22ae6d5a9d4eeb1021d306ef-bae3338d7fe6964dd6b7d0610843f257';
+          modelViewUrl: 'eu-central-1'
+        };
+        window.api = new SDVApp.ParametricViewer(settings);
+      };
       /************************************************************************
       // exportFile(): Dedicated function triigered when onclick event is activated
       // 							 when user clicked submit.
       ************************************************************************/
       function exportFile() {
         var userEmail = document.getElementById('email').value;
-        api.parameters.updateAsync({
+        initSdvApp.parameters.updateAsync({
           // PDF maker startup. (id corresponds to PDF maker)
           name: 'ENTER EMAIL',
           value: userEmail
@@ -95,7 +100,7 @@
           submitButton.disabled = 'disabled';
           window.location.href = "#section-2";
           exportFile();
-          api.exports.requestAsync({name: "data email"}).then( function(response) {
+          initSdvApp.exports.requestAsync({name: "data email"}).then( function(response) {
               console.log(response);
           });
         }
