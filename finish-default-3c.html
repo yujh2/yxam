@@ -1,4 +1,4 @@
-<!doctype html>
+api<!doctype html>
 <html lang="en">
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -78,7 +78,7 @@
       ************************************************************************/
       function exportFile() {
         var userEmail = document.getElementById('email').value;
-        initSdvApp.parameters.updateAsync({
+        api.parameters.updateAsync({
           // PDF maker startup. (id corresponds to PDF maker)
           name: 'ENTER EMAIL',
           value: userEmail
