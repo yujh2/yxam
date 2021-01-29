@@ -50,9 +50,16 @@
     logged_out_greeting="您好! 歡迎來到我們的客製體驗活動。任何問題都可以跟我們詢問喔!">
   </div> -->
   <!-- notification for small viewports and landscape oriented smartphones -->
+  <script type="text/javascript">
+    function moveOn() {
+      let block = document.getElementsByClassName("device-notification");
+      block[0].style.display = "none";
+    }
+  </script>
   <div class="device-notification">
       <h2 style="font-size: 2.5em;">喔不...&#128549;</h2>
     <p class="device-notification--message">看來您目前的螢幕大小不適合瀏覽我們為你準備的精彩內容。為了讓每位使用者都擁有最佳的體驗，請將手機轉為直向或使用更大的螢幕來體驗我們的網站喔!</p>
+    <button type="button" name="moveOnButton" onclick="moveOn();" style="background: black;">繼續前往網站 >></button>
   </div>
   <!-- pop-up modal for website clarification -->
   <div id="myModal" class="modal-pop">
