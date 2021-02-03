@@ -239,6 +239,9 @@ html,body,main {
   .tooltip {
     display: none;
   }
+  .input-group {
+    width: 100% !important;
+  }
 }
 
 .param-adjust {
