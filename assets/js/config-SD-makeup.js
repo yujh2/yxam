@@ -381,15 +381,16 @@ SDrowCount.addEventListener('input', function() {
 // SDconnectBlocks: API variable for SD to choose which blocks to connect
 //                  into bigger area
 ************************************************************************/
-var SDconnectBlocksTemp = document.getElementById('connect-blocks');
-SDconnectBlocksTemp.addEventListener('input', function() {
-  var SDconnectBlocks = SDconnectBlocksTemp.value.split('&');
+var SDconnectBlocksTemp = document.getElementById('connect-blocks-par');
+SDconnectBlocksTemp.addEventListener('keyup', function() {
+  let firstVal = document.getElementById('connect-blocks1').value;
+  let secondVal = document.getElementById('connect-blocks2').value;
+  var SDconnectBlocks = firstVal.concat(",", secondVal);
   api.parameters.updateAsync({
     name: 'combine items',
-    value: SDconnectBlocks.toString()
+    value: SDconnectBlocks
   });
 });
-
 /************************************************************************
 // SDindColumnCount: API variable for SD to change number of columns individually
 //                   for dedicated blocks
