@@ -1023,6 +1023,7 @@ body{
   left: -15px;
   margin-left: 50%;
   top: 90vh;
+  cursor: pointer;
 }
 
 @media (max-width: 900px){
